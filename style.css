@@ -1,3 +1,7 @@
+body{
+    display:flex;
+    justify-content: space-around;
+}
 .fotky_frame{
     border:2px;
 }
