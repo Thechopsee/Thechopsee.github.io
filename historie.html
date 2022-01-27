@@ -4,19 +4,19 @@
         <link rel="stylesheet" href="modal_style.css"/>
         <script src="modal_galery.js"></script>
     </head>
-    <body>
+    <body onload="prepareModal()">
         <p>Portské,buček a soudek rumu.A tak to všechno začalo....</p><br>
         <div id="2021" class="fotky_frame">
             
             <div class="top_galery">
-                <div class="main_left"><img src="2021_1.png" width="300"></div>
-                <div class="main_right"><img src="2021_2.png" width="300"></div>
+                <div class="main_left"><img src="2021_1.png" width="300" id="myImg0" class="myImg"></div>
+                <div class="main_right"><img src="2021_2.png" width="300" id="myImg1"class="myImg" ></div>
             </div>
             <div class="bottom_galery">
-                <img src="2021_3.png" width="100">
-                <img src="2021_4.png" width="100">
-                <img src="2021_5.png" width="100">
-                <img src="2021_6.png" width="100">
+                <img src="2021_3.png" width="100" id="myImg2" class="myImg">
+                <img src="2021_4.png" width="100" id="myImg3" class="myImg">
+                <img src="2021_5.png" width="100" id="myImg4" class="myImg">
+                <img src="2021_6.png" width="100" id="myImg5" class="myImg">
             </div>
         </div>
         <div id="2020" class="fotky_frame"></div>
@@ -29,11 +29,6 @@
         <div id="2013" class="fotky_frame"></div>
         <div id="2012" class="fotky_frame"></div>
         <div id="2011" class="fotky_frame"></div>
-
-
-
-    <!-- Trigger the Modal -->
-    <img id="myImg" src="2021_1.jpg" alt="Snow" style="width:100%;max-width:300px">
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
