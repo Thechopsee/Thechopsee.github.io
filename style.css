@@ -5,3 +5,8 @@ body{
 .fotky_frame{
     border:2px;
 }
+
+.top_galery{
+    display: flex;
+    justify-content: space-around;
+}
