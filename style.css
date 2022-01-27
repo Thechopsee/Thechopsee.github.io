@@ -1,12 +1,16 @@
-body{
-    display:flex;
-    justify-content: space-around;
-}
+
 .fotky_frame{
     border:2px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    text-align: center;
+
 }
 
 .top_galery{
     display: flex;
     justify-content: space-around;
-}
+    }
+
+
