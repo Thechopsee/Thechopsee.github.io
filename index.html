@@ -11,15 +11,15 @@
     })();
 
 
-       
-    function sendEmail()
-    {
-        var templateParams = {
+    var templateParams = {
         name: 'Karel',
         prijmeni: 'Vomáčka',
         message: 'data_sem'
         };
-    
+     
+    function sendEmail()
+    {
+      
         emailjs.send('service_w22m9er', 'template_pkbylb9', templateParams)
         .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
@@ -35,7 +35,7 @@
   
 <body>
 Dobrej
-<button onclick="sendEmail">Pošli testing mail</button>
+<button onclick="sendEmail()">Pošli testing mail</button>
 </body>
   
 </html>
