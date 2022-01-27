@@ -12,6 +12,7 @@
     justify-content: space-around;
     }
 .bottom_galery{
+    padding-top: 2%;
     display: flex;
     justify-content: space-around;
     
