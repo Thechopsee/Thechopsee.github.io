@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styl.css"/>
+        <script defer src="odpocet.js"></script>
+        <script defer src="registrace.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="facebook.com"><img src="./obr/fb.png" width="25" ></a>
+        </header>
+       
+        <menu>
+            <a href="./index.html">Těrlická plachta 2022</a> | <a href="./historie.html">Historie</a> | <a href="./registrace.html">Registrace</a> | <a href="./kontakty.html">Kontakt</a>            
+        </menu>
+
+
+        
+        <div class="counter">
+            <h2>Zbývající</h2>
+            <div class="box">
+                <h3 id="daystxt">dny</h2>
+                <h2 id="days">000</h2>
+            </div>
+            <div class="box">
+                <h3 id="hourstxt">hodiny</h2>
+                <h2 id="hours">00</h2>
+            </div>
+            <div class="box">
+                <h3 id="minutestxt">minuty</h2>
+                <h2 id="minutes">00</h2>
+            </div>
+            <div class="box">
+                <h3 id="secondstxt">a sekundy</h2>
+                <h2 id="seconds">00</h2>
+            </div>
+            <h2>pro přihlášení!</h2>
+        </div>
+        
+        
+        <form name="form">
+            <div class="formular_cely"></div>
+                <h2>Závodník</h2>
+                <div class="formular">
+                    <label class="left" for="jmeno">Jméno: </label>
+                    <input type="text"  id="jmeno"  name="jmeno">
+
+                    <label class="left" for="prijmeni">Příjmení: </label>
+                    <input type=text id="prijmeni">
+
+                    <label class="left" for="date">Datum narození: </label>
+                    <input type="date" id="date">
+                    
+                    <label class="left" for="mail">E-mail: </label>
+                    <input type="email" id="mail">
+
+                    <label class="left" for="klub">Klub: </label>
+                    <input type="text" id="klub">
+
+                    <label class="left" for="licence">Licence: </label>
+                    <input type="text" id="licence">
+
+                    <label class="left" for="stat">Stát: </label> 
+                    <input type="text" id="stat" list="staty">                
+                    <datalist id="staty">
+                        <option value="CZE">
+                        <option value="POL">
+                        <option value="SVK">
+                    </datalist>
+                </div>
+
+                <h2>Modely</h2>
+                <div class="formular">
+                    <label class="left" for="rg">RG-65: </label>
+                    <input class="right_check" type="checkbox" id="rg">
+
+                    <label class="left" for="kategorie">Kategorie: </label>
+                    <select id="kategorie" width="50%" name="kategorie">
+                        <option value="vyber">Vyber</option>
+                        <option value="nss_a">NSS-A</option>
+                        <option value="nss_b">NSS-B</option>
+                        <option value="nss_c">NSS-C</option>
+                    </select>
+
+                    <label class="left" for="nazev_modelu">Název modelu: </label>
+                    <input type="text" id="nazev_modelu">
+
+                    <label class="left" for="plocha">Plocha plachet: </label>
+                    <div class="right"><input  type="number" id="plocha" min="1" max="5" step="0.0001" >&nbsp;[m&sup2;]</div>
+
+                    <label class="left" for="delka">Délka vodorysky: </label>
+                    <div class="right"><input class="right" type="number" id="delka" min="1" max="5" step="1">&nbsp;[mm]</div>
+
+                    <label class="left" for="vytlak">Výtlak: </label>
+                    <div class="right"><input class="right" type="number" id="vytlak" min="1" max="30" step="0.1">&nbsp;[kg]</div>
+
+                    <label class="left" for="meritko">Měřítko: 1: </label>
+                    <input type="number" id="plocha" min="1" max="50" step="0.01">
+                    
+                </div>
+                <br>
+            <input type="button" id="odeslat" onclick="validace(this.form)" value="Odeslat přihlášku">
+            </div>
+            
+        </form>
+
+        
+        
+        
+        
+
+
+        
+        
+
+    </body>
+</html>

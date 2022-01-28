@@ -1,0 +1,97 @@
+body {
+  background-color: #303b4a;
+  color: #45cece;
+}
+html {
+  font-family: "Century Gothic", CenturyGothic;
+}
+menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 150%;
+}
+menu {
+  text-align: center;
+}
+h1 {
+  font-size: 6em;
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+}
+header {
+  text-align: right;
+}
+#info {
+  text-align: center;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+#info_nahore {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+}
+#info_text_1a {
+  text-align: right;
+}
+#info_text_1b {
+  text-align: left;
+}
+.formular {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 1.5%;
+}
+h2 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 1%;
+}
+form input {
+  width: 50%;
+  background-color: #444e59;
+}
+form select {
+  width: 50%;
+  background-color: #444e59;
+}
+.left {
+  text-align: right;
+}
+.right {
+  text-align: left;
+}
+.right_check {
+  text-align: left;
+}
+h3 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 1%;
+}
+.counter {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 0.9fr 0.9fr 0.9fr 1fr;
+  padding-left: 10%;
+  padding-right: 10%;
+  gap: 1.5%;
+}
+.counter h2 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 0%;
+}
+.counter h3 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 0%;
+}
