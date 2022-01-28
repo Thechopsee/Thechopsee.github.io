@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="styl.css"/>
         <script defer src="odpocet.js"></script>
         <script defer src="registrace.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     </head>
     <body>
@@ -38,7 +39,7 @@
         </div>
         
         
-        <form name="form">
+        <form action="https://dataspracovavac.tode.cz/test.php" method="post">
             <div class="formular_cely"></div>
                 <h2>Závodník</h2>
                 <div class="formular">
@@ -46,22 +47,22 @@
                     <input type="text"  id="jmeno"  name="jmeno">
 
                     <label class="left" for="prijmeni">Příjmení: </label>
-                    <input type=text id="prijmeni">
+                    <input type=text id="prijmeni" name="prijmeni">
 
                     <label class="left" for="date">Datum narození: </label>
-                    <input type="date" id="date">
+                    <input type="date" id="date" name="date">
                     
                     <label class="left" for="mail">E-mail: </label>
-                    <input type="email" id="mail">
+                    <input type="email" id="mail" name="mail">
 
                     <label class="left" for="klub">Klub: </label>
-                    <input type="text" id="klub">
+                    <input type="text" id="klub" name="klub">
 
                     <label class="left" for="licence">Licence: </label>
-                    <input type="text" id="licence">
+                    <input type="text" id="licence" name="licence">
 
                     <label class="left" for="stat">Stát: </label> 
-                    <input type="text" id="stat" list="staty">                
+                    <input type="text" id="stat" list="staty" name="stat">                
                     <datalist id="staty">
                         <option value="CZE">
                         <option value="POL">
@@ -72,7 +73,7 @@
                 <h2>Modely</h2>
                 <div class="formular">
                     <label class="left" for="rg">RG-65: </label>
-                    <input class="right_check" type="checkbox" id="rg">
+                    <input class="right_check" type="checkbox" id="rg" name="rg">
 
                     <label class="left" for="kategorie">Kategorie: </label>
                     <select id="kategorie" width="50%" name="kategorie">
@@ -83,23 +84,23 @@
                     </select>
 
                     <label class="left" for="nazev_modelu">Název modelu: </label>
-                    <input type="text" id="nazev_modelu">
+                    <input type="text" id="nazev_modelu" name="nazev_modelu">
 
                     <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" min="1" max="5" step="0.0001" >&nbsp;[m&sup2;]</div>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" min="1" max="5" step="0.0001" >&nbsp;[m&sup2;]</div>
 
                     <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" min="1" max="5" step="1">&nbsp;[mm]</div>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka" min="1" max="5" step="1">&nbsp;[mm]</div>
 
                     <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" min="1" max="30" step="0.1">&nbsp;[kg]</div>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak" min="1" max="30" step="0.1">&nbsp;[kg]</div>
 
                     <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="plocha" min="1" max="50" step="0.01">
+                    <input type="number" id="meritko" name="meritko" min="1" max="50" step="0.01">
                     
                 </div>
                 <br>
-            <input type="button" id="odeslat" onclick="validace(this.form)" value="Odeslat přihlášku">
+             <input type="submit" id="odeslat" onclick="sendEmail(this.form)"> 
             </div>
             
         </form>
