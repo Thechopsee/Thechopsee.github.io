@@ -46,11 +46,7 @@ header {
   padding-right: 20%;
   gap: 1.5%;
 }
-#center
-{
-  display: flex;
-  justify-content: space-around;
-}
+
 h2 {
   font-family: "Century Gothic", CenturyGothic;
   font-weight: normal;
@@ -59,7 +55,7 @@ h2 {
 }
 form input {
   width: 50%;
-  background-color: #444e59;
+  background-color: #dadfe4;
 }
 form select {
   width: 50%;
@@ -99,4 +95,17 @@ h3 {
   font-weight: normal;
   text-align: center;
   margin: 0%;
+}
+
+
+
+#center
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+#kontakty_blok{
+  text-align: center;
+  margin-top: 5%;
 }
