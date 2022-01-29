@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html>
-  
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-
-    (function() {
-    emailjs.init("user_aHSZslb08hBUmqeZ4wJ6L");
-      console.log("init");
-    })();
-
-
-    var templateParams = {
-        name: 'Karel',
-        prijmeni: 'Vomáčka',
-        message: 'data_sem'
-        };
-     
-    function sendEmail()
-    {
-      
-        emailjs.send('service_w22m9er', 'template_pkbylb9', templateParams)
-        .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        }, function(error) {
-        console.log('FAILED...', error);
-        });
-    }
-   
-    </script>
+    <head>
+        <link rel="stylesheet" href="styl.css"/>
+    </head>
+    <body>
+        <header>
+            <a href="facebook.com"><img src="./obr/fb.png" width="25" ></a>
+        </header>
+       <h1>Těrlická plachta</h1>
+        <menu>
+            <a href="./index.html">Těrlická plachta 2022</a> | <a href="./historie.html">Historie</a> | <a href="./registrace.html">Registrace</a> | <a href="./kontakty.html">Kontakt</a>            
+        </menu>
 
 
-</head>
-  
-<body>
-Dobrej
-<button onclick="sendEmail()">Pošli testing mail</button>
-<a href="historie.html">historie</a><br>
-<a href="registrace.html">Registrace</a><br>
-<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description"></iframe>
-<form action="https://dataspracovavac.tode.cz/test.php" method="post">
-    Name:  <input type="text" name="username" /><br />
-    Email: <input type="text" name="email" /><br />
-    <input type="submit" name="submit" value="Submit me!" />
-</form>
-</body>
-  
+        <div id="info">   
+            <div id="info_nahore">
+                <div id="info_text_1a">
+                    <h3>KDY</h3>
+                    <p>30.9.-2.10.2022</p>
+                </div>
+                <div id="info_text_1b">
+                    <h3>KDE</h3>
+                    <p>RS Vyhlídka Těrlicko</p>
+                </div>
+            </div>         
+            
+            <div class="info_text_2">
+                <h3>CO</h3>
+                <p>Setkání plachetnic třídy NSS - A,B,C,RG-650 a další typy plachetnic bez strojního pohonu</p>
+            </div>
+        </div>
+        
+
+    </body>
 </html>
