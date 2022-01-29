@@ -46,6 +46,11 @@ header {
   padding-right: 20%;
   gap: 1.5%;
 }
+#center
+{
+  display: flex;
+  justify-content: space-around;
+}
 h2 {
   font-family: "Century Gothic", CenturyGothic;
   font-weight: normal;
