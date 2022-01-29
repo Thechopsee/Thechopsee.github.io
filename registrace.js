@@ -70,9 +70,20 @@ function validace(form){
     function sendEmail(form)
     {
         var templateParams = {
-            name: form.jmeno.value,
+            jmeno: form.jmeno.value,
             prijmeni: form.prijmeni.value,
-            message: 'data_sem'
+            date:form.date.value,
+            mail:form.mail.value,
+            klub:form.klub.value,
+            licence:form.licence.value,
+            stat:form.stat.value,
+            rg:form.rg.value,
+            kategorie:form.kategorie.value,
+            nazev:form.nazev_modelu.value,
+            plocha:form.plocha.value,
+            delka:form.delka.value,
+            vytlak:form.vytlak.value,
+            meritko:form.meritko.value,
             };
         emailjs.send('service_w22m9er', 'template_pkbylb9', templateParams)
         .then(function(response) {
