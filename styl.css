@@ -122,3 +122,19 @@ p{
   border-style: none;
   border-radius: 4px;
 }
+
+
+#mobile_logo{
+  display: none;
+  min-width: 300px;
+}
+
+@media only screen and (max-width: 500px){ 
+  #logo{
+    display: none;
+  }
+
+  #mobile_logo{
+    display: block;
+  }
+}
