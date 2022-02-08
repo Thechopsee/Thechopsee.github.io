@@ -126,7 +126,7 @@ p{
 
 #mobile_logo{
   display: none;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 @media only screen and (hover:none) and (pointer:coarse){ 
