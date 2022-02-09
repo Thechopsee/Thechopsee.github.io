@@ -145,5 +145,11 @@ p{
   {
     margin-bottom: 2%;
   }
+  .bottom_galery{
+    padding-top: 2%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap:2%;
+  }
 
 }
