@@ -137,10 +137,7 @@ p{
   #mobile_logo{
     display: block;
   }
-  .main_left img{
-    width:200px;
-  }
-  .main_right img{
-    width:200px;
+  .top_galery{
+    flex-direction: column;
   }
 }
