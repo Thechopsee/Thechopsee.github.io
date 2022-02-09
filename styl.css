@@ -139,5 +139,11 @@ p{
   }
   .top_galery{
     flex-direction: column;
+    
   }
+  .main_left
+  {
+    margin-bottom: 2%;
+  }
+
 }
