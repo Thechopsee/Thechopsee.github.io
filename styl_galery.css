@@ -97,25 +97,6 @@ display: flex;
 justify-content: space-around;
 
 }
-.bottom_galery{
-  padding-top: 2%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap:2%;
-  
-  }
-  .bottom_galery_1{
-    padding-top: 2%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2%;
-  }
-.bottom_galery_1{
-  padding-top: 2%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2%;
-}
 .brk{
   display: none;
 }
