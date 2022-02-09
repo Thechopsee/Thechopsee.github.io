@@ -137,6 +137,7 @@ p{
   #mobile_logo{
     display: block;
   }
+<<<<<<< HEAD
   .top_galery{
     flex-direction: column;
     
@@ -153,4 +154,6 @@ p{
     gap:2%;
   }
 
+=======
+>>>>>>> parent of d57e391 (main img update)
 }

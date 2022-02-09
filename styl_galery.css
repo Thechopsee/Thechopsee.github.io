@@ -97,12 +97,3 @@ display: flex;
 justify-content: space-around;
 
 }
-.brk{
-  display: none;
-}
-.main_left img{
-  width:300px;
-}
-.main_right img{
-  width:300px;
-}
