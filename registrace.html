@@ -38,9 +38,13 @@
             </div>
             <h2>pro přihlášení!</h2>
         </div>
+
+        <div class="counter_mobile">
+            Přihlášování končí 23.9.2022!
+        </div>
         
         <!--<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description"></iframe> -->
-        <form action="https://dataspracovavac.tode.cz/test.php" method="post">
+        <form id="form_web" action="https://dataspracovavac.tode.cz/test.php" method="post">
             <div class="formular_cely"></div>
                 <h2>Závodník</h2>
                 <div class="formular">
@@ -107,6 +111,73 @@
             </div>
             
         </form>
+        <form id="form_mobile" action="https://dataspracovavac.tode.cz/test.php" method="post">
+            <div class="formular_cely_mobile"></div>
+                <h2>Závodník</h2>
+                <div class="formular_mobile">
+                    <label class="mleft" for="jmeno">Jméno: </label>
+                    <div class="fmright"><input type="text"  id="jmeno"  name="jmeno" required></div>
+ 
+                    <label class="mleft" for="prijmeni">Příjmení: </label>
+                    <div class="mright"><input type=text id="prijmeni" name="prijmeni" required></div>
+ 
+                    <label class="mleft" for="date">Datum narození: </label>
+                    <div class="mright"><input type="date" id="date" name="date" required></div>
+ 
+                    <label class="mleft" for="mail">E-mail: </label>
+                    <div class="mright"><input type="email" id="mail" name="mail" required></div>
+ 
+                    <label class="mleft" for="klub">Klub: </label>
+                    <div class="mright"><input type="text" id="klub" name="klub"></div>
+ 
+                    <label class="mleft" for="licence">Licence: </label>
+                    <div class="mright"><input type="text" id="licence" name="licence"></div>
+ 
+                    <label class="mleft" for="stat">Stát: </label> 
+                    <div class="mright"><input type="text" id="stat" list="staty" name="stat" required> </div>               
+                    <datalist id="staty">
+                        <option value="CZE">
+                        <option value="POL">
+                        <option value="SVK">
+                    </datalist>
+                </div>
+ 
+                <h2>Modely</h2>
+                <div class="formular_mobile">
+                    <label class="mleft" for="rg">RG-65: </label>
+                    <div class="mright"><input class="mright_check" type="checkbox" id="rg" name="rg"></div>
+ 
+                    <label class="mleft" for="kategorie">Kategorie: </label>
+                    <div class="mright"><select id="kategorie" width="50%" name="kategorie">
+                        <option value="vyber">Vyber</option>
+                        <option value="nss_a">NSS-A</option>
+                        <option value="nss_b">NSS-B</option>
+                        <option value="nss_c">NSS-C</option>
+                    </select></div>
+ 
+                    <label class="mleft" for="nazev_modelu">Název modelu: </label>
+                    <div class="mright"><input type="text" id="nazev_modelu" name="nazev_modelu"></div>
+ 
+                    <label class="mleft" for="plocha">Plocha plachet [m&sup2;]: </label>
+                    <div class="mright"><input  type="number" id="plocha" name="plocha" min="1" max="5" step="0.0001" ></div>
+ 
+                    <label class="mleft" for="delka">Délka vodorysky [mm]: </label>
+                    <div class="mright"><input class="mright" type="number" id="delka" name="delka" min="1" max="5" step="1"></div>
+ 
+                    <label class="mleft" for="vytlak">Výtlak [kg]: </label>
+                    <div class="mright"><input class="mright" type="number" id="vytlak" name="vytlak" min="1" max="30" step="0.1"></div>
+ 
+                    <label class="mleft" for="meritko">Měřítko: 1: </label>
+                    <div class="mright"><input type="number" id="meritko" name="meritko" min="1" max="50" step="0.01"></div>
+ 
+                </div>
+                <br>
+                <!-- onclick="sendEmail(this.form)"-->
+                <div id="center">Registrace bude dostupná hned po zveřejnění propozic!</div>
+             <div id="center"><input type="submit" id="odeslat" onclick="sendEmail(this.form)" disabled></div> 
+            </div>
+ 
+        </form>  
 
         
         

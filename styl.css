@@ -61,6 +61,17 @@ header {
   padding-right: 20%;
   gap: 1.5%;
 }
+.formular_mobile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1%;
+  padding-right: 1%;
+ 
+}
+.mleft{
+  text-align: center;
+}
 #propozice{
   text-align: center;
   width:80%;
@@ -155,15 +166,36 @@ p{
   color: #45cece;
 }
 
+.counter_mobile{
+  display: none;
+}
+#form_mobile{
+  display: none;
+}
+ 
 @media only screen and (hover:none) and (pointer:coarse){ 
   #logo{
     display: none;
   }
-
+ 
   #mobile_logo{
     display: block;
+    filter: invert(83%) sepia(82%) saturate(1620%) hue-rotate(140deg) brightness(86%) contrast(86%);
   }
-
+  .counter_mobile{
+    display: block;
+  }
+  .counter{
+    display: none;
+  }
+ 
+  #form_mobile{
+    display: block;
+  }
+  #form_web{
+    display: none;
+  }
+ 
 }
 
 #odeslat:disabled{
