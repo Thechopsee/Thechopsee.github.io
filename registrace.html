@@ -54,8 +54,8 @@
                     <label class="left" for="prijmeni">Příjmení: </label>
                     <input type=text id="prijmeni" name="prijmeni" required>
 
-                    <label class="left" for="date">Datum narození: </label>
-                    <input type="date" id="date" name="date" required>
+                    <label class="left" for="junior">Mladší 18ti let: </label>
+                    <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior"></div>
                     
                     <label class="left" for="mail">E-mail: </label>
                     <input type="email" id="mail" name="mail" required>
@@ -78,7 +78,7 @@
                 <h2>Modely</h2>
                 <div class="formular">
                     <label class="left" for="rg">RG-65: </label>
-                    <input class="right_check" type="checkbox" id="rg" name="rg">
+                    <div class="right"><input class="right_check" type="checkbox" id="rg" name="rg"></div>
 
                     <label class="left" for="kategorie">Kategorie: </label>
                     <select id="kategorie" width="50%" name="kategorie">
@@ -90,18 +90,18 @@
 
                     <label class="left" for="nazev_modelu">Název modelu: </label>
                     <input type="text" id="nazev_modelu" name="nazev_modelu">
+                    
+                    <label class="left" for="delka">Délka vodorysky: </label>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1">&nbsp;[mm]</div>
 
                     <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" name="plocha" min="1" max="5" step="0.0001" >&nbsp;[m&sup2;]</div>
-
-                    <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" name="delka" min="1" max="5" step="1">&nbsp;[mm]</div>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" >&nbsp;[m&sup2;]</div>
 
                     <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak" min="1" max="30" step="0.1">&nbsp;[kg]</div>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01">&nbsp;[kg]</div>
 
                     <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="meritko" name="meritko" min="1" max="50" step="0.01">
+                    <input type="number" id="meritko" name="meritko" step="0.01">
                     
                 </div>
                 <br>
@@ -121,8 +121,8 @@
                     <label class="mleft" for="prijmeni">Příjmení: </label>
                     <div class="mright"><input type=text id="prijmeni" name="prijmeni" required></div>
  
-                    <label class="mleft" for="date">Datum narození: </label>
-                    <div class="mright"><input type="date" id="date" name="date" required></div>
+                    <label class="mleft" for="junior">Mladší 18ti let: </label>
+                    <div class="mright"><input class="mright_check" type="checkbox" id="junior" name="junior"></div>
  
                     <label class="mleft" for="mail">E-mail: </label>
                     <div class="mright"><input type="email" id="mail" name="mail" required></div>
@@ -158,17 +158,17 @@
                     <label class="mleft" for="nazev_modelu">Název modelu: </label>
                     <div class="mright"><input type="text" id="nazev_modelu" name="nazev_modelu"></div>
  
-                    <label class="mleft" for="plocha">Plocha plachet [m&sup2;]: </label>
-                    <div class="mright"><input  type="number" id="plocha" name="plocha" min="1" max="5" step="0.0001" ></div>
- 
                     <label class="mleft" for="delka">Délka vodorysky [mm]: </label>
-                    <div class="mright"><input class="mright" type="number" id="delka" name="delka" min="1" max="5" step="1"></div>
+                    <div class="mright"><input class="mright" type="number" id="delka" name="delka" step="1"></div>
+
+                    <label class="mleft" for="plocha">Plocha plachet [m&sup2;]: </label>
+                    <div class="mright"><input  type="number" id="plocha" name="plocha"  step="0.0001" ></div>
  
                     <label class="mleft" for="vytlak">Výtlak [kg]: </label>
-                    <div class="mright"><input class="mright" type="number" id="vytlak" name="vytlak" min="1" max="30" step="0.1"></div>
+                    <div class="mright"><input class="mright" type="number" id="vytlak" name="vytlak" step="0.01"></div>
  
                     <label class="mleft" for="meritko">Měřítko: 1: </label>
-                    <div class="mright"><input type="number" id="meritko" name="meritko" min="1" max="50" step="0.01"></div>
+                    <div class="mright"><input type="number" id="meritko" name="meritko"  step="0.01"></div>
  
                 </div>
                 <br>

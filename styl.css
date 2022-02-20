@@ -7,7 +7,7 @@ html {
   font-family: "Century Gothic", CenturyGothic;
 }
 menu a {
-  color: black;
+  color: #dadfe4;
   text-decoration: none;
   font-size: 150%;
 }
@@ -100,7 +100,7 @@ form input {
 }
 form select {
   width: 50%;
-  background-color: #444e59;
+  background-color: #dadfe4;
 }
 .left {
   text-align: right;
@@ -110,6 +110,7 @@ form select {
 }
 .right_check {
   text-align: left;
+  padding-left: 0px;
 }
 h3 {
   font-family: "Century Gothic", CenturyGothic;
@@ -149,6 +150,10 @@ h3 {
 #kontakty_blok{
   text-align: center;
   margin-top: 5%;
+}
+#kontakty_blok a{
+  color: #dadfe4;
+  text-decoration: none;
 }
 
 p{

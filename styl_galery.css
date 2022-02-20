@@ -79,21 +79,28 @@
 
 
 .fotky_frame{
-border:2px;
+  border-radius: 5px;
+padding:1%;
 margin-left: 10%;
 margin-right: 10%;
-margin-bottom: 2%;
+margin-top: 1%;
+margin-bottom: 1%;
 text-align: center;
-border:2px;
-}
+background-color: #dadfe4;
 
+}
+.fotky_frame h3{
+  color: #303b4a;
+}
 .top_galery{
-display: flex;
-justify-content: space-around;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap:2%
 }
 .bottom_galery{
 padding-top: 2%;
-display: flex;
-justify-content: space-around;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap:2%
 
 }
