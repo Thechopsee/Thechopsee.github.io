@@ -73,12 +73,20 @@ header {
   text-align: center;
 }
 #propozice{
-  text-align: center;
-  width:80%;
-  height: 100%;
-  position:absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:4%;
 
+  padding-left: 20%;
+  padding-right: 20%;
+}
+#propozice_m{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap:4%;
 
+  padding-left: 20%;
+  padding-right: 20%;
 }
 h2 {
   font-family: "Century Gothic", CenturyGothic;
@@ -172,6 +180,9 @@ p{
 #form_mobile{
   display: none;
 }
+#propozice_m{
+  display: none;
+}
  
 @media only screen and (hover:none) and (pointer:coarse){ 
   #logo{
@@ -196,6 +207,12 @@ p{
     display: none;
   }
  
+  #propozice_m{
+    display: block;
+  }
+  #propozice{
+    display: none;
+  }
 }
 
 #odeslat:disabled{
