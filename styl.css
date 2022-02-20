@@ -138,3 +138,8 @@ p{
     display: block;
   }
 }
+
+#odeslat:disabled{
+
+  background-color: grey;
+}
