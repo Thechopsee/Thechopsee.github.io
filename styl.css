@@ -137,23 +137,3 @@ p{
   #mobile_logo{
     display: block;
   }
-<<<<<<< HEAD
-  .top_galery{
-    flex-direction: column;
-    
-  }
-  .main_left
-  {
-    margin-bottom: 2%;
-  }
-  .bottom_galery{
-    padding-top: 2%;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap:2%;
-  }
-
-=======
->>>>>>> parent of d57e391 (main img update)
-}
