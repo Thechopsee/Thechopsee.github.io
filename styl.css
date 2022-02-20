@@ -95,11 +95,11 @@ h2 {
   margin-bottom: 1%;
 }
 form input {
-  width: 50%;
+  width: 70%;
   background-color: #dadfe4;
 }
 form select {
-  width: 50%;
+  width: 70%;
   background-color: #dadfe4;
 }
 .left {
@@ -188,6 +188,9 @@ p{
 #propozice_m{
   display: none;
 }
+#mobil_galerie{
+  display: none;
+}
  
 @media only screen and (hover:none) and (pointer:coarse){ 
   #logo{
@@ -216,6 +219,12 @@ p{
     display: block;
   }
   #propozice{
+    display: none;
+  }
+  #mobil_galerie{
+    display: block;
+  }
+  #pc_galerie{
     display: none;
   }
 }
