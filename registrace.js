@@ -72,7 +72,7 @@ function validace(form){
         var templateParams = {
             jmeno: form.jmeno.value,
             prijmeni: form.prijmeni.value,
-            date:form.date.value,
+            date:form.junior.value,
             mail:form.mail.value,
             klub:form.klub.value,
             licence:form.licence.value,
