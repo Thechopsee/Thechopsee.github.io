@@ -1,6 +1,7 @@
 body {
   background-color: #303b4a;
   color: #45cece;
+  text-align: center;
 }
 html {
   font-family: "Century Gothic", CenturyGothic;
@@ -23,18 +24,32 @@ header {
   text-align: right;
 }
 #info {
-  text-align: center;
+
   padding-left: 15%;
   padding-right: 15%;
 }
 #info_nahore {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2%;
+  gap: 4%;
+
 }
 #info_text_1a {
-  text-align: right;
+  text-align: right !important;
 }
+#info_text_1a h3{
+  text-align: right ;
+}
+#info_text_1a p{
+  text-align: right ;
+}
+#info_text_1b h3{
+  text-align: left ;
+}
+#info_text_1b p{
+  text-align: left ;
+}
+
 #info_text_1b {
   text-align: left;
 }
@@ -46,7 +61,14 @@ header {
   padding-right: 20%;
   gap: 1.5%;
 }
+#propozice{
+  text-align: center;
+  width:80%;
+  height: 100%;
+  position:absolute;
 
+
+}
 h2 {
   font-family: "Century Gothic", CenturyGothic;
   font-weight: normal;
@@ -123,10 +145,14 @@ p{
   border-radius: 4px;
 }
 
+#logo{
+  filter: invert(83%) sepia(82%) saturate(1620%) hue-rotate(140deg) brightness(86%) contrast(86%);
+}
 
 #mobile_logo{
   display: none;
   min-width: 200px;
+  color: #45cece;
 }
 
 @media only screen and (hover:none) and (pointer:coarse){ 
