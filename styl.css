@@ -164,8 +164,10 @@ p{
     display: block;
   }
 
+}
 
-  #odeslat:disabled{
+#odeslat:disabled{
 
-    background-color: grey;
-  }
+  background-color: grey;
+}
+  
