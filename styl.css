@@ -3,6 +3,10 @@ body {
   color: #45cece;
   text-align: center;
 }
+a{
+  color: #dadfe4;
+  text-decoration: none;
+}
 html {
   font-family: "Century Gothic", CenturyGothic;
 }
