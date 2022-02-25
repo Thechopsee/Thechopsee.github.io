@@ -196,7 +196,11 @@ p{
   #logo{
     display: none;
   }
- 
+  menu{
+    display:flex;
+    flex-direction: column;
+    padding: 0;
+  }
   #mobile_logo{
     display: block;
     filter: invert(83%) sepia(82%) saturate(1620%) hue-rotate(140deg) brightness(86%) contrast(86%);
