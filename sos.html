@@ -2,6 +2,160 @@
     <head>
     </head>
     <body>
-        Hellooooo neco navic
+<p class="zadani">
+    Ve virtualizačním prostředí Virtualbox vytvořte PC s jedním pevným diskem a dvěma síťovými kartami. Jednu kartu připojte do sítě NAT a druhou do sítě "Host-only network". Na toto virtualizované PC nainstalujte aktuální OS Linux/Debian v minimalistické verzi, pouze s podporou protokolu SSH (bez XWindows, apod.).
+</p>
+<p>typ: linux, verze: debian (64-bit) <br>
+    Nový pevný disk VHD, dynamicky, 8gb<br>
+    přidat síť pouze s hostem<br>
+    Spustit a přidat bootovací cd (odkaz pro stáhnutí ze stránek)<br>
+    a spustit -> Grafická instalace ->Česká klávesnice!!!<br>
+    enp0s3 primární, debian, vsb.cz, heslo pro roota, vytvoření uživatele a heslo,<br>
+    use entire disk, Finish partision, yes,<br>
+    ne, czechia, ftp.cz.debian.org!!!, http proxy -nic, participate no, pouze SSH, <br>
+    yes, dev/sda, <br>
+    po zapnutí a přihlášení<br>
+    apt update <br>
+    apt install mdadm <br>
+     apt install net-tools <br>
+    apt install quota <br>
+    </p>
+    <hr>
+    <p>
+        Nakonfigurujte systém tak, aby síťová karta na rozhraní NAT dostávala IP adresu prostřednictvím protokolu DHCP (z Virtualboxu) a druhá karta bude mít IP adresu nastavenou staticky. Pro konfiguraci obou rozhraní využijte standardní metody používané v distribuci Debian.
+    </p>
+    <p>
+        ip addr <br>
+* dhclient enp0s8 -> route -n a tam je přiřazená ip, netmask a gatteway – 
+ip addr -> odsud ip adresa -> zapsat a vyplnit<br>
+reboot!!!!<br>
+cd /etc/network<br>
+nano interfaces<br>
+   allow-hotplug enp0s8 <br>
+   iface enp0s8  inet static<br>
+      address *<br>
+      netmask *<br>
+      gateway *<br>
+proveď reboot a zkontroluj v ip addr <br>
+Vyzkoušej připojení přes SSH.<br>
+ssh ucet@ip<br>
+    </p>
+    <hr>
+    <p>
+        Do virtualizovaného PC přidejte další tři pevné disky o kapacitě alespoň 200MB. Z těchto disků vytvořte v systému RAID který bude odolný proti výpadku dvou disků. Na RAID vytvořte jeden oddíl a naformátujte ho souborovým systémem ext4. Tento souborový systém připojte jako složku /home. Nakonfigurujte systém tak, aby připojení diskového pole proběhlo vždy po startu systému.
+    </p>
+    <p>
+        v SATA části -> VHD, Dynamicky, vhodně pojmenovat, 1GB   3x <br>
+        Popřemýšlet, který RAID použít! V tomto případě to bude 1! <br>
+        lsblk -f -vypsání disků<br>
+        <br>
+        Pro každý disk b-d <br>
+        fdisk /dev/sdb  otevře nastaveni disku<br>
+        potom n - vytvoří novou partion<br>
+        první se zvolí typ, takže p<br>
+        potom se zvolí číslo partion, takže 1 <br>
+        pak číslo prvního sektoru - stačí dát enter<br>
+        pak číslo posledního sektoru - stačí dát enter<br>
+        pak W aby se změna zapsala na disk. <br>
+        Mkfs -t ext4 /dev/sdb1 - naformátuje disk  na ext4- opět pro všechny! <br>
+        lsblk -f ->každý musí mít své uid<br>
+        mdadm --create /dev/md0 --level=mirror --raid-devices=3 /dev/sd[c-e]1   <br>      vytvoří v dev/md0 nový raid ,který je 1 protože mirror pro tři zařízení dev/sdc až /dev/sde na první partišně. <br>
+        mdadm --detail /dev/md0   ---kontrola, zda je tam správný raid <br>
+        a na konci reboot<br>
+        mdadm -E /dev/sd[b-d]1 kontrola<br>
+        mkfs -t ext4 /dev/mdčíslo - naformátuje disk  na ext4<br>
+        Předání složky home<br>
+        mkdir -p /srv/home     ----vytvoříme novou složku<br>
+         mount /dev/mdčíslo /srv/home   ---nový disk do něj namountíme<br>
+         cp -aR /home/* /srv/home/   ---přesune data ze starého home do nového i zprávy atd---dase ověřit pomocí df -l<br>
+        umount /srv/home   -pak se novy home unmoutne<br>
+         mount /dev/mdčíslo /home  --- namoutíme home<br>
+         ls -l /home   musí tam být lost+found!!! <br>
+        df -hl --- ověření jestli je home homem<br>
+        <br>
+        Otevřít fstab nano /etc/fstab a přidáme řádek: <br>
+        /dev/ mdčíslo   /home  ext4   usrquota,grpquota   0  0<br>
+        nebo <br>
+        Otevřít fstab nano /etc/fstab a přidáme řádek: <br> 
+        UUID=id /home  ext4 usrquota,grpquota    0  0<br>
+        reboot <br>
+        SParedisk____ <br>
+        mdadm --manage /dev/md127 --add-spare /dev/loop3 <br>
+        
+    </p>
+    <hr>
+    <p>
+        Vytvořte spustitelný skript v jazyce bash, který do systému přidá definovaný počet uživatelských účtů ve tvaru uz001 až uz###, kde ### bude číslo zadané jako parametr skriptu. Zařiďte, aby číslo nemohlo přesáhnout 3 cifry. Interpret pro všechny uživatele bude /bin/bash a uživatelům se vytvoří domovský adresář ve složce /home. Uživatelé budou mít prázdné heslo a budou nuceni si ho po prvním přihlášení změnit. Každému uživateli se při vytvoření účtu vytvoří v domovské složce soubor READ_ME.txt . Všem uživatelů definujte diskové kvóty.
+    </p>
+    <p>
+        https://pastebin.com/6R9mLTdV  -> skripty pro A, skript pro B /XfXmmMA9 <br>
+chmod +x script.sh <br>
+mount -o remount,usrquota,grpquota /home <br>
+service quota start<br>
+edquota uz001<br>
+nano quota.sh<br>
+chmos +x quota.sh<br>
+./quota.sh<br>
+repquota -a ( nebo zkusit -av) <br>
+
+    </p>
+    <hr>
+    <p>
+        V kořenovém adresáři vytvořte složku /projekty. V systému vytvořte skupinu projekty a přidejte do ní 10 uživatelů. Složka /projekty bude umožňovat přístup jen uživatelům patřícím do skupiny projekty. Pokud některý z uživatelů vytvoří v této složce soubor, tento bude automaticky patřit skupině projekty a nikoli domovské skupině uživatele, který ho vytvořil.
+    </p>
+    <p>
+        mkdir /home/vsichni #vytvorit slozku<br>
+groupadd -g 666 vsichni #vytvorit skupinu <br>
+usermod -G vsichni u01 #pridat uzivatele do skupiny /
+chgrp -R vsichni /home/vsichni #zmeni skupinu rekurzivne <br>
+chmod g+s /home/vsichni #nove vytvorene hovna jsou ve “vsichni” group<br>
+upravit další chmody podle zadání o -others, g -group<br>
+ls -l<br>
+    </p>
+    <hr>
+    <p>
+        Nainstalujte webový server Apache2 s podporou PHP, https a userdir.
+    </p>
+    <p>
+        apt install apache2<br>
+apache2 -version<br>
+systemctl status apache2<br>
+hostname -I <br>
+vypíše ip adresu která když se zadá do prohlížeče na fyz. počítači má vyhodit Apache 2 debian Default page tedy je ověřeno že funguje https <br>
+a2enmod userdir<br>
+sudo apt-get install php libapache2-mod-php php-mysql<br>
+a2enmod php7.4<br>
+systemctl restart apache2<br>
+
+Apache with PHP and SSL A(1,2,4 a5) B(1,2,3) <br>
+1. apt install apache2 <br>
+ - webfiles in /var/www/html/<br>
+ - apache config in /etc/apache2/<br>
+2. apt install libapache2-mod-php<br>
+3. enable ssl -    /usr/sbin/a2enmod ssl<br>
+4. enable https site - /usr/sbin/a2ensite default-ssl<br>
+5. enable userdir - a2enmod userdir<br>
+6. systemctl restart apache2<br>
+<br>
+
+apache2ctl -t -D DUMP_MODULES<br>
+cd /etc/apache2/mods-available<br>
+
+    </p>
+    <hr>
+    <p>
+
+    </p>
+    <p>
+        
+    </p>
+    <hr>
+    <p>
+
+    </p>
+    <p>
+        
+    </p>
+
     </body>
 </html>
