@@ -76,7 +76,28 @@
 }
 
 
-
+.galery_butt
+{
+  width:30%;
+  background-color: #303b4a;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.galery_butt:hover
+{
+  background-color: white;
+  color:#303b4a;
+  border-width:2% !important;
+  border-color: #303b4a;
+  
+}
+#galery_link
+{
+  margin-top: 1%;
+}
 
 .fotky_frame{
   border-radius: 5px;

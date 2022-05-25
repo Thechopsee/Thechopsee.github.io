@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #303b4a;
   color: #45cece;
@@ -150,7 +153,16 @@ h3 {
   display: flex;
   justify-content: space-around;
 }
-
+.spacer
+{
+  display: flex;
+  justify-content: space-around;
+}
+#yearmenu
+{
+  margin-left: 10%;
+  margin-right: 10%;
+}
 #kontakty_blok{
   text-align: center;
   margin-top: 5%;
