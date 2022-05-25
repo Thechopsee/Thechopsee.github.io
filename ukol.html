@@ -8,11 +8,17 @@
                     {
                         window.location ="final.html"
                     }
+                    else
+                    {
+                        var la=document.getElementById("textt");
+                        la.innerText="chyba"
+                    }
                 }
         </script>
     </head>
     <body>
         <input type="text" id="lname" name="lname" ><br>
+        <p id="textt"></p>
         <button onclick="odeslat()">Odeslat</button>
     </body>
 </html>
