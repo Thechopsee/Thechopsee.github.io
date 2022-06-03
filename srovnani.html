@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script> 
+        var listdat='["batt_voltage","pv_voltage","load_amps","charge_current","batt_overdischarge","batt_full_voltage","load_on","load_overload","load_short","batt_overload","batt_overdischage","batt_full","batt_temp","batt_charging"]';
+        var arr_from_json = JSON.parse(listdat);
+        console.log(arr_from_json.length);
+    </script>
+</head>
+<body>
+    <div id="srovnani">
+        <form>
+            <select name="atribut" id="atribut">
+                <option v-for="choice in choices">{{ choice }}</option>
+            </select><br>
+
+            <label class="left" for="csv_vstup1">CSV od data: </label>
+			<input type="date" id="csv_vstup1"  name="date_od"placeholder="CSV od data"><br>
+
+            <label class="left" for="csv_vstup2">CSV do data: </label>
+			<input type="date" id="csv_vstup2" name="date_do" placeholder="CSV do data"><br>
+
+            <input type="submit">odeslat</input>
+        </form>
+    </div>
+</body>
+<script>
+     var data=new Vue({
+        el: '#srovnani',
+        data:{
+            'choices': arr_from_json
+        }
+        })
+
+</script>
+</html>
