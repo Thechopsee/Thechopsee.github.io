@@ -1,21 +1,22 @@
 
+    let galerie2021 ={clankyalias:["Minisail"],
+    clanky:["http://www.minisail.pl/index.php/2021/10/06/terlicko-2021/?fbclid=IwAR34HRgYVQOMhwWfLUEv8cdUjZQgTdGfFcr2uejdDD8dvlsD7uwIIFKEILU"],
+    key:2021,
+    };
 
-let clanky2021 ={clankyalias:["Polar","Oficiální report"],
-                clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U", "clanky/tp2021.pdf"],
-                key:2021,
-                };
+var galerie_list=[];
 
-var clanky_list=[];
-
-function build_list()
+function build_list_g()
 {
-    clanky_list.push(clanky2021);
+
+    galerie_list.push(galerie2021);
 }
-function down_clanky(sender)
+
+function down_galerie(sender)
 {
-  if(clanky_list.length==0)
+  if(galerie_list.length==0)
   {
-      build_list()
+      build_list_g()
   }
   for(var i=0;i<sender.classList.length;i++)
   {
@@ -23,7 +24,6 @@ function down_clanky(sender)
     {
         sender.classList.add('galery_butt');
         sender.classList.remove('galery_butt_reversed');
-        
         var place=document.getElementById(sender.id.split("-")[1]+"place")
         place.innerHTML="";
         return;
@@ -31,6 +31,7 @@ function down_clanky(sender)
     
     
   }
+  
   document.getElementById("clanky-"+sender.id.split("-")[1]).classList.remove('galery_butt_reversed');
   document.getElementById("vysledky-"+sender.id.split("-")[1]).classList.remove('galery_butt_reversed');
   document.getElementById("galerie-"+sender.id.split("-")[1]).classList.remove('galery_butt_reversed');
@@ -39,22 +40,23 @@ function down_clanky(sender)
   document.getElementById("galerie-"+sender.id.split("-")[1]).classList.add('galery_butt');
   sender.classList.remove('galery_butt');
   sender.classList.add('galery_butt_reversed');
-  for(var i=0;i<clanky_list.length;i++)
+
+  for(var i=0;i<galerie_list.length;i++)
   {
-    if("clanky-"+clanky_list[i].key==sender.id || "vysledky-"+clanky_list[i].key==sender.id || "galerie-"+clanky_list[i].key==sender.id)
+      if("clanky-"+galerie_list[i].key==sender.id || "vysledky-"+galerie_list[i].key==sender.id || "galerie-"+galerie_list[i].key==sender.id)
       {
           var place=document.getElementById(sender.id.split("-")[1]+"place")
           place.innerHTML="";
-          for(var j=0;j<clanky_list[i].clankyalias.length;j++)
+          for(var j=0;j<galerie_list[i].clankyalias.length;j++)
           {
             var butt=document.createElement("button");
             
             butt.classList.add("odkazy_butt");
             var a=document.createElement("a");
         
-            a.innerHTML=clanky_list[i].clankyalias[j];
+            a.innerHTML=galerie_list[i].clankyalias[j];
             
-            a.href=clanky_list[i].clanky[j];
+            a.href=galerie_list[i].clanky[j];
             butt.appendChild(a);
             place.appendChild(butt);
             place.appendChild(document.createElement("br"));
