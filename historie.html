@@ -55,6 +55,10 @@
                 <img src="./fotky/2020/2020_5.jpg" width="100%" id="myImg4" class="myImg" >
                 <img src="./fotky/2020/2020_6.jpg" width="100%" id="myImg5" class="myImg" >
             </div>
+            <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2020" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2020" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2020" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+            <div id="center">
+                <div id="2020place" class="clanky_place"></div>
+            </div>
         </div>
         <div id="2019" class="fotky_frame">
             <h3>2019</h3><br>
@@ -336,5 +340,27 @@
     <div id="caption"></div>
     </div>
 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Nahoru</button>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
     </body>
 </html>

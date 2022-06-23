@@ -4,12 +4,17 @@ let clanky2021 ={clankyalias:["Polar","Oficiální report"],
                 clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U", "clanky/tp2021.pdf"],
                 key:2021,
                 };
+let clanky2020 ={clankyalias:["minisail.cz"],
+                clanky:["https://www.minisail.cz/setkani/z-akci/id:12507/x-terlicka-plachta-2020"],
+                key:2020,
+                };
 
 var clanky_list=[];
 
 function build_list()
 {
     clanky_list.push(clanky2021);
+    clanky_list.push(clanky2020);
 }
 function down_clanky(sender)
 {
