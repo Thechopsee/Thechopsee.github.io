@@ -1,7 +1,7 @@
 
 
-let clanky2021 ={clankyalias:["Polar","Oficiální report"],
-                clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U", "clanky/tp2021.pdf"],
+let clanky2021 ={clankyalias:["Polar","Minisail.cz","Oficiální report"],
+                clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U","https://www.minisail.cz/setkani/z-akci/id:13859","clanky/tp2021.pdf"],
                 key:2021,
                 };
 let clanky2020 ={clankyalias:["minisail.cz"],

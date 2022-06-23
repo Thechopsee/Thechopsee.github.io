@@ -1,10 +1,10 @@
 
-    let galerie2021 ={clankyalias:["Minisail.pl","Rajce-Ferodedek","Drive-Val","Fotky Google-Snek"],
-    clanky:["http://www.minisail.pl/index.php/2021/10/06/terlicko-2021/?fbclid=IwAR34HRgYVQOMhwWfLUEv8cdUjZQgTdGfFcr2uejdDD8dvlsD7uwIIFKEILU","https://minisail.rajce.idnes.cz/Terlicka_plachta_1._-_3._10._2021/","https://drive.google.com/drive/folders/1JG2F9iNUn6NOawPQnZOkL0AGFgLFxVpd?usp=sharing","https://photos.google.com/share/AF1QipNnHDr13oX2xww9A2vgowscje3L-Q2GszbPmqOWp4COteTuuM1zFRxtRB-rCBN-Cw?key=VE9GN1dhQmd6VjdxTHoyd19wRWdxVE1MMHY1TE93"],
+    let galerie2021 ={clankyalias:["Minisail.pl","Rajce-Ferodedek","Drive-Val","Fotky Google-Snek","Rajce-Kubik-team"],
+    clanky:["http://www.minisail.pl/index.php/2021/10/06/terlicko-2021/?fbclid=IwAR34HRgYVQOMhwWfLUEv8cdUjZQgTdGfFcr2uejdDD8dvlsD7uwIIFKEILU","https://minisail.rajce.idnes.cz/Terlicka_plachta_1._-_3._10._2021/","https://drive.google.com/drive/folders/1JG2F9iNUn6NOawPQnZOkL0AGFgLFxVpd?usp=sharing","https://photos.google.com/share/AF1QipNnHDr13oX2xww9A2vgowscje3L-Q2GszbPmqOWp4COteTuuM1zFRxtRB-rCBN-Cw?key=VE9GN1dhQmd6VjdxTHoyd19wRWdxVE1MMHY1TE93","https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2021/"],
     key:2021,
     };
-    let galerie2020 ={clankyalias:["Drive-Val"],
-    clanky:["https://drive.google.com/drive/folders/1zKT3x748ADWmIbU-sOcDF5jGU6uX26-1?usp=sharing"],
+    let galerie2020 ={clankyalias:["Drive-Val","Rajce-Kubik-team"],
+    clanky:["https://drive.google.com/drive/folders/1zKT3x748ADWmIbU-sOcDF5jGU6uX26-1?usp=sharing","https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2020/"],
     key:2020,
     };
 
