@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styl.css"/>
+        <script defer src="odpocet.js"></script>
+        <script defer src="registrace.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+    </head>
+    <body>
+
+        <img src="./logos/logo.svg" width="100%" id="logo">
+        <img src="./logos/logomobile.svg" width="100%" id="mobile_logo">
+        <menu id="menu_web">
+            <a href="./index.html">Těrlická plachta 2022</a> | <a href="./historie.html">Historie</a> | <a href="./registrace.html">Registrace</a> | <a href="./kontakty.html">Kontakt</a>            
+        </menu>
+        <menu id="menu_mob">
+            <a href="./index.html">Těrlická plachta 2022</a> <a href="./historie.html">Historie</a> <a href="./registrace.html">Registrace</a> <a href="./kontakty.html">Kontakt</a>            
+        </menu>
+
+
+        
+        <div class="counter">
+            <h2>Zbývající</h2>
+            <div class="box">
+                <h3 id="daystxt">dny</h2>
+                <h2 id="days">000</h2>
+            </div>
+            <div class="box">
+                <h3 id="hourstxt">hodiny</h2>
+                <h2 id="hours">00</h2>
+            </div>
+            <div class="box">
+                <h3 id="minutestxt">minuty</h2>
+                <h2 id="minutes">00</h2>
+            </div>
+            <div class="box">
+                <h3 id="secondstxt">a sekundy</h2>
+                <h2 id="seconds">00</h2>
+            </div>
+            <h2>pro přihlášení!</h2>
+        </div>
+
+        <div class="counter_mobile">
+            Přihlášování končí 23.9.2022!
+        </div>
+        
+        <!--<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description"></iframe> -->
+        <form id="form_web" action="https://dataspracovavac.tode.cz/test.php" method="post">
+            <div class="formular_cely"></div>
+                <h2>Závodník</h2>
+                <div class="formular">
+                    <label class="left" for="jmeno">Jméno: </label>
+                    <input type="text"  id="jmeno"  name="jmeno" required>
+
+                    <label class="left" for="prijmeni">Příjmení: </label>
+                    <input type=text id="prijmeni" name="prijmeni" required>
+
+                    <label class="left" for="junior">Mladší 18ti let: </label>
+                    <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior"></div>
+                    
+                    <label class="left" for="mail">E-mail: </label>
+                    <input type="email" id="mail" name="mail" required>
+
+                    <label class="left" for="klub">Klub: </label>
+                    <input type="text" id="klub" name="klub">
+
+                    <label class="left" for="licence">Licence: </label>
+                    <input type="text" id="licence" name="licence">
+
+                    <label class="left" for="stat">Stát: </label> 
+                    <input type="text" id="stat" list="staty" name="stat" required>                
+                    <datalist id="staty">
+                        <option value="CZE">
+                        <option value="POL">
+                        <option value="SVK">
+                    </datalist>
+                </div>
+
+                <h2>Modely</h2>
+                <div class="formular">
+                    <label class="left" for="rg">RG-65: </label>
+                    <div class="right"><input class="right_check" type="checkbox" id="rg" name="rg"></div>
+
+                    <label class="left" for="kategorie">Kategorie: </label>
+                    <select id="kategorie" width="50%" name="kategorie">
+                        <option value="vyber">Vyber</option>
+                        <option value="nss_a">NSS-A</option>
+                        <option value="nss_b">NSS-B</option>
+                        <option value="nss_c">NSS-C</option>
+                    </select>
+
+                    <label class="left" for="nazev_modelu">Název modelu: </label>
+                    <input type="text" id="nazev_modelu" name="nazev_modelu">
+                    
+                    <label class="left" for="delka">Délka vodorysky: </label>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1">&nbsp;[mm]</div>
+
+                    <label class="left" for="plocha">Plocha plachet: </label>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" >&nbsp;[m&sup2;]</div>
+
+                    <label class="left" for="vytlak">Výtlak: </label>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01">&nbsp;[kg]</div>
+
+                    <label class="left" for="meritko">Měřítko: 1: </label>
+                    <input type="number" id="meritko" name="meritko" step="0.01">
+                    
+                </div>
+                <br>
+                <h2>Ubytovaní</h2>
+                <div class="formular">
+                    <label class="left" for="ubytovani">Chci ubytovaní</label>
+                    <div class="right">
+                        <input class="right_check" type="checkbox" id="ubytovani" name="ubytovani">
+                    </div>
+                    
+                </div>
+                <br>
+                <p id="center">O možnostonech ubytovaní budete po registraci informovaní emailem</p>
+                <!-- onclick="sendEmail(this.form)"-->
+                <div id="center">Registrace bude dostupná 1.7.2022!</div>
+                <div id="center"><input id="odeslat" onclick="sendEmail(this.form)"></div> 
+            </div>
+            
+        </form>
+        <form id="form_mobile" action="https://dataspracovavac.tode.cz/test.php" method="post">
+            <div class="formular_cely_mobile"></div>
+                <h2>Závodník</h2>
+                <div class="formular_mobile">
+                    <label class="mleft" for="jmeno">Jméno: </label>
+                    <div class="fmright"><input type="text"  id="jmeno"  name="jmeno" required></div>
+ 
+                    <label class="mleft" for="prijmeni">Příjmení: </label>
+                    <div class="mright"><input type=text id="prijmeni" name="prijmeni" required></div>
+ 
+                    <label class="mleft" for="junior">Mladší 18ti let: </label>
+                    <div class="mright"><input class="mright_check" type="checkbox" id="junior" name="junior"></div>
+ 
+                    <label class="mleft" for="mail">E-mail: </label>
+                    <div class="mright"><input type="email" id="mail" name="mail" required></div>
+ 
+                    <label class="mleft" for="klub">Klub: </label>
+                    <div class="mright"><input type="text" id="klub" name="klub"></div>
+ 
+                    <label class="mleft" for="licence">Licence: </label>
+                    <div class="mright"><input type="text" id="licence" name="licence"></div>
+ 
+                    <label class="mleft" for="stat">Stát: </label> 
+                    <div class="mright"><input type="text" id="stat" list="staty" name="stat" required> </div>               
+                    <datalist id="staty">
+                        <option value="CZE">
+                        <option value="POL">
+                        <option value="SVK">
+                    </datalist>
+                </div>
+ 
+                <h2>Modely</h2>
+                <div class="formular_mobile">
+                    <label class="mleft" for="rg">RG-65: </label>
+                    <div class="mright"><input class="mright_check" type="checkbox" id="rg" name="rg"></div>
+ 
+                    <label class="mleft" for="kategorie">Kategorie: </label>
+                    <div class="mright"><select id="kategorie" width="50%" name="kategorie">
+                        <option value="vyber">Vyber</option>
+                        <option value="nss_a">NSS-A</option>
+                        <option value="nss_b">NSS-B</option>
+                        <option value="nss_c">NSS-C</option>
+                    </select></div>
+ 
+                    <label class="mleft" for="nazev_modelu">Název modelu: </label>
+                    <div class="mright"><input type="text" id="nazev_modelu" name="nazev_modelu"></div>
+ 
+                    <label class="mleft" for="delka">Délka vodorysky [mm]: </label>
+                    <div class="mright"><input class="mright" type="number" id="delka" name="delka" step="1"></div>
+
+                    <label class="mleft" for="plocha">Plocha plachet [m&sup2;]: </label>
+                    <div class="mright"><input  type="number" id="plocha" name="plocha"  step="0.0001" ></div>
+ 
+                    <label class="mleft" for="vytlak">Výtlak [kg]: </label>
+                    <div class="mright"><input class="mright" type="number" id="vytlak" name="vytlak" step="0.01"></div>
+ 
+                    <label class="mleft" for="meritko">Měřítko: 1: </label>
+                    <div class="mright"><input type="number" id="meritko" name="meritko"  step="0.01"></div>
+ 
+                </div>
+                <br>
+                <h2>Ubytovaní</h2>
+                <div class="formular">
+                    <label class="left" for="ubytovani">Chci ubytovaní</label>
+                    <div class="right">
+                        <input class="right_check" type="checkbox" id="ubytovani" name="ubytovani">
+                    </div>
+                    
+                </div>
+                <p id="center">O možnostonech ubytovaní budete po registraci informovaní emailem</p>
+                <br>
+                <!-- onclick="sendEmail(this.form) disabled"-->
+                <div id="center">Registrace bude dostupná 1.7.2022!</div>
+             <div id="center"><input id="odeslat" onclick="sendEmail(this.form)"></div> 
+            </div>
+ 
+        </form>  
+
+        
+        
+        
+        
+
+
+        
+        
+
+    </body>
+</html>
