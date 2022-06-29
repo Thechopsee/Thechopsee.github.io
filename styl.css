@@ -260,3 +260,7 @@ p{
   background-color: grey;
 }
   
+
+#iframeId{
+  border: none;
+}
