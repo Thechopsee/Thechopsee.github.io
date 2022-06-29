@@ -1,12 +1,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="styl.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script defer src="odpocet.js"></script>
         <script defer src="registrace.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
-        
     </head>
     <body>
 
@@ -45,8 +43,8 @@
         <div class="counter_mobile">
             Přihlášování končí 23.9.2022!
         </div>
-        <div id="maincont"></div>
-        <h2>Registrační formulář</h2>
+        
+        <!--<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description"></iframe> -->
         <form id="form_web" action="https://dataspracovavac.tode.cz/test.php" method="post">
             <div class="formular_cely"></div>
                 <h2>Závodník</h2>
@@ -55,7 +53,7 @@
                     <input type="text"  id="jmeno"  name="jmeno" required>
 
                     <label class="left" for="prijmeni">Příjmení: </label>
-                    <input type="text" id="prijmeni" name="prijmeni" required>
+                    <input type=text id="prijmeni" name="prijmeni" required>
 
                     <label class="left" for="junior">Mladší 18ti let: </label>
                     <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior"></div>
@@ -120,7 +118,7 @@
                 <p id="center">O možnostonech ubytovaní budete po registraci informovaní emailem</p>
                 <!-- onclick="sendEmail(this.form)"-->
                 <div id="center">Registrace bude dostupná 1.7.2022!</div>
-                <div id="center"><input id="odeslat" onclick="sendEmail(this.form)" disabled></div> 
+                <div id="center"><input id="odeslat" onclick="sendEmail(this.form)" type="submit"></div> 
             </div>
             
         </form>
@@ -132,7 +130,7 @@
                     <div class="fmright"><input type="text"  id="jmeno"  name="jmeno" required></div>
  
                     <label class="mleft" for="prijmeni">Příjmení: </label>
-                    <div class="mright"><input type="text" id="prijmeni" name="prijmeni" required></div>
+                    <div class="mright"><input type=text id="prijmeni" name="prijmeni" required></div>
  
                     <label class="mleft" for="junior">Mladší 18ti let: </label>
                     <div class="mright"><input class="mright_check" type="checkbox" id="junior" name="junior"></div>
@@ -197,13 +195,11 @@
                 <br>
                 <!-- onclick="sendEmail(this.form) disabled"-->
                 <div id="center">Registrace bude dostupná 1.7.2022!</div>
-             <div id="center"><input id="odeslat" onclick="sendEmail(this.form)" disabled></div> 
+             <div id="center"><input id="odeslat" onclick="sendEmail(this.form)" type="submit"></div> 
             </div>
  
         </form>  
 
-        <h2>Registrovaní účastníci</h2>
-        <iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description" width="80%" id="iframeId" height="500px"></iframe>
         
         
         

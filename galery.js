@@ -15,3 +15,18 @@ span.onclick = function() {
     modal.style.display = "none";
   }
 }
+
+function down_vysledky(sender)
+{
+  link = document.createElement("a");
+  link.setAttribute("href", "vysledky/"+sender.id+".xlsx"); 
+  link.setAttribute("download", "vysledky/"+sender.id+".xlsx");
+  link.click(); 
+  
+}
+
+
+function down_vysledky(sender)
+{
+
+}

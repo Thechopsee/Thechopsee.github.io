@@ -3,6 +3,8 @@
         <link rel="stylesheet" href="styl.css"/>
         <link rel="stylesheet" href="styl_galery.css"/>
         <script defer src="galery.js"></script>
+        <script defer src="galerie/galerie.js"></script>
+        <script defer src="clanky/clanky.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
     </head>
     <body>
@@ -19,7 +21,7 @@
     <body onload="prepareModal()">
         <h2>Historie</h2>
         <p>Portské, buček, soudek rumu. A tak to všechno začalo...</p><br>
-        <div class="spacer" id="yearmenu"><a href="#2020">2020</a><a href="#2019">2019</a><a href="#2018">2018</a><a href="#2017">2017</a><a href="#2016">2016</a><a href="#2015">2015</a><a href="#2014">2014</a><a href="#2013">2013</a><a href="#2012">2012</a><a href="#2011">2011</a></div>
+        <div class="cara_wraper"><div class="spacer" id="yearmenu"><a href="#2020" class="his_nav_button">2020</a><a href="#2019" class="his_nav_button">2019</a><a href="#2018" class="his_nav_button">2018</a><a href="#2017" class="his_nav_button">2017</a><a href="#2016" class="his_nav_button">2016</a><a href="#2015" class="his_nav_button">2015</a><a href="#2014" class="his_nav_button">2014</a><a href="#2013" class="his_nav_button">2013</a><a href="#2012" class="his_nav_button">2012</a><a href="#2011" class="his_nav_button">2011</a></div></div>
        <div id="pc_galerie">
         <div id="2021" class="fotky_frame">
             <h3>2021</h3><br>
@@ -36,7 +38,10 @@
                 <img src="./fotky/2021/2021_6.jpg" width="100%" id="myImg5" class="myImg">
 
             </div>
-            <div class="spacer" id="galery_link"><button class="galery_butt">Članky ↧</button><button class="galery_butt">Galerie ↧</button><button class="galery_butt">Vysledky ↧</button></div>
+            <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2021" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2021" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2021" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+            <div id="center">
+                <div id="2021place" class="clanky_place"></div>
+            </div>
         </div>
         <div id="2020" class="fotky_frame">
             <h3>2020</h3><br>
@@ -49,6 +54,10 @@
                 <img src="./fotky/2020/2020_4.jpg" width="100%" id="myImg3" class="myImg" >
                 <img src="./fotky/2020/2020_5.jpg" width="100%" id="myImg4" class="myImg" >
                 <img src="./fotky/2020/2020_6.jpg" width="100%" id="myImg5" class="myImg" >
+            </div>
+            <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2020" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2020" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2020" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+            <div id="center">
+                <div id="2020place" class="clanky_place"></div>
             </div>
         </div>
         <div id="2019" class="fotky_frame">
@@ -63,6 +72,10 @@
                 <img src="./fotky/2019/2019_5.jpg" width="100%" id="myImg4" class="myImg" >
                 <img src="./fotky/2019/2019_6.jpg" width="100%" id="myImg5" class="myImg" >
             </div>
+            <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2019" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2019" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2019" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+            <div id="center">
+                <div id="2019place" class="clanky_place"></div>
+            </div>
         </div>
         <div id="2018" class="fotky_frame">
             <h3>2018</h3><br>
@@ -76,6 +89,10 @@
                 <img src="./fotky/2018/2018_5.jpg" width="100%" id="myImg4" class="myImg" >
                 <img src="./fotky/2018/2018_6.jpg" width="100%" id="myImg5" class="myImg" >
             </div>
+                <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2018" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2018" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2018" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+                <div id="center">
+                    <div id="2018place" class="clanky_place"></div>
+            </div>
         </div>
         <div id="2017" class="fotky_frame">
             <h3>2017</h3><br>
@@ -88,6 +105,10 @@
                 <img src="./fotky/2017/2017_4.jpg" width="100%" id="myImg3" class="myImg" >
                 <img src="./fotky/2017/2017_5.jpg" width="100%" id="myImg4" class="myImg" >
                 <img src="./fotky/2017/2017_6.jpg" width="100%" id="myImg5" class="myImg" >
+            </div>
+             <div class="spacer" id="galery_link"><button class="galery_butt" id="clanky-2017" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2017" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2017" onclick="down_vysledky(this)">Vysledky ↧</button></div>
+                <div id="center">
+                    <div id="2017place" class="clanky_place"></div>
             </div>
         </div>
         <div id="2016" class="fotky_frame">
@@ -331,5 +352,27 @@
     <div id="caption"></div>
     </div>
 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Nahoru</button>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
     </body>
 </html>
