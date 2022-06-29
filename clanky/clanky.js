@@ -1,20 +1,35 @@
 
 
-let clanky2021 ={clankyalias:["Polar","Minisail.cz","Oficiální report"],
-                clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U","https://www.minisail.cz/setkani/z-akci/id:13859","clanky/tp2021.pdf"],
+let clanky2021 ={clankyalias:["Polar","Minisail.cz","Oficiální report","Těrlický miniexpress"],
+                clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U","https://www.minisail.cz/setkani/z-akci/id:13859","clanky/tp2021.pdf","https://www.youtube.com/watch?v=llcK838mBz0"],
                 key:2021,
                 };
 let clanky2020 ={clankyalias:["minisail.cz"],
                 clanky:["https://www.minisail.cz/setkani/z-akci/id:12507/x-terlicka-plachta-2020"],
                 key:2020,
                 };
+let clanky2019 ={clankyalias:["minisail.cz"],
+                clanky:["https://www.minisail.cz/setkani/z-akci/id:11371/zamykani-terlicko-2019"],
+                key:2019,
+                };
+let clanky2018 ={clankyalias:["minisail.cz"],
+                clanky:["https://www.minisail.cz/setkani/z-akci/id:10492/terlicka-plachta-2018"],
+                key:2018,
+                };
 
+let clanky2017 ={clankyalias:["modelyznojmo.webnode.cz","minisail.cz"],
+                clanky:["https://modelyznojmo.webnode.cz/kde-jsme-byli/terlicka-plachta-30-9-2017/","https://www.minisail.cz/setkani/z-akci/id:9036/terlicko-2017"],
+                key:2017,
+                };
 var clanky_list=[];
 
 function build_list()
 {
     clanky_list.push(clanky2021);
     clanky_list.push(clanky2020);
+    clanky_list.push(clanky2019);
+    clanky_list.push(clanky2018);
+    clanky_list.push(clanky2017);
 }
 function down_clanky(sender)
 {

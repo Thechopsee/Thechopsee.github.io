@@ -194,7 +194,9 @@ padding-bottom: 1%;
   border: 2px;
   border-radius: 10px;
 }
-
+.clanky_place:empty{
+  margin:0;
+}
 #myBtn {
   display: none;
   position: fixed;
@@ -213,4 +215,39 @@ padding-bottom: 1%;
 
 #myBtn:hover {
   background-color: #555;
+}
+
+.cara_wraper{
+  text-align: center;
+  margin: 20px;
+  position: relative;
+  
+}
+
+.cara_wraper:before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  border-top: 1px solid white;
+  background: white;
+  width: 80%;
+  transform: translateY(-50%);
+}
+
+.his_nav_button{
+  background-color: #45cece;
+  color:white;
+  padding:1%;
+  border-radius: 5px;
+  z-index: 3;
+
+}
+.his_nav_button:hover{
+  background-color: white;
+  color:#45cece;
+  padding:1%;
+  border-radius: 5px;
+  z-index: 3;
+
 }
