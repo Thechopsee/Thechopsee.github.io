@@ -254,7 +254,9 @@ p{
     display: none;
   }
 }
-
+#odeslat{
+  color:white;
+}
 #odeslat:disabled{
 
   background-color: grey;
