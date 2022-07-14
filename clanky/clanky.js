@@ -1,5 +1,5 @@
-
-
+//step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
+//krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
 let clanky2021 ={clankyalias:["Polar","Minisail.cz","Oficiální report","Těrlický miniexpress"],
                 clanky:["https://polar.cz/zpravy/karvinsko/terlicko/11000027836/na-terlicke-plachte-zasahovali-potapeci?fbclid=IwAR2vnLrZcUTEOr5Ky3UY4bTVhog1Ef7xCsAeJpKNKf3HQvPQex_TubySk8U","https://www.minisail.cz/setkani/z-akci/id:13859","clanky/tp2021.pdf","https://www.youtube.com/watch?v=llcK838mBz0"],
                 key:2021,
@@ -47,6 +47,8 @@ let clanky2011 ={clankyalias:["minisail.cz"],
                 };
 var clanky_list=[];
 
+//step 2.add object to list.Function is run when page body is loaded.
+//krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list()
 {
     clanky_list.push(clanky2021);

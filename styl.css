@@ -5,6 +5,8 @@ body {
   background-color: #303b4a;
   color: #45cece;
   text-align: center;
+  margin: 0px;
+
 }
 a{
   color: #dadfe4;
@@ -265,4 +267,33 @@ p{
 
 #iframeId{
   border: none;
+}
+
+.footer{
+  background-color: #363131;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  padding: 2%;
+}
+.bottom_line
+{
+  font-size: small;
+}
+.bottom_lines{
+  color:#b4a3a3;
+
+}
+
+.bottom_line a{
+  color:#b4a3a3;
+}
+
+.bottom_line_nad{
+  color: white;
+  margin-bottom: 1%;
+}
+
+#kont_spacer{
+  margin: 10%;
 }
