@@ -1,4 +1,5 @@
-
+//step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
+//krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
     let galerie2021 ={clankyalias:["Minisail.pl","Rajce-Ferodedek","Drive-Val","Fotky Google-Snek","Rajce-Kubik-team"],
     clanky:["http://www.minisail.pl/index.php/2021/10/06/terlicko-2021/?fbclid=IwAR34HRgYVQOMhwWfLUEv8cdUjZQgTdGfFcr2uejdDD8dvlsD7uwIIFKEILU","https://minisail.rajce.idnes.cz/Terlicka_plachta_1._-_3._10._2021/","https://drive.google.com/drive/folders/1JG2F9iNUn6NOawPQnZOkL0AGFgLFxVpd?usp=sharing","https://photos.google.com/share/AF1QipNnHDr13oX2xww9A2vgowscje3L-Q2GszbPmqOWp4COteTuuM1zFRxtRB-rCBN-Cw?key=VE9GN1dhQmd6VjdxTHoyd19wRWdxVE1MMHY1TE93","https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2021/"],
     key:2021,
@@ -19,9 +20,34 @@
     clanky:["https://modelyzn.rajce.idnes.cz/Modely_Znojmo_Terlicka_plachta_30.9.2017/","https://www.youtube.com/watch?v=VjzVdAk6-Sw","https://www.rcportal.sk/terlicka-plachta-2017-g4826","https://www.youtube.com/watch?v=f2V4tbh1YcI"],
     key:2017,
     };
+    let galerie2016 ={clankyalias:[""],
+    clanky:[""],
+    key:2016,
+    };
+    let galerie2015 ={clankyalias:[""],
+    clanky:[""],
+    key:2015,
+    };
+    let galerie2014 ={clankyalias:[""],
+    clanky:[""],
+    key:2014,
+    };
+    let galerie2013 ={clankyalias:[""],
+    clanky:[""],
+    key:2013,
+    };
+    let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz"],
+    clanky:["https://moravskoslezsky.denik.cz/z-regionu/obrazem-soutez-radiem-rizenych-modelu-plachetnic-20120929.html","http://terlicko.cz/terlicka-plachta-2012-09-28-30/gs-1062"],
+    key:2012,
+    };
+    let galerie2011 ={clankyalias:[""],
+    clanky:[""],
+    key:2011,
+    };
 
 var galerie_list=[];
-
+//step 2.add object to list.Function is run when page body is loaded.
+//krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list_g()
 {
 
@@ -30,8 +56,14 @@ function build_list_g()
     galerie_list.push(galerie2019);
     galerie_list.push(galerie2018);
     galerie_list.push(galerie2017);
+    galerie_list.push(galerie2016);
+    galerie_list.push(galerie2015);
+    galerie_list.push(galerie2014);
+    galerie_list.push(galerie2013);
+    galerie_list.push(galerie2012);
+    galerie_list.push(galerie2011);
 }
-
+//Function that runs when button is clicked
 function down_galerie(sender)
 {
   if(galerie_list.length==0)
