@@ -28,8 +28,8 @@
     clanky:[""],
     key:2015,
     };
-    let galerie2014 ={clankyalias:[""],
-    clanky:[""],
+    let galerie2014 ={clankyalias:["daja-se.rajce.idnes.cz"],
+    clanky:["https://daja-se.rajce.idnes.cz/Terlicka_plachta/"],
     key:2014,
     };
     let galerie2013 ={clankyalias:[""],
