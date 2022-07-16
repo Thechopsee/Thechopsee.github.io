@@ -69,14 +69,16 @@
                     <label class="left" for="licence">Licence: </label>
                     <input type="text" id="licence" name="licence">
 
-                    <label class="left" for="stat">Stát: </label> 
-                    <input type="text" id="stat" list="staty" name="stat" required>                
+                    <label class="left" for="stat">ISO Státu: </label> 
+                    <input type="text" id="stat" list="staty" name="stat" required maxlength="3" placeholder="CZE">                
                     <datalist id="staty">
                         <option value="CZE">
                         <option value="POL">
                         <option value="SVK">
                     </datalist>
+                    
                 </div>
+                
 
                 <h2>Modely</h2>
                 <div class="formular">
@@ -146,8 +148,8 @@
                     <label class="mleft" for="licence">Licence: </label>
                     <div class="mright"><input type="text" id="licence" name="licence"></div>
  
-                    <label class="mleft" for="stat">Stát: </label> 
-                    <div class="mright"><input type="text" id="stat" list="staty" name="stat" required> </div>               
+                    <label class="mleft" for="stat">ISO Státu: </label> 
+                    <div class="mright"><input type="text" id="stat" list="staty" name="stat" required maxlength="3" placeholder="CZE"></div>               
                     <datalist id="staty">
                         <option value="CZE">
                         <option value="POL">
