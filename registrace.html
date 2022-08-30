@@ -6,7 +6,25 @@
         <script defer src="registrace.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
-        
+        <script>
+        $(function() {
+            var checkbox = $("#rg");
+            checkbox.change(function() {
+                if (checkbox.is(':checked')) {
+                $('#delka').prop('required', false); //to add required
+                $('#plocha').prop('required', false); //to add required
+                $('#vytlak').prop('required', false); //to add required
+                $('#meritko').prop('required', false); //to add required
+                } 
+                else {
+                $('#delka').prop('required', true); //to add required
+                $('#plocha').prop('required', true); //to add required
+                $('#vytlak').prop('required', true); //to add required
+                $('#meritko').prop('required', true); //to add required
+                }
+            });
+            });
+        </script>
     </head>
     <body>
 
@@ -97,16 +115,16 @@
                     <input type="text" id="nazev_modelu" name="nazev_modelu">
                     
                     <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1">&nbsp;[mm]</div>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" required>&nbsp;[mm]</div>
 
                     <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" >&nbsp;[m&sup2;]</div>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" required>&nbsp;[m&sup2;]</div>
 
                     <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01">&nbsp;[kg]</div>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" required>&nbsp;[kg]</div>
 
                     <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="meritko" name="meritko" step="0.01">
+                    <input type="number" id="meritko" name="meritko" step="0.01" required>
                     
                 </div>
                 <br>
