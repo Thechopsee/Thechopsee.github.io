@@ -1,4 +1,4 @@
-const finaleDate = new Date("September 23, 2022 00:00:00").getTime();
+const finaleDate = new Date("September 24, 2022 00:00:00").getTime();
 
 function timer (){
     const now = new Date().getTime();
