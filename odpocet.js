@@ -1,5 +1,6 @@
 const finaleDate = new Date("September 24, 2022 00:00:00").getTime();
 
+var going=true;
 function timer (){
     const now = new Date().getTime();
     var diff = finaleDate - now;
@@ -12,9 +13,17 @@ function timer (){
     document.querySelector('#hours').textContent = hours;
     document.querySelector('#minutes').textContent = minutes;
     document.querySelector('#seconds').textContent = seconds;
-
+    if(days<0)
+    {
+        document.getElementById("counter").innerHTML="";
+        going=false;
+    }
 
 
 }
+
 timer();
+if(going)
+{
 setInterval(timer,1000);
+}
