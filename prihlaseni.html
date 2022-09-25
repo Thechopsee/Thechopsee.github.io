@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styl.css"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,39 +12,41 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ jmeno }} {{ prijmeni }}  {{date}} {{stat}} {{rg}}  {{plocha}}</h1>
+        
         <div id="form_temp">
             <div class="form_body" id="primal_body">
                 <div id="first_slide">
                     <label class="left" for="jmeno">Jméno: </label>
-                    <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno">
+                    <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno"><br>
 
                     <label class="left" for="prijmeni">Příjmení: </label>
-                    <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni">
+                    <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni"><br>
 
                     <label class="left" for="junior">Mladší 18ti let: </label>
-                    <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior" v-model="date"></div>
+                    <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date"><br>
                     
                     <label class="left" for="mail">E-mail: </label>
-                    <input type="email" id="mail" name="mail" v-model="mail">
+                    <input type="email" id="mail" name="mail" v-model="mail"><br>
 
                     <label class="left" for="klub">Klub: </label>
-                    <input type="text" id="klub" name="klub" v-model="klub">
+                    <input type="text" id="klub" name="klub" v-model="klub"><br>
 
                     <label class="left" for="licence">Licence: </label>
-                    <input type="text" id="licence" name="licence" v-model="licence">
+                    <input type="text" id="licence" name="licence" v-model="licence"><br>
 
                     <label class="left" for="stat">ISO Státu: </label>        
                     <select id="staty"  name="stat" maxlength="3" v-model="stat">
                         <option value="CZE">CZE</option>
                         <option value="POL">POL</option>
                         <option value="SVK">SVK</option>
-                    </select>
+                    </select><br>
                 </div>
                 <div id="second_slide" style="display:none">
+                    <h3>Budete závodit v kategorii RG?</h3>
                     <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
                 </div>
                 <div id="third_slide" style="display:none">
+                    <h3>Budete zavodit v kategorii NSS?</h3>
                     <button @click="nss(true)">Ano</button><button @click="nss(false)">Ne</button>
                 </div>
                 <div id="fourth_slide" style="display:none">
@@ -56,23 +59,26 @@
                     </select>
 
                     <label class="left" for="nazev_modelu">Název modelu: </label>
-                    <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev" >
+                    <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev" ><br>
                     
                     <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka">&nbsp;[mm]</div>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka">&nbsp;[mm]</div><br>
 
                     <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha">&nbsp;[m&sup2;]</div>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha">&nbsp;[m&sup2;]</div><br>
 
                     <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak">&nbsp;[kg]</div>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak">&nbsp;[kg]</div><br>
 
                     <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
+                    <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko"><br>
                 </div>
                 <div id="six_slide" style="display:none">
                     final
                 </div>
+            </div>
+            <div id="error_log">
+
             </div>
             <button @click="second_slide" id="ss_button">Pokračovat</button>
             <button @click="fifth_slide" id="fs_button" style="display:none">Pokračovat</button>
@@ -109,10 +115,33 @@
                     document.getElementById("first_slide").style.display="none";
                     document.getElementById("ss_button").style.display="none";
                     document.getElementById("second_slide").style.display="flex";
+                    el=document.getElementById("error_log");
+                    el.innerHTML="";
                 }
                 else
                 {
                     console.log("error"+this.stat.length);
+                    el=document.getElementById("error_log");
+                    el.innerHTML="";
+                    let str="";
+                    if(this.jmeno.length<=0)
+                    {
+                        str+="Jméno nezadáno<br>";
+                    }
+                    if(this.prijmeni.length<=0)
+                    {
+                        str+="Příjmení nezadáno<br>";
+                    }
+                    if(this.mail.length<=0)
+                    {
+                        str+="Emailová adresa nezadána<br>";
+                    }
+                    if(this.stat.length<=0)
+                    {
+                        str+="Stát nezadán<br>";
+                    }
+                    el.innerHTML=str;
+                    
                 }
                 
             },
@@ -121,10 +150,37 @@
                 if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0)
                 {
                     document.getElementById("fs_button").style.display="none";
+                    el=document.getElementById("error_log");
+                    el.innerHTML="";
                 }
                 else
                 {
                     console.log("error"+this.stat.length);
+                    el=document.getElementById("error_log");
+                    el.innerHTML="";
+                    let str="";
+                    if(this.nazev.length<=0)
+                    {
+                        str+="Název modelu nezadán<br>";
+                    }
+                    if(this.plocha<=0)
+                    {
+                        str+="Plocha nezadána<br>";
+                    }
+                    if(this.delka<=0)
+                    {
+                        str+="Délka nezadána<br>";
+                    }
+                    if(this.vytlak<=0)
+                    {
+                        str+="Výtlak nezadán<br>";
+                    }
+                    if(this.meritko<=0)
+                    {
+                        str+="Měřítko nezadáno<br>";
+                    }
+                    el.innerHTML=str;
+
                 }
             },
             rgg(data)

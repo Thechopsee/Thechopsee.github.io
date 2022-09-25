@@ -297,3 +297,13 @@ p{
 #kont_spacer{
   margin: 10%;
 }
+
+#form_temp{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#error_log
+{
+  color: #ff0033;
+}
