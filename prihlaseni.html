@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    
+
+</head>
+<body>
+    <div id="app">
+        <h1>{{ jmeno }} {{ prijmeni }}  {{date}} {{stat}} {{rg}}  {{plocha}}</h1>
+        <div id="form_temp">
+            <div class="form_body" id="primal_body">
+                <div id="first_slide">
+                    <label class="left" for="jmeno">Jméno: </label>
+                    <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno">
+
+                    <label class="left" for="prijmeni">Příjmení: </label>
+                    <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni">
+
+                    <label class="left" for="junior">Mladší 18ti let: </label>
+                    <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior" v-model="date"></div>
+                    
+                    <label class="left" for="mail">E-mail: </label>
+                    <input type="email" id="mail" name="mail" v-model="mail">
+
+                    <label class="left" for="klub">Klub: </label>
+                    <input type="text" id="klub" name="klub" v-model="klub">
+
+                    <label class="left" for="licence">Licence: </label>
+                    <input type="text" id="licence" name="licence" v-model="licence">
+
+                    <label class="left" for="stat">ISO Státu: </label>        
+                    <select id="staty"  name="stat" maxlength="3" v-model="stat">
+                        <option value="CZE">CZE</option>
+                        <option value="POL">POL</option>
+                        <option value="SVK">SVK</option>
+                    </select>
+                </div>
+                <div id="second_slide" style="display:none">
+                    <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
+                </div>
+                <div id="third_slide" style="display:none">
+                    <button @click="nss(true)">Ano</button><button @click="nss(false)">Ne</button>
+                </div>
+                <div id="fourth_slide" style="display:none">
+                    <label class="left" for="kategorie">Kategorie: </label>
+                    <select id="kategorie" width="50%" name="kategorie" v-model="kategorie">
+                        <option value="vyber">Vyber</option>
+                        <option value="nss_a">NSS-A</option>
+                        <option value="nss_b">NSS-B</option>
+                        <option value="nss_c">NSS-C</option>
+                    </select>
+
+                    <label class="left" for="nazev_modelu">Název modelu: </label>
+                    <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev" >
+                    
+                    <label class="left" for="delka">Délka vodorysky: </label>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka">&nbsp;[mm]</div>
+
+                    <label class="left" for="plocha">Plocha plachet: </label>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha">&nbsp;[m&sup2;]</div>
+
+                    <label class="left" for="vytlak">Výtlak: </label>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak">&nbsp;[kg]</div>
+
+                    <label class="left" for="meritko">Měřítko: 1: </label>
+                    <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
+                </div>
+                <div id="six_slide" style="display:none">
+                    final
+                </div>
+            </div>
+            <button @click="second_slide" id="ss_button">Pokračovat</button>
+            <button @click="fifth_slide" id="fs_button" style="display:none">Pokračovat</button>
+        </div>
+
+        </div>    
+    </div>
+</body>
+<script>
+    var Formular = new Vue({
+        el: '#app',
+        data: {message: 'Hello Vue!',
+                jmeno:'',
+                prijmeni:'',
+                date:false,
+                mail:'',
+                klub:'',
+                licence:'',
+                stat:'',
+                rg:false,
+                kategorie:'',
+                nazev:'',
+                plocha:0,
+                delka:0,
+                vytlak:0,
+                meritko:0,
+              },
+        methods:{
+            second_slide()
+            {
+                if(this.jmeno.length>0 && this.prijmeni.length>0 && this.mail.length>0 && this.stat.length>0)
+                {
+                    console.log("here"+this.jmeno);
+                    document.getElementById("first_slide").style.display="none";
+                    document.getElementById("ss_button").style.display="none";
+                    document.getElementById("second_slide").style.display="flex";
+                }
+                else
+                {
+                    console.log("error"+this.stat.length);
+                }
+                
+            },
+            fifth_slide()
+            {
+                if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0)
+                {
+                    document.getElementById("fs_button").style.display="none";
+                }
+                else
+                {
+                    console.log("error"+this.stat.length);
+                }
+            },
+            rgg(data)
+            {
+                this.rg=data;
+                document.getElementById("second_slide").style.display="none";
+                document.getElementById("third_slide").style.display="flex";
+            },
+            nss(data)
+            {
+                if(data==true)
+                {
+                    console.log(data);
+                    document.getElementById("fourth_slide").style.display="flex";
+                    document.getElementById("third_slide").style.display="none";
+                    document.getElementById("fs_button").style.display="flex";
+                }
+                else
+                {
+                    document.getElementById("six_slide").style.display="flex";
+                    document.getElementById("third_slide").style.display="none";
+                    console.log(data);
+                }
+            }
+        },
+        
+    })
+</script>
+</html>
