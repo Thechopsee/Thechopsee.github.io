@@ -1,5 +1,9 @@
 //step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
 //krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
+let galerie2022 ={clankyalias:["Rajce-Ferodedek","Drive-Val"],
+clanky:["https://minisail.rajce.idnes.cz/12._Terlicka_plachta_30._09._-_02._10._22/?","https://drive.google.com/drive/folders/1VSYOAUbJJYjVkutYKk-_xaeN9fKaUsuQ?usp=sharing"],
+key:2022,
+};
     let galerie2021 ={clankyalias:["Minisail.pl","Rajce-Ferodedek","Drive-Val","Fotky Google-Snek","Rajce-Kubik-team"],
     clanky:["http://www.minisail.pl/index.php/2021/10/06/terlicko-2021/?fbclid=IwAR34HRgYVQOMhwWfLUEv8cdUjZQgTdGfFcr2uejdDD8dvlsD7uwIIFKEILU","https://minisail.rajce.idnes.cz/Terlicka_plachta_1._-_3._10._2021/","https://drive.google.com/drive/folders/1JG2F9iNUn6NOawPQnZOkL0AGFgLFxVpd?usp=sharing","https://photos.google.com/share/AF1QipNnHDr13oX2xww9A2vgowscje3L-Q2GszbPmqOWp4COteTuuM1zFRxtRB-rCBN-Cw?key=VE9GN1dhQmd6VjdxTHoyd19wRWdxVE1MMHY1TE93","https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2021/"],
     key:2021,
@@ -50,7 +54,7 @@ var galerie_list=[];
 //krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list_g()
 {
-
+    galerie_list.push(galerie2022);
     galerie_list.push(galerie2021);
     galerie_list.push(galerie2020);
     galerie_list.push(galerie2019);
