@@ -17,22 +17,22 @@
             <div class="form_body" id="primal_body">
                 <div id="first_slide">
                     <label class="left" for="jmeno">Jméno: </label>
-                    <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno"><br>
+                    <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno">
 
                     <label class="left" for="prijmeni">Příjmení: </label>
-                    <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni"><br>
+                    <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni">
 
                     <label class="left" for="junior">Mladší 18ti let: </label>
-                    <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date"><br>
+                    <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date">
                     
                     <label class="left" for="mail">E-mail: </label>
-                    <input type="email" id="mail" name="mail" v-model="mail"><br>
+                    <input type="email" id="mail" name="mail" v-model="mail">
 
                     <label class="left" for="klub">Klub: </label>
-                    <input type="text" id="klub" name="klub" v-model="klub"><br>
+                    <input type="text" id="klub" name="klub" v-model="klub">
 
                     <label class="left" for="licence">Licence: </label>
-                    <input type="text" id="licence" name="licence" v-model="licence"><br>
+                    <input type="text" id="licence" name="licence" v-model="licence">
 
                     <label class="left" for="stat">ISO Státu: </label>        
                     <select id="staty"  name="stat" maxlength="3" v-model="stat">
@@ -42,12 +42,16 @@
                     </select><br>
                 </div>
                 <div id="second_slide" style="display:none">
-                    <h3>Budete závodit v kategorii RG?</h3>
-                    <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
+                    <h3>Budete závodit v kategorii RG?</h3><br>
+                    <div id="ssecond_slide">
+                        <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
+                    </div>
                 </div>
                 <div id="third_slide" style="display:none">
-                    <h3>Budete zavodit v kategorii NSS?</h3>
+                    <h3>Budete zavodit v kategorii NSS?</h3><br>
+                    <div id="tthird_slide">
                     <button @click="nss(true)">Ano</button><button @click="nss(false)">Ne</button>
+                    </div>
                 </div>
                 <div id="fourth_slide" style="display:none">
                     <label class="left" for="kategorie">Kategorie: </label>
@@ -94,7 +98,7 @@
             <div id="error_log">
 
             </div>
-            <button @click="second_slide" id="ss_button">Pokračovat</button>
+            <button @click="second_slide" id="ss_button" >Pokračovat</button>
             <button @click="fifth_slide" id="fs_button" style="display:none">Pokračovat</button>
             <button @click="finish" id="finish_button" style="display:none">Dokončit přihlášku</button>
         </div>
@@ -144,6 +148,12 @@
         methods:{
             second_slide()
             {
+                
+                document.getElementById("first_slide").style.display="none";
+                document.getElementById("ss_button").style.display="none";
+                document.getElementById("second_slide").style.display="block";
+                
+                return
                 if(this.jmeno.length>0 && this.prijmeni.length>0 && this.mail.length>0 && this.stat.length>0)
                 {
                     console.log("here"+this.jmeno);
