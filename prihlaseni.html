@@ -74,7 +74,21 @@
                     <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko"><br>
                 </div>
                 <div id="six_slide" style="display:none">
-                    final
+                    <h3>Kontrola zadaných údajů</h3><br>
+                    Jméno:{{jmeno}}<br>
+                    Příjmení:{{prijmeni}}<br>
+                    Věková kategorie:{{date}}<br>
+                    Email:{{mail}}<br>
+                    Klub:{{klub}}<br>
+                    Licence:{{licence}}<br>
+                    Státní příslušnost:{{stat}}<br>
+                    Rg650:{{rg}}<br>
+                    Kategorie:{{kategorie}}<br>
+                    Název modelu:{{nazev}}<br>
+                    Plocha plachet:{{plocha}}<br>
+                    Délka vodorysky:{{delka}}<br>
+                    Výtlak modelu:{{vytlak}}<br>
+                    Měřítko: 1:{{meritko}}<br>
                 </div>
             </div>
             <div id="error_log">
@@ -82,10 +96,31 @@
             </div>
             <button @click="second_slide" id="ss_button">Pokračovat</button>
             <button @click="fifth_slide" id="fs_button" style="display:none">Pokračovat</button>
+            <button @click="finish" id="finish_button" style="display:none">Dokončit přihlášku</button>
         </div>
 
         </div>    
     </div>
+
+
+    <!---------------------------------------------------------------------------------------->
+    <form id="secret_form" style="display:none">
+        <input type="text"  id="sjmeno"  name="sjmeno" required>
+        <input type="text" id="sprijmeni" name="sprijmeni" required>
+        <input class="right_check" type="text" id="sjunior" name="sjunior">
+        <input type="email" id="smail" name="smail" required>
+        <input type="text" id="sklub" name="sklub">
+        <input type="text" id="slicence" name="slicence">
+        <input type="text" id="sstat" list="staty" name="sstat" required maxlength="3" placeholder="CZE">                
+        <input class="right_check" type="checkbox" id="srg" name="srg">
+        <input class="right_check" type="checkbox" id="skategorie" name="skategorie">
+        <input type="text" id="snazev_modelu" name="snazev_modelu" >
+        <input class="right" type="number" id="sdelka" name="sdelka"  step="1">
+        <input  type="number" id="splocha" name="splocha" step="0.0001">
+        <input class="right" type="number" id="svytlak" name="svytlak"  step="0.01">
+        <input type="number" id="smeritko" name="smeritko" step="0.01">
+<!-------------------------------------------------------------------------------------------------------------------------------------->
+    </form>
 </body>
 <script>
     var Formular = new Vue({
@@ -115,6 +150,7 @@
                     document.getElementById("first_slide").style.display="none";
                     document.getElementById("ss_button").style.display="none";
                     document.getElementById("second_slide").style.display="flex";
+                    document.getElementById("finish_button").style.display="flex";
                     el=document.getElementById("error_log");
                     el.innerHTML="";
                 }
@@ -150,6 +186,8 @@
                 if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0)
                 {
                     document.getElementById("fs_button").style.display="none";
+                    document.getElementById("fourth_slide").style.display="none";
+                    document.getElementById("six_slide").style.display="flex";
                     el=document.getElementById("error_log");
                     el.innerHTML="";
                 }
@@ -204,7 +242,7 @@
                     document.getElementById("third_slide").style.display="none";
                     console.log(data);
                 }
-            }
+            },
         },
         
     })
