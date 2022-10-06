@@ -16,7 +16,24 @@ body {
   padding-right: 20%;
   gap: 1.5%;
 }
+#fourth_slide{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 1.5%;
+}
+#six_slide{
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
 #ss_button{
+  margin-left: 40%;
+  margin-right: 40%;
+}
+#fs_button{
   margin-left: 40%;
   margin-right: 40%;
 }

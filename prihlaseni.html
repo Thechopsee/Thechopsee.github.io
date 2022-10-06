@@ -63,22 +63,23 @@
                     </select>
 
                     <label class="left" for="nazev_modelu">Název modelu: </label>
-                    <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev" ><br>
+                    <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev">
                     
-                    <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka">&nbsp;[mm]</div><br>
+                    <label class="left" for="delka">Délka vodorysky [mm]: </label>
+                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka"></div>
 
-                    <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha">&nbsp;[m&sup2;]</div><br>
+                    <label class="left" for="plocha">Plocha plachet [m&sup2;]: </label>
+                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha"></div>
 
-                    <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak">&nbsp;[kg]</div><br>
+                    <label class="left" for="vytlak">Výtlak [kg]: </label>
+                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak"></div>
 
                     <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko"><br>
+                    <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
+                    <br>
                 </div>
                 <div id="six_slide" style="display:none">
-                    <h3>Kontrola zadaných údajů</h3><br>
+                    <h3>Kontrola zadaných údajů</h3><br><br>
                     Jméno:{{jmeno}}<br>
                     Příjmení:{{prijmeni}}<br>
                     Věková kategorie:{{date}}<br>
@@ -235,20 +236,20 @@
             {
                 this.rg=data;
                 document.getElementById("second_slide").style.display="none";
-                document.getElementById("third_slide").style.display="flex";
+                document.getElementById("third_slide").style.display="block";
             },
             nss(data)
             {
                 if(data==true)
                 {
                     console.log(data);
-                    document.getElementById("fourth_slide").style.display="flex";
+                    document.getElementById("fourth_slide").style.display="grid";
                     document.getElementById("third_slide").style.display="none";
-                    document.getElementById("fs_button").style.display="flex";
+                    document.getElementById("fs_button").style.display="block";
                 }
                 else
                 {
-                    document.getElementById("six_slide").style.display="flex";
+                    document.getElementById("six_slide").style.display="block";
                     document.getElementById("third_slide").style.display="none";
                     console.log(data);
                 }
