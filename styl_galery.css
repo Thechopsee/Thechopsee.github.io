@@ -222,6 +222,7 @@ padding-bottom: 1%;
   margin: 20px;
   position: relative;
   
+  
 }
 
 .cara_wraper:before{
@@ -240,7 +241,10 @@ padding-bottom: 1%;
   color:white;
   padding:1%;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 .his_nav_button:hover{
@@ -252,3 +256,29 @@ padding-bottom: 1%;
 
 }
 
+#yearmenu{
+  display:flex;
+  flex-wrap: wrap;
+
+  gap:3%
+}
+
+
+@media screen and (max-width: 800px) {
+  #yearmenu {
+    flex-wrap: wrap;
+  }
+  #yearmenu::after {
+     content:"";
+     flex-basis:100%;
+  }
+  #yearmenu a:nth-child(n + 6) { /* the last 3 element after the "after" */
+    order:2;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper::after {
+     content:none;
+  }
+}
