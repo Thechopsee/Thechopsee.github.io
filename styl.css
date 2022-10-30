@@ -352,7 +352,7 @@ p{
 }
 
 #kont_spacer{
-  margin: 10%;
+  margin: 40%;
 }
 
 #form_temp{
@@ -363,4 +363,15 @@ p{
 #error_log
 {
   color: #ff0033;
+}
+
+@media screen and (max-width: 600px) {
+.footer{
+  flex-direction: column;
+}
+.bottom_lines{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+}
 }
