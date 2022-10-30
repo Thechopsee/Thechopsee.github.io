@@ -93,3 +93,15 @@ body {
       display: block;
     }
   }
+
+  h1{
+    color:#43cece;
+  }
+  h2{
+    color:#43cece;
+  
+    }
+ #vysledkywrp{
+  margin-left: 10%;
+  margin-right: 10%;
+ }
