@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BouteBibliotek</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bible.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body id="bd">
+        
+    </body>
+    <script>
+    
+    class Literatura
+    {
+        constructor(id,nazev,serie_nazev,cover_path,appid) 
+        {
+            this.id = id;
+            this.nazev = nazev;
+            this.serie_nazev=serie_nazev;
+            this.cover_path=cover_path;
+            this.formular = new Vue({
+                el: appid+"",
+                data: {Nazev: this.nazev,
+                       SerieNazev:this.serie_nazev,
+                       CVRPAth:this.cover_path, 
+                },
+                computed: {
+                        photo() {
+                        return this.CVRPAth;
+                        }
+                    }
+            })
+        }
+        
+    }
+    wpcount=-1
+    
+    var el=document.getElementById("bd");
+    for(var i=0;i<7;i++)
+    {
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML="<div id='app"+i+"' class='appblok'><img v-bind:src='photo' width='100px'/> <div class='nazev'>{{Nazev}}</div><div class='serie'>{{SerieNazev}}</div></div>";
+        if(i%3==0)
+        {
+            wpcount++;
+            var wrapper = document.createElement("div");
+                wrapper.id="ezwraper"+wpcount;
+                wrapper.className += "ezwraper" ;
+            el.append(wrapper);
+        }
+        var el_wp=document.getElementById("ezwraper"+wpcount);
+        el_wp.append(newDiv);
+
+            
+        
+        var tr=new Literatura(1,"Něco","nevím","img01.jpg","#app"+i);
+        
+    }
+    
+    </script>
+</html>

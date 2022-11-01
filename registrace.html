@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
         <script>
-        $(function() {
+       /* $(function() {
             var checkbox = $("#rg");
             checkbox.change(function() {
                 if (checkbox.is(':checked')) {
@@ -24,7 +24,7 @@
                 $('#meritko').prop('required', true); //to add required
                 }
             });
-            });
+            });*/
         </script>
     </head>
     <body>
@@ -58,11 +58,11 @@
                 <h3 id="secondstxt">a sekundy</h2>
                 <h2 id="seconds">00</h2>
             </div>
-            <h2>pro přihlášení!</h2>
+            <h2>do začatku přihlášování!</h2>
         </div>
 
         <div class="counter_mobile">
-            Přihlášování končí 23.9.2022!
+            Přihlášování začíná 1.7.2023!
         </div>
         <div id="maincont"></div>
         <h2>Registrační formulář</h2>
@@ -390,6 +390,10 @@
                         document.getElementById("third_slide").style.display="none";
                         console.log(data);
                     }
+                },
+                finish(data)
+                {
+                    return;
                 },
             },
             
