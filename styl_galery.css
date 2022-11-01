@@ -126,61 +126,10 @@
   margin-top: 1%;
 }
 
-.fotky_frame{
-  border-radius: 5px;
-padding:1%;
-margin-left: 10%;
-margin-right: 10%;
-margin-top: 1%;
-margin-bottom: 1%;
-text-align: center;
-background-color: #dadfe4;
 
-}
-.fotky_frame h3{
-  color: #303b4a;
-}
-.top_galery{
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap:2%
-}
-.bottom_galery{
-padding-top: 2%;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-gap:2%
 
-}
 
-.fotky_frame_m{
-  border-radius: 5px;
-padding:1%;
-margin-left: 10%;
-margin-right: 10%;
-margin-top: 1%;
-margin-bottom: 1%;
-text-align: center;
-background-color: #dadfe4;
- 
-}
-.fotky_frame_m h3{
-  color: #303b4a;
-}
-.top_galery_m{
-display: grid;
-grid-template-rows: 1fr 1fr;
-gap:2%;
-padding-bottom: 2%;
-}
-.bottom_galery_m{
-padding-top: 2%;
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr;
-gap:2%;
-padding-bottom: 1%;
-}
+
 
 .clanky_place{
   display:flex;
@@ -275,6 +224,18 @@ padding-bottom: 1%;
   #yearmenu a:nth-child(n + 6) { /* the last 3 element after the "after" */
     order:2;
   }
+
+  .bottom_galery{
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 2%;
+    }
+
+  .top_galery{
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap:10%;
+      padding-bottom: 2%;
+      }
 }
 
 @media screen and (max-width: 400px) {
@@ -282,3 +243,62 @@ padding-bottom: 1%;
      content:none;
   }
 }
+
+.fotky_frame_m{
+  border-radius: 5px;
+padding:1%;
+margin-left: 10%;
+margin-right: 10%;
+margin-top: 1%;
+margin-bottom: 1%;
+text-align: center;
+background-color: #dadfe4;
+ 
+}
+.fotky_frame_m h3{
+  color: #303b4a;
+}
+
+.fotky_frame{
+  border-radius: 5px;
+padding:1%;
+margin-left: 10%;
+margin-right: 10%;
+margin-top: 1%;
+margin-bottom: 1%;
+text-align: center;
+background-color: #dadfe4;
+
+}
+.fotky_frame h3{
+  color: #303b4a;
+}
+
+.top_galery_m{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap:2%;
+  padding-bottom: 2%;
+  }
+  
+.bottom_galery_m{
+  padding-top: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap:2%;
+  padding-bottom: 1%;
+  }
+
+  .top_galery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2%
+    }
+    .bottom_galery{
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:2%
+    
+    }
