@@ -6,10 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bible.css"/>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body id="bd">
-        
+        <form id="dts" action="https://dataspracovavac.tode.cz/API/literatureApi.php?what=all" method="GET"><input type="submit" ></form>
     </body>
     <script>
     
@@ -36,6 +37,21 @@
         }
         
     }
+
+
+
+
+    $.ajax({
+    url:"https://dataspracovavac.tode.cz/API/literatureApi.php?what=all",
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    type:'GET',
+    "crossDomain": true,
+    success: function(json){
+        var data = JSON.parse(json);
+            console.log(data);
+        }
+        });
+
     wpcount=-1
     
     var el=document.getElementById("bd");
