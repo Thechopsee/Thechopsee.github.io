@@ -4,6 +4,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width", initial-scale="1">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script defer src="kontakt.js"></script>
     </head>
     <body>
 
@@ -33,11 +35,12 @@
                           <input type="text" class="form-control" name="name" id="name" placeholder="Jméno">
                         </div>
                         <div class="col-md-6 form-group">
-                          <label for="budget" class="col-form-label">Téma</label>
-                          <select class="custom-select" id="budget" name="budget">
+                          <label for="tema" class="col-form-label">Téma</label>
+                          <select class="custom-select" id="tema" name="tema">
                             <option selected>Vyberte</option>
-                            <option value="$1000 below"> $1,000</option>
-                            <option value="$2,000 - $5,000">$2,000 - $5,000</option>
+                            <option value="Dotaz">Dotaz</option>
+                            <option value="Hlasenichyby">Hlašení chyby</option>
+                            <option value="Historie">Záznam do historie</option>
                           </select>
                           
                         </div>
@@ -61,8 +64,8 @@
         
                       <div class="row">
                         <div class="col-md-12">
-                          <input type="submit" value="Ve výstavbě" class="btn btn-block btn-primary rounded-0 py-2 px-4" id="sndbtn" disabled>
-                          <span class="submitting"></span>
+                          <input onclick="sendEmail(this.form)" value="Ve výstavbě" class="btn btn-block btn-primary rounded-0 py-2 px-4" id="sndbtn" readonly >
+                          <div id="err"></div>
                         </div>
                       </div>
                     </form>
