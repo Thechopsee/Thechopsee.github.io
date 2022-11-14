@@ -1,7 +1,7 @@
 //step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
 //krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
-let galerie2022 ={clankyalias:["Rajce-Ferodedek","Drive-Val"],
-clanky:["https://minisail.rajce.idnes.cz/12._Terlicka_plachta_30._09._-_02._10._22/?","https://drive.google.com/drive/folders/1VSYOAUbJJYjVkutYKk-_xaeN9fKaUsuQ?usp=sharing"],
+let galerie2022 ={clankyalias:["Rajce-Ferodedek","Drive-Val,Drive-JiříJakubec"],
+clanky:["https://minisail.rajce.idnes.cz/12._Terlicka_plachta_30._09._-_02._10._22/?","https://drive.google.com/drive/folders/1VSYOAUbJJYjVkutYKk-_xaeN9fKaUsuQ?usp=sharing","https://drive.google.com/drive/folders/1ADp1lblpfIwnLGYfA-xfqVesONJfR5cg?usp=share_link"],
 key:2022,
 };
     let galerie2021 ={clankyalias:["Minisail.pl","Rajce-Ferodedek","Drive-Val","Fotky Google-Snek","Rajce-Kubik-team"],
