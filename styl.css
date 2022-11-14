@@ -223,11 +223,13 @@ h3 {
   margin-right: 10%;
 }
 #kontakty_blok{
+  color:#45cece !important;
   text-align: center;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 #kontakty_blok a{
-  color: #dadfe4;
+  color: #dadfe4 !important;
   text-decoration: none;
 }
 

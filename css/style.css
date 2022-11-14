@@ -7,7 +7,9 @@ a {
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a, a:hover {
-    text-decoration: none !important; }
+    text-decoration: none !important; 
+    color:white;
+  }
 
 
 h2 {
@@ -57,7 +59,10 @@ h2 {
 
 .box {
   padding: 20px;
-  background: #fff;}
+  background: #fff;
+  margin-bottom: 5%;  
+}
+
   .box h3 {
     font-size: 14px;
     margin-bottom: 30px;
