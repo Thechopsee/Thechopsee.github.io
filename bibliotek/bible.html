@@ -44,8 +44,7 @@
     $.ajax({
     url:"https://dataspracovavac.tode.cz/API/literatureApi.php?what=all",
     headers: { 'Access-Control-Allow-Origin': '*' },
-    type:'GET',
-    "crossDomain": true,
+    dataType:"jsonp",
     success: function(json){
         var data = JSON.parse(json);
             console.log(data);
