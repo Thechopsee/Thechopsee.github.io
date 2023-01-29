@@ -1,0 +1,411 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #303b4a;
+  color: #45cece;
+  text-align: center;
+  margin: 0px;
+
+}
+#first_slide{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  padding-right: 10%;
+  gap: 1.5%;
+}
+#fourth_slide{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5%;
+}
+#six_slide{
+  text-align: center;
+}
+
+#fs_button{
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#ssecond_slide{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 20%;
+  margin-right: 20%;
+  gap: 1.5%;
+}
+#tthird_slide{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 20%;
+  margin-right: 20%;
+  gap: 1.5%;
+}
+#ts_button{
+  margin-left: 40%;
+  margin-right: 40%;
+}
+a{
+  color: #dadfe4;
+  text-decoration: none;
+}
+html {
+  font-family: "Century Gothic", CenturyGothic;
+}
+menu a {
+  color: #dadfe4;
+  text-decoration: none;
+  font-size: 150%;
+}
+menu {
+  text-align: center;
+}
+h1 {
+  font-size: 6em;
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+}
+header {
+  text-align: right;
+}
+#info {
+
+  padding-left: 15%;
+  padding-right: 15%;
+}
+#info_nahore {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4%;
+
+}
+#info_text_1a {
+  text-align: right !important;
+}
+#info_text_1a h3{
+  text-align: right ;
+}
+#info_text_1a p{
+  text-align: right ;
+}
+#info_text_1b h3{
+  text-align: left ;
+}
+#info_text_1b p{
+  text-align: left ;
+}
+
+#info_text_1b {
+  text-align: left;
+}
+.formular {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 1.5%;
+}
+.formular_mobile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1%;
+  padding-right: 1%;
+ 
+}
+.mleft{
+  text-align: center;
+}
+#propozice{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:4%;
+  margin-bottom: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+#propozice_m{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap:4%;
+
+  padding-left: 20%;
+  padding-right: 20%;
+}
+h2 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 1%;
+}
+form input {
+  width: 70%;
+  background-color: #dadfe4;
+}
+form select {
+  width: 70%;
+  background-color: #dadfe4;
+}
+.left {
+  text-align: right;
+}
+.right {
+  text-align: left;
+}
+.right_check {
+  text-align: left;
+  padding-left: 0px;
+}
+h3 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 1%;
+}
+.counter {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 0.9fr 0.9fr 0.9fr 1fr;
+  padding-left: 10%;
+  padding-right: 10%;
+  gap: 1.5%;
+}
+.counter h2 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 0%;
+}
+.counter h3 {
+  font-family: "Century Gothic", CenturyGothic;
+  font-weight: normal;
+  text-align: center;
+  margin: 0%;
+}
+
+
+
+#center
+{
+  display: flex;
+  justify-content: space-around;
+}
+.spacer
+{
+  display: flex;
+  justify-content: space-around;
+}
+#yearmenu
+{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#kontakty_blok{
+  color:#45cece !important;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#kontakty_blok a{
+  color: #dadfe4 !important;
+  text-decoration: none;
+}
+
+p{
+  text-align: center;
+}
+
+#center input{
+  color:#dadfe4;
+  background-color:#45cece ;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: none;
+  border-radius: 4px;
+}
+
+#logo{
+  filter: invert(83%) sepia(82%) saturate(1620%) hue-rotate(140deg) brightness(86%) contrast(86%);
+}
+
+#mobile_logo{
+  display: none;
+  min-width: 200px;
+  color: #45cece;
+}
+
+.counter_mobile{
+  display: none;
+}
+#form_mobile{
+  display: none;
+}
+#propozice_m{
+  display: none;
+}
+#mobil_galerie{
+  display: none;
+}
+#menu_mob{
+  display: none;
+}
+ 
+@media only screen and (hover:none) and (pointer:coarse){ 
+  #logo{
+    display: none;
+  }
+  #menu_mob{
+    display:flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  #menu_web{
+    display: none;
+  }
+  #mobile_logo{
+    display: block;
+    filter: invert(83%) sepia(82%) saturate(1620%) hue-rotate(140deg) brightness(86%) contrast(86%);
+  }
+  .counter_mobile{
+    display: block;
+  }
+  .counter{
+    display: none;
+  }
+ 
+  #form_mobile{
+    display: block;
+  }
+  #form_web{
+    display: none;
+  }
+ 
+  #propozice_m{
+    display: block;
+  }
+  #propozice{
+    display: none;
+  }
+  #mobil_galerie{
+    display: block;
+  }
+  #pc_galerie{
+    display: none;
+  }
+}
+#odeslat{
+  color:white;
+}
+#odeslat:disabled{
+
+  background-color: grey;
+}
+  
+
+#iframeId{
+  border: none;
+}
+
+.footer{
+  background-color: #363131;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  padding: 2%;
+}
+.bottom_line
+{
+  font-size: small;
+}
+.bottom_lines{
+  color:#b4a3a3;
+
+}
+
+.bottom_line a{
+  color:#b4a3a3;
+}
+
+.bottom_line_nad{
+  color: white;
+  margin-bottom: 1%;
+}
+
+#kont_spacer{
+  margin: 40%;
+}
+
+#form_temp{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#error_log
+{
+  color: #ff0033;
+}
+
+@media screen and (max-width: 600px) {
+.footer{
+  flex-direction: column;
+}
+.bottom_lines{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+}
+}
+
+.registracniform
+{
+  color:#303b4a;
+  border-radius: 12px;
+  white-space: nowrap;
+  background-color: white;
+  padding:5%;
+  margin:5%;
+  min-width: 250px;
+}
+
+.form_butt
+{
+  width:30%;
+  margin-top: 5%;
+  background-color: #303b4a;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.form_butt:hover
+{
+  background-color: white;
+  color:#303b4a;
+  border-width:4px !important;
+  border-color: #303b4a;
+  
+}
+
+#error_log{
+  border-radius: 12px;
+  background-color: #cc0000;
+  color:white;
+  margin-top: 5%;
+  margin-left: 18%;
+  margin-right: 18%;
+  padding:2%;
+}
+
+#error_log:empty{
+  background-color: white;
+}
