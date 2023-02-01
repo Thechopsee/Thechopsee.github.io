@@ -12,36 +12,36 @@ key:2022,
     clanky:["https://drive.google.com/drive/folders/1zKT3x748ADWmIbU-sOcDF5jGU6uX26-1?usp=sharing","https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2020/","https://daja-se.rajce.idnes.cz/Terlicka_plachta_2020/","https://minisail.rajce.idnes.cz/Jubilejni_X._Terlicka_plachta_25._-27._09._2020/"],
     key:2020,
     };
-    let galerie2019 ={clankyalias:["Drive-Seb"],
-    clanky:["https://drive.google.com/drive/folders/1Wn3iQHFyGFzaUUOAenkkFOkBhoHOTVun?usp=sharing"],
+    let galerie2019 ={clankyalias:["Drive-Seb","Rajce-Ferodedek"],
+    clanky:["https://drive.google.com/drive/folders/1Wn3iQHFyGFzaUUOAenkkFOkBhoHOTVun?usp=sharing","https://minisail.rajce.idnes.cz/Terlicko_2019/"],
     key:2019,
     };
     let galerie2018 ={clankyalias:["Rajce-Kubik-team"],
     clanky:["https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2018/"],
     key:2018,
     };
-    let galerie2017 ={clankyalias:["Rajce-modelyzn","Youtube-Pavel Trvaj","RCportal.sk-guitar61","Youtube-Martin Machalík"],
-    clanky:["https://modelyzn.rajce.idnes.cz/Modely_Znojmo_Terlicka_plachta_30.9.2017/","https://www.youtube.com/watch?v=VjzVdAk6-Sw","https://www.rcportal.sk/terlicka-plachta-2017-g4826","https://www.youtube.com/watch?v=f2V4tbh1YcI"],
+    let galerie2017 ={clankyalias:["Rajce-modelyzn","Youtube-Pavel Trvaj","RCportal.sk-guitar61","Youtube-Martin Machalík","Rajce-Ferodedek"],
+    clanky:["https://modelyzn.rajce.idnes.cz/Modely_Znojmo_Terlicka_plachta_30.9.2017/","https://www.youtube.com/watch?v=VjzVdAk6-Sw","https://www.rcportal.sk/terlicka-plachta-2017-g4826","https://www.youtube.com/watch?v=f2V4tbh1YcI","https://minisail.rajce.idnes.cz/Terlicko_2017/"],
     key:2017,
     };
-    let galerie2016 ={clankyalias:[""],
-    clanky:[""],
+    let galerie2016 ={clankyalias:["Rajce-Ferodedek"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2016/"],
     key:2016,
     };
-    let galerie2015 ={clankyalias:[""],
-    clanky:[""],
+    let galerie2015 ={clankyalias:["Rajce-Ferodedek"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2015/"],
     key:2015,
     };
     let galerie2014 ={clankyalias:["daja-se.rajce.idnes.cz"],
     clanky:["https://daja-se.rajce.idnes.cz/Terlicka_plachta/"],
     key:2014,
     };
-    let galerie2013 ={clankyalias:[""],
-    clanky:[""],
+    let galerie2013 ={clankyalias:["Rajce-Ferodedek"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2013/"],
     key:2013,
     };
-    let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz"],
-    clanky:["https://moravskoslezsky.denik.cz/z-regionu/obrazem-soutez-radiem-rizenych-modelu-plachetnic-20120929.html","http://terlicko.cz/terlicka-plachta-2012-09-28-30/gs-1062"],
+    let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz","Rajce-Ferodedek"],
+    clanky:["https://moravskoslezsky.denik.cz/z-regionu/obrazem-soutez-radiem-rizenych-modelu-plachetnic-20120929.html","http://terlicko.cz/terlicka-plachta-2012-09-28-30/gs-1062","https://minisail.rajce.idnes.cz/Terlicko_2012/"],
     key:2012,
     };
     let galerie2011 ={clankyalias:[""],
