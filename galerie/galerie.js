@@ -16,28 +16,28 @@ key:2022,
     clanky:["https://drive.google.com/drive/folders/1Wn3iQHFyGFzaUUOAenkkFOkBhoHOTVun?usp=sharing","https://minisail.rajce.idnes.cz/Terlicko_2019/"],
     key:2019,
     };
-    let galerie2018 ={clankyalias:["Rajce-Kubik-team","Rajce-Ferodedek"],
-    clanky:["https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2018/","https://minisail.rajce.idnes.cz/Terlicka_plachta_-_Terlicko_2018/?"],
+    let galerie2018 ={clankyalias:["Rajce-Kubik-team","Rajce-Ferodedek","Rajce-MoNaKo"],
+    clanky:["https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2018/","https://minisail.rajce.idnes.cz/Terlicka_plachta_-_Terlicko_2018/?","https://monako.rajce.idnes.cz/terlicko_nss_180928/"],
     key:2018,
     };
-    let galerie2017 ={clankyalias:["Rajce-modelyzn","Youtube-Pavel Trvaj","RCportal.sk-guitar61","Youtube-Martin Machalík","Rajce-Ferodedek"],
-    clanky:["https://modelyzn.rajce.idnes.cz/Modely_Znojmo_Terlicka_plachta_30.9.2017/","https://www.youtube.com/watch?v=VjzVdAk6-Sw","https://www.rcportal.sk/terlicka-plachta-2017-g4826","https://www.youtube.com/watch?v=f2V4tbh1YcI","https://minisail.rajce.idnes.cz/Terlicko_2017/"],
+    let galerie2017 ={clankyalias:["Rajce-modelyzn","Youtube-Pavel Trvaj","RCportal.sk-guitar61","Youtube-Martin Machalík","Rajce-Ferodedek","Rajce-MoNaKo"],
+    clanky:["https://modelyzn.rajce.idnes.cz/Modely_Znojmo_Terlicka_plachta_30.9.2017/","https://www.youtube.com/watch?v=VjzVdAk6-Sw","https://www.rcportal.sk/terlicka-plachta-2017-g4826","https://www.youtube.com/watch?v=f2V4tbh1YcI","https://minisail.rajce.idnes.cz/Terlicko_2017/","https://monako.rajce.idnes.cz/terlicko_nss_machalik_170929/"],
     key:2017,
     };
-    let galerie2016 ={clankyalias:["Rajce-Ferodedek"],
-    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2016/"],
+    let galerie2016 ={clankyalias:["Rajce-Ferodedek","Rajce-MoNaKo","Drive-Seb"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2016/","https://monako.rajce.idnes.cz/terlicko_nss_160929/","https://drive.google.com/drive/folders/1d_RC8fPRuFfclPdS7at1Q_6uMBAIiKaw?usp=share_link"],
     key:2016,
     };
-    let galerie2015 ={clankyalias:["Rajce-Ferodedek"],
-    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2015/"],
+    let galerie2015 ={clankyalias:["Rajce-Ferodedek","Rajce-MoNaKo","Rajce-MoNaKo-2"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2015/","https://monako.rajce.idnes.cz/terlicko_nss_150925/","https://monako.rajce.idnes.cz/terlicko_nss_150924/"],
     key:2015,
     };
     let galerie2014 ={clankyalias:["daja-se.rajce.idnes.cz"],
     clanky:["https://daja-se.rajce.idnes.cz/Terlicka_plachta/"],
     key:2014,
     };
-    let galerie2013 ={clankyalias:["Rajce-Ferodedek"],
-    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2013/"],
+    let galerie2013 ={clankyalias:["Rajce-Ferodedek","Rajce-MoNaKo","Rajce-MoNaKo-2"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2013/","https://monako.rajce.idnes.cz/terlicko_nss_131011/","https://monako.rajce.idnes.cz/terlicko_nss_131013/"],
     key:2013,
     };
     let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz","Rajce-Ferodedek"],
