@@ -16,8 +16,8 @@ key:2022,
     clanky:["https://drive.google.com/drive/folders/1Wn3iQHFyGFzaUUOAenkkFOkBhoHOTVun?usp=sharing","https://minisail.rajce.idnes.cz/Terlicko_2019/"],
     key:2019,
     };
-    let galerie2018 ={clankyalias:["Rajce-Kubik-team"],
-    clanky:["https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2018/"],
+    let galerie2018 ={clankyalias:["Rajce-Kubik-team","Rajce-Ferodedek"],
+    clanky:["https://kubik-team.rajce.idnes.cz/Terlicka_plachta_2018/","https://minisail.rajce.idnes.cz/Terlicka_plachta_-_Terlicko_2018/?"],
     key:2018,
     };
     let galerie2017 ={clankyalias:["Rajce-modelyzn","Youtube-Pavel Trvaj","RCportal.sk-guitar61","Youtube-Martin Machalík","Rajce-Ferodedek"],
