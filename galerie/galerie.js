@@ -32,20 +32,20 @@ key:2022,
     clanky:["https://minisail.rajce.idnes.cz/Terlicko_2015/","https://monako.rajce.idnes.cz/terlicko_nss_150925/","https://monako.rajce.idnes.cz/terlicko_nss_150924/"],
     key:2015,
     };
-    let galerie2014 ={clankyalias:["daja-se.rajce.idnes.cz"],
-    clanky:["https://daja-se.rajce.idnes.cz/Terlicka_plachta/"],
+    let galerie2014 ={clankyalias:["daja-se.rajce.idnes.cz","modelteam.com.pl"],
+    clanky:["https://daja-se.rajce.idnes.cz/Terlicka_plachta/","www.modelteam.com.pl/galeria/thumbnails.php?album=166"],
     key:2014,
     };
-    let galerie2013 ={clankyalias:["Rajce-Ferodedek","Rajce-MoNaKo","Rajce-MoNaKo-2"],
-    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2013/","https://monako.rajce.idnes.cz/terlicko_nss_131011/","https://monako.rajce.idnes.cz/terlicko_nss_131013/"],
+    let galerie2013 ={clankyalias:["Rajce-Ferodedek","Rajce-MoNaKo","Rajce-MoNaKo-2","modelteam.com.pl"],
+    clanky:["https://minisail.rajce.idnes.cz/Terlicko_2013/","https://monako.rajce.idnes.cz/terlicko_nss_131011/","https://monako.rajce.idnes.cz/terlicko_nss_131013/","http://www.modelteam.com.pl/galeria/thumbnails.php?album=165"],
     key:2013,
     };
-    let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz","Rajce-Ferodedek"],
-    clanky:["https://moravskoslezsky.denik.cz/z-regionu/obrazem-soutez-radiem-rizenych-modelu-plachetnic-20120929.html","http://terlicko.cz/terlicka-plachta-2012-09-28-30/gs-1062","https://minisail.rajce.idnes.cz/Terlicko_2012/"],
+    let galerie2012 ={clankyalias:["moravskoslezsky.denik.cz","terlicko.cz","Rajce-Ferodedek","modelteam.com.pl"],
+    clanky:["https://moravskoslezsky.denik.cz/z-regionu/obrazem-soutez-radiem-rizenych-modelu-plachetnic-20120929.html","http://terlicko.cz/terlicka-plachta-2012-09-28-30/gs-1062","https://minisail.rajce.idnes.cz/Terlicko_2012/","http://www.modelteam.com.pl/galeria/thumbnails.php?album=149"],
     key:2012,
     };
-    let galerie2011 ={clankyalias:[""],
-    clanky:[""],
+    let galerie2011 ={clankyalias:["modelteam.com.pl"],
+    clanky:["http://www.modelteam.com.pl/galeria/thumbnails.php?album=127"],
     key:2011,
     };
 
