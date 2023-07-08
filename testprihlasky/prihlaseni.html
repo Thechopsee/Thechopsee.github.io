@@ -46,13 +46,13 @@
                         <h3>Budete závodit v kategorii RG?</h3>
                         <br>
                         <div id="ssecond_slide">
-                            <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
+                            <button @click="rgg(true)" id="rgtrue">Ano</button><button @click="rgg(false)" id="rgfalse">Ne</button>
                         </div>
                     </div>
                     <div id="third_slide" style="display:none">
                         <h3>Budete zavodit v kategorii NSS?</h3><br>
                         <div id="tthird_slide">
-                        <button @click="nss(true)">Ano</button><button @click="nss(false)">Ne</button>
+                        <button @click="nss(true)" id="nsstrue">Ano</button><button @click="nss(false)" id="nssfalse">Ne</button>
                         </div>
                     </div>
                     <div id="fourth_slide" style="display:none">
@@ -116,21 +116,21 @@
 
 
     <!---------------------------------------------------------------------------------------->
-    <form id="secret_form" style="display:none" target="_blank" action="http://terlickaplachta.cz">
-        <input type="text"  id="sjmeno"  name="sjmeno" >
-        <input type="text" id="sprijmeni" name="sprijmeni" >
-        <input class="right_check" type="text" id="sjunior" name="sjunior">
-        <input type="text" id="smail" name="smail" >
-        <input type="text" id="sklub" name="sklub">
-        <input type="text" id="slicence" name="slicence">
-        <input type="text" id="sstat" list="staty" name="sstat" maxlength="3" placeholder="CZE">                
-        <input class="right_check" type="text" id="srg" name="srg">
-        <input class="right_check" type="text" id="skategorie" name="skategorie">
-        <input type="text" id="snazev_modelu" name="snazev_modelu" >
-        <input class="right" type="number" id="sdelka" name="sdelka"  step="1">
-        <input  type="number" id="splocha" name="splocha" step="0.0001">
-        <input class="right" type="number" id="svytlak" name="svytlak"  step="0.01">
-        <input type="number" id="smeritko" name="smeritko" step="0.01">
+    <form id="secret_form" style="display:none" action="https://dataspracovavac.tode.cz/test.php" method="post">
+        <input type="text"  id="sjmeno"  name="jmeno" >
+        <input type="text" id="sprijmeni" name="prijmeni" >
+        <input class="right_check" type="text" id="sjunior" name="junior">
+        <input type="text" id="smail" name="mail" >
+        <input type="text" id="sklub" name="klub">
+        <input type="text" id="slicence" name="licence">
+        <input type="text" id="sstat" list="staty" name="stat" maxlength="3" placeholder="CZE">                
+        <input class="right_check" type="text" id="srg" name="rg">
+        <input class="right_check" type="text" id="skategorie" name="kategorie">
+        <input type="text" id="snazev_modelu" name="nazev_modelu" >
+        <input class="right" type="number" id="sdelka" name="delka"  step="1">
+        <input  type="number" id="splocha" name="plocha" step="0.0001">
+        <input class="right" type="number" id="svytlak" name="vytlak"  step="0.01">
+        <input type="number" id="smeritko" name="meritko" step="0.01">
         <button id="odesli">send</button>
     </form>
 <!-------------------------------------------------------------------------------------------------------------------------------------->
