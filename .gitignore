@@ -1,2 +1,4 @@
-
+tests/TPTest/TPTest/bin/
+tests/TPTest/TPTest/obj/
 *.py
+tests/TPTest/.vs/
