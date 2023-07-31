@@ -1,10 +1,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="styl.css"/>
+        <link rel="stylesheet" href="testprihlasky\styleee.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
-        <script defer src="odpocet.js"></script>
-        <script defer src="registrace.js"></script>
+        <script defer src="js/odpocet.js"></script>
+        <!-- <script defer src="js/registrace.js"></script> -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
 
@@ -48,205 +49,167 @@
         </div>
         <div id="maincont"></div>
         <h2>Registrační formulář</h2>
-        <p>Nový formulář je ve výstavbě</p>
-        <div id="app">
-            <div id="form_temp">
-                <div class="form_body" id="primal_body">
-                    <div id="first_slide">
-                        <label class="left" for="jmeno">Jméno: </label>
-                        <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno" disabled>
-    
-                        <label class="left" for="prijmeni">Příjmení: </label>
-                        <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni" disabled>
-    
-                        <label class="left" for="junior">Mladší 18ti let: </label>
-                        <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date" disabled>
-                        
-                        <label class="left" for="mail">E-mail: </label>
-                        <input type="email" id="mail" name="mail" v-model="mail" disabled>
-    
-                        <label class="left" for="klub">Klub: </label>
-                        <input type="text" id="klub" name="klub" v-model="klub" disabled>
-    
-                        <label class="left" for="licence">Licence: </label>
-                        <input type="text" id="licence" name="licence" v-model="licence" disabled>
-    
-                        <label class="left" for="stat">ISO Státu: </label>        
-                        <select id="staty"  name="stat" maxlength="3" v-model="stat" disabled>
-                            <option value="CZE">CZE</option>
-                            <option value="POL">POL</option>
-                            <option value="SVK">SVK</option>
-                        </select><br>
-                    </div>
-                    <div id="second_slide" style="display:none">
-                        <h3>Budete závodit v kategorii RG?</h3><br>
-                        <div id="ssecond_slide">
-                            <button @click="rgg(true)">Ano</button><button @click="rgg(false)">Ne</button>
-                        </div>
-                    </div>
-                    <div id="third_slide" style="display:none">
-                        <h3>Budete zavodit v kategorii NSS?</h3><br>
-                        <div id="tthird_slide">
-                        <button @click="nss(true)">Ano</button><button @click="nss(false)">Ne</button>
-                        </div>
-                    </div>
-                    <div id="fourth_slide" style="display:none">
-                        <label class="left" for="kategorie">Kategorie: </label>
-                        <select id="kategorie" width="50%" name="kategorie" v-model="kategorie">
-                            <option value="vyber">Vyber</option>
-                            <option value="nss_a">NSS-A</option>
-                            <option value="nss_b">NSS-B</option>
-                            <option value="nss_c">NSS-C</option>
-                        </select>
-    
-                        <label class="left" for="nazev_modelu">Název modelu: </label>
-                        <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev">
-                        
-                        <label class="left" for="delka">Délka vodorysky [mm]: </label>
-                        <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka"></div>
-    
-                        <label class="left" for="plocha">Plocha plachet [m&sup2;]: </label>
-                        <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha"></div>
-    
-                        <label class="left" for="vytlak">Výtlak [kg]: </label>
-                        <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak"></div>
-    
-                        <label class="left" for="meritko">Měřítko: 1: </label>
-                        <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
-                        <br>
-                    </div>
-                    <div id="six_slide" style="display:none">
-                        <h3>Kontrola zadaných údajů</h3><br><br>
-                        Jméno:{{jmeno}}<br>
-                        Příjmení:{{prijmeni}}<br>
-                        Věková kategorie:{{date}}<br>
-                        Email:{{mail}}<br>
-                        Klub:{{klub}}<br>
-                        Licence:{{licence}}<br>
-                        Státní příslušnost:{{stat}}<br>
-                        Rg650:{{rg}}<br>
-                        Kategorie:{{kategorie}}<br>
-                        Název modelu:{{nazev}}<br>
-                        Plocha plachet:{{plocha}}<br>
-                        Délka vodorysky:{{delka}}<br>
-                        Výtlak modelu:{{vytlak}}<br>
-                        Měřítko: 1:{{meritko}}<br>
-                    </div>
-                </div>
-                <div id="error_log">
-    
-                </div>
-                <button @click="second_slide" id="ss_button" disabled>Pokračovat</button>
-                <button @click="fifth_slide" id="fs_button" style="display:none">Pokračovat</button>
-                <button @click="finish" id="finish_button" style="display:none">Dokončit přihlášku</button>
-            </div>
-    
-            </div>    
-        </div>
-        <!-- <form id="form_web" action="https://dataspracovavac.tode.cz/test.php" method="post">
-            <div class="formular_cely"></div>
-                <h2>Závodník</h2>
-                <div class="formular">
-                    <label class="left" for="jmeno">Jméno: </label>
-                    <input type="text"  id="jmeno"  name="jmeno" required>
-
-                    <label class="left" for="prijmeni">Příjmení: </label>
-                    <input type="text" id="prijmeni" name="prijmeni" required>
-
-                    <label class="left" for="junior">Mladší 18ti let: </label>
-                    <div class="right"><input class="right_check" type="checkbox" id="junior" name="junior"></div>
-                    
-                    <label class="left" for="mail">E-mail: </label>
-                    <input type="email" id="mail" name="mail" required>
-
-                    <label class="left" for="klub">Klub: </label>
-                    <input type="text" id="klub" name="klub">
-
-                    <label class="left" for="licence">Licence: </label>
-                    <input type="text" id="licence" name="licence">
-
-                    <label class="left" for="stat">ISO Státu: </label> 
-                    <input type="text" id="stat" list="staty" name="stat" required maxlength="3" placeholder="CZE">                
-                    <datalist id="staty">
-                        <option value="CZE">
-                        <option value="POL">
-                        <option value="SVK">
-                    </datalist>
-                    
-                </div>
-                
-
-                <h2>Modely</h2>
-                <div class="formular">
-                    <label class="left" for="rg">RG-65: </label>
-                    <div class="right"><input class="right_check" type="checkbox" id="rg" name="rg"></div>
-
-                    <label class="left" for="kategorie">Kategorie: </label>
-                    <select id="kategorie" width="50%" name="kategorie">
-                        <option value="vyber">Vyber</option>
-                        <option value="nss_a">NSS-A</option>
-                        <option value="nss_b">NSS-B</option>
-                        <option value="nss_c">NSS-C</option>
-                    </select>
-                    <label class="left" for="nazev_modelu">Název modelu: </label>
-                    <input type="text" id="nazev_modelu" name="nazev_modelu" >
-                    
-                    <label class="left" for="delka">Délka vodorysky: </label>
-                    <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" required>&nbsp;[mm]</div>
-
-                    <label class="left" for="plocha">Plocha plachet: </label>
-                    <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" required>&nbsp;[m&sup2;]</div>
-
-                    <label class="left" for="vytlak">Výtlak: </label>
-                    <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" required>&nbsp;[kg]</div>
-
-                    <label class="left" for="meritko">Měřítko: 1: </label>
-                    <input type="number" id="meritko" name="meritko" step="0.01" required>
-                    
-                </div>
-                <br>
-                <h2>Ubytovaní</h2>
-                <div class="formular">
-                    <label class="left" for="ubytovani">Chci ubytovaní</label>
-                    <div class="right">
-                        <input class="right_check" type="checkbox" id="ubytovani" name="ubytovani">
-                    </div>
-                    
-                </div>
-                <br>
-                <p id="center">O možnostonech ubytovaní budete po registraci informovaní emailem</p>
-             onclick="sendEmail(this.form)"-->
-                <!--<div id="center"><input id="odeslat" onclick="sendEmail(this.form)" type="submit" value="Registrovat!" disabled></div>-->
-            </div>
-            
-        </form>
-
-        <h2>Registrovaní účastníci</h2>
-        <iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description" width="80%" id="iframeId" height="500px"></iframe>
         
-        <div id="kont_spacer"> </div>
-        <div class="footer">
-            <div id="Co" class="bottom_lines">
-                <div class="bottom_line_nad">Co? Kdy? Kde?</div>
-                <div class="bottom_line">💡 Setkání plachetnic třídy NSS - A,B,C,RG-650</div>
-                <div class="bottom_line">🕘 29.9.-1.10.2023</div>
-                <div class="bottom_line">🗺 RS Vyhlídka Těrlicko</div>
+        <div class="spacer">
+            <div id="app" class="registracniform">
+                <div id="form_temp">
+                    <div class="form_body" id="primal_body">
+                        <div id="first_slide">
+                            <label class="left" for="jmeno">Jméno: </label>
+                            <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno">
+    
+                            <label class="left" for="prijmeni">Příjmení: </label>
+                            <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni">
+    
+                            <label class="left" for="junior">Mladší 18ti let: </label>
+                            <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date">
+                            
+                            <label class="left" for="mail">E-mail: </label>
+                            <input type="email" id="mail" name="mail" v-model="mail">
+    
+                            <label class="left" for="klub">Klub: </label>
+                            <input type="text" id="klub" name="klub" v-model="klub">
+    
+                            <label class="left" for="licence">Licence: </label>
+                            <input type="text" id="licence" name="licence" v-model="licence">
+    
+                            <label class="left" for="stat">ISO Státu: </label>        
+                            <select id="staty"  name="stat" maxlength="3" v-model="stat">
+                                <option value="CZE">CZE</option>
+                                <option value="POL">POL</option>
+                                <option value="SVK">SVK</option>
+                            </select><br>
+                        </div>
+                        <div id="second_slide" style="display:none">
+                            <h3 >Budete závodit v kategorii RG?</h3>
+                            <br>
+                            <div id="ssecond_slide">
+                                <button @click="rgg(true)" id="rgtrue" class="form_butt">Ano</button><button @click="rgg(false)" id="rgfalse" class="form_butt">Ne</button>
+                            </div>
+                        </div>
+                        <div id="third_slide" style="display:none">
+                            <h3>Budete zavodit v kategorii NSS?</h3><br>
+                            <div id="tthird_slide">
+                            <button @click="nss(true)" id="nsstrue" class="form_butt">Ano</button><button @click="nss(false)" id="nssfalse" class="form_butt">Ne</button>
+                            </div>
+                        </div>
+                        <div id="fourth_slide" style="display:none">
+                            <label class="left" for="kategorie">Kategorie: </label>
+                            <select id="kategorie" width="50%" name="kategorie" v-model="kategorie">
+                                <option value="vyber">Vyber</option>
+                                <option value="nss_a">NSS-A</option>
+                                <option value="nss_b">NSS-B</option>
+                                <option value="nss_c">NSS-C</option>
+                            </select>
+    
+                            <label class="left" for="nazev_modelu">Název modelu: </label>
+                            <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev">
+                            
+                            <label class="left" for="delka">Délka vodorysky [mm]: </label>
+                            <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka"></div>
+    
+                            <label class="left" for="plocha">Plocha plachet [m&sup2;]: </label>
+                            <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha"></div>
+    
+                            <label class="left" for="vytlak">Výtlak [kg]: </label>
+                            <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak"></div>
+    
+                            <label class="left" for="meritko">Měřítko: 1: </label>
+                            <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
+                            <br>
+                        </div>
+                        <div id="six_slide" style="display:none">
+                            <h3>Kontrola zadaných údajů</h3><br><br>
+                            <div>
+                            Jméno:{{jmeno}}<br>
+                            Příjmení:{{prijmeni}}<br>
+                            Věková kategorie:{{date}}<br>
+                            Email:{{mail}}<br>
+                            Klub:{{klub}}<br>
+                            Licence:{{licence}}<br>
+                            Státní příslušnost:{{stat}}<br>
+                            Rg650:{{rg}}<br>
+                            Kategorie:{{kategorie}}<br>
+                            Název modelu:{{nazev}}<br>
+                            Plocha plachet:{{plocha}}<br>
+                            Délka vodorysky:{{delka}}<br>
+                            Výtlak modelu:{{vytlak}}<br>
+                            Měřítko: 1:{{meritko}}<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="error_log">
+    
+                    </div>
+                    <div class="spacer">
+                        <button @click="second_slide" id="ss_button" class="form_butt" >Pokračovat</button>
+                        <button @click="fifth_slide" id="fs_button" class="form_butt" style="display:none">Pokračovat</button>
+                        <button @click="finish" id="finish_button" class="form_butt" style="display:none">Dokončit</button>
+                    </div>   
+                </div>
+    
+                </div>    
             </div>
-            <div id="Registrace" class="bottom_lines">
-                <div class="bottom_line_nad">Registrace</div>
-                <div class="bottom_line">🗈 <a href='propozice.pdf'>Propozice</a></div>
-                <div class="bottom_line">🗊 <a href="registrace.html">Registrační formulář</a></div>
-            </div>
-            <div id="Kontakt" class="bottom_lines">
-                <div class="bottom_line_nad">Kontakt</div>
-                <div class="bottom_line">🖃 <a href = "mailto:sebastian.walent@gmail.com">sebastian.walent@gmail.com</a></div>
-                <div class="bottom_line">🖃 <a href = "mailto:modelari.slezsko@gmail.com">modelari.slezsko@gmail.com</a></div>
-            </div>
+            <h2>Registrovaní účastníci</h2>
+<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description" width="80%" id="iframeId" height="500px"></iframe>
 
         </div>
+    
+    
+        <!---------------------------------------------------------------------------------------->
+        <form id="secret_form" style="display:none" action="https://dataspracovavac.tode.cz/test.php" method="post">
+            <input type="text"  id="sjmeno"  name="jmeno" >
+            <input type="text" id="sprijemni" name="prijmeni" >
+            <input class="right_check" type="text" id="sjunior" name="junior">
+            <input type="text" id="smail" name="mail" >
+            <input type="text" id="sklub" name="klub">
+            <input type="text" id="slicence" name="licence">
+            <input type="text" id="sstat" list="staty" name="stat" maxlength="3" placeholder="CZE">                
+            <input class="right_check" type="text" id="srg" name="rg">
+            <input class="right_check" type="text" id="skategorie" name="kategorie">
+            <input type="text" id="snazev_modelu" name="nazev_modelu" >
+            <input class="right" type="number" id="sdelka" name="delka"  step="1">
+            <input  type="number" id="splocha" name="plocha" step="0.0001">
+            <input class="right" type="number" id="svytlak" name="vytlak"  step="0.01">
+            <input type="number" id="smeritko" name="meritko" step="0.01">
+            <button id="odesli">send</button>
+        </form>
+    <!-------------------------------------------------------------------------------------------------------------------------------------->
+        
     </body>
-
     <script>
+    
+    (function() {
+        emailjs.init("user_aHSZslb08hBUmqeZ4wJ6L");
+          console.log("init");
+        })();
+    
+        function sendEmail(form)
+        {
+            var templateParams = {
+                jmeno: form.jmeno,
+                prijmeni: form.prijmeni,
+                date:form.date,
+                mail:form.mail,
+                klub:form.klub,
+                licence:form.licence,
+                stat:form.stat,
+                rg:form.rg,
+                kategorie:form.kategorie,
+                nazev:form.nazev,
+                plocha:form.plocha,
+                delka:form.delka,
+                vytlak:form.vytlak,
+                meritko:form.meritko,
+                };
+            emailjs.send('service_w22m9er', 'template_pkbylb9', templateParams)
+            .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+            console.log('FAILED...', error);
+            });
+        }
+    
         var Formular = new Vue({
             el: '#app',
             data: {message: 'Hello Vue!',
@@ -269,18 +232,12 @@
                 second_slide()
                 {
                     
-                    //document.getElementById("first_slide").style.display="none";
-                    //document.getElementById("ss_button").style.display="none";
-                    //document.getElementById("second_slide").style.display="block";
-                    
-                    return
                     if(this.jmeno.length>0 && this.prijmeni.length>0 && this.mail.length>0 && this.stat.length>0)
                     {
                         console.log("here"+this.jmeno);
                         document.getElementById("first_slide").style.display="none";
                         document.getElementById("ss_button").style.display="none";
-                        document.getElementById("second_slide").style.display="flex";
-                        document.getElementById("finish_button").style.display="flex";
+                        document.getElementById("second_slide").style.display="block";
                         el=document.getElementById("error_log");
                         el.innerHTML="";
                     }
@@ -307,7 +264,7 @@
                             str+="Stát nezadán<br>";
                         }
                         el.innerHTML=str;
-                        
+                        return;
                     }
                     
                 },
@@ -317,7 +274,8 @@
                     {
                         document.getElementById("fs_button").style.display="none";
                         document.getElementById("fourth_slide").style.display="none";
-                        document.getElementById("six_slide").style.display="flex";
+                        document.getElementById("finish_button").style.display="block";
+                        document.getElementById("six_slide").style.display="block";
                         el=document.getElementById("error_log");
                         el.innerHTML="";
                     }
@@ -368,6 +326,7 @@
                     }
                     else
                     {
+                        document.getElementById("finish_button").style.display="block";
                         document.getElementById("six_slide").style.display="block";
                         document.getElementById("third_slide").style.display="none";
                         console.log(data);
@@ -375,10 +334,46 @@
                 },
                 finish(data)
                 {
-                    return;
+                    console.log(document.getElementById("sjmeno"));
+                    console.log(document.getElementById("sprijemni"));
+                    console.log(document.getElementById("sjunior"));
+                    console.log(document.getElementById("smail"));
+                    console.log(document.getElementById("sklub"));
+                    console.log(document.getElementById("slicence"));
+                    console.log(document.getElementById("sstat"));
+                    console.log(document.getElementById("srg"));
+                    console.log(document.getElementById("skategorie"));
+                    console.log(document.getElementById("snazev_modelu"));
+                    console.log(document.getElementById("sdelka"));
+                    console.log(document.getElementById("splocha"));
+                    console.log(document.getElementById("svytlak"));
+                    console.log(document.getElementById("smeritko"));
+
+                    document.getElementById("sjmeno").value=this.jmeno;
+                    document.getElementById("sprijemni").value=this.prijmeni;
+                    document.getElementById("sjunior").value=this.date;
+                    document.getElementById("smail").value=this.mail;
+                    document.getElementById("sklub").value=this.klub;
+                    document.getElementById("slicence").value=this.licence;
+                    document.getElementById("sstat").value=this.stat;
+                    document.getElementById("srg").value=this.rg;
+                    document.getElementById("skategorie").value=this.kategorie;
+                     document.getElementById("snazev_modelu").value=this.nazev;
+                    document.getElementById("sdelka").value=this.delka;
+                    document.getElementById("splocha").value=this.plocha;
+                    document.getElementById("svytlak").value=this.vytlak;
+                    document.getElementById("smeritko").value=this.meritko; 
+    
+                    sendEmail(this);
+                    console.log(this);
+                    console.log(this.jmeno);
+                    document.getElementById("six_slide").innerHTML="Děkujeme za registraci! Kopie registrace vám byla odeslána na email.";
+                    document.getElementById("finish_button").style.display="none";
+                    document.getElementById("odesli").click();
                 },
             },
             
         })
     </script>
+    
 </html>
