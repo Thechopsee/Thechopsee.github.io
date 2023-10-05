@@ -1,3 +1,4 @@
+<!-- TODO:Add backend ubytovani -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +48,14 @@
                         <br>
                         <div id="ssecond_slide">
                             <button @click="rgg(true)" id="rgtrue">Ano</button><button @click="rgg(false)" id="rgfalse">Ne</button>
+                        </div>
+                    </div>
+                    <div id="second_and_half_slide" style="display:none">
+                        <h3>Chcete ubytovaní?</h3>
+                        <p>(Budete brzo kontaktovani mailem)</p>
+                        <br>
+                        <div id="ssecond_half_slide">
+                            <button @click="ubyt(true)" id="rgtrue">Ano</button><button @click="ubyt(false)" id="rgfalse">Ne</button>
                         </div>
                     </div>
                     <div id="third_slide" style="display:none">
@@ -186,6 +195,7 @@
                 delka:0,
                 vytlak:0,
                 meritko:0,
+                ubytovani:false,
               },
         methods:{
             second_slide()
@@ -272,7 +282,7 @@
             {
                 this.rg=data;
                 document.getElementById("second_slide").style.display="none";
-                document.getElementById("third_slide").style.display="block";
+                document.getElementById("second_and_half_slide").style.display="block";
             },
             nss(data)
             {
@@ -290,6 +300,12 @@
                     document.getElementById("third_slide").style.display="none";
                     console.log(data);
                 }
+            },
+            ubyt(data)
+            {
+                this.ubytovani=data;
+                document.getElementById("second_and_half_slide").style.display="none";
+                document.getElementById("third_slide").style.display="block";
             },
             finish(data)
             {
