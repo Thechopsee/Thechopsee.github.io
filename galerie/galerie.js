@@ -1,5 +1,9 @@
 //step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
 //krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
+let galerie2023 ={clankyalias:["Drive-Val"],
+clanky:["https://drive.google.com/drive/folders/1wGup31O7Z-RAbWfALy5O8KVlaVV7sUGE?usp=drive_link"],
+key:2023,
+};
 let galerie2022 ={clankyalias:["Rajce-Ferodedek","Drive-Val","Drive-JiříJakubec"],
 clanky:["https://minisail.rajce.idnes.cz/12._Terlicka_plachta_30._09._-_02._10._22/?","https://drive.google.com/drive/folders/1VSYOAUbJJYjVkutYKk-_xaeN9fKaUsuQ?usp=sharing","https://drive.google.com/drive/folders/1ADp1lblpfIwnLGYfA-xfqVesONJfR5cg?usp=share_link"],
 key:2022,
@@ -54,6 +58,7 @@ var galerie_list=[];
 //krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list_g()
 {
+    galerie_list.push(galerie2023);
     galerie_list.push(galerie2022);
     galerie_list.push(galerie2021);
     galerie_list.push(galerie2020);
