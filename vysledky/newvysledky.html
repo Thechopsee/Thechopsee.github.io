@@ -75,6 +75,15 @@
                 pdfObject2.setAttribute('width', '100%');
                 pdfObject2.setAttribute('height', '500px');
 
+                var pdfObject3 = document.createElement('object');
+                pdfObject3.setAttribute('data', soubor+"/"+soubor+"buchreg.pdf");
+                pdfObject3.setAttribute('type', 'application/pdf');
+                pdfObject3.setAttribute('width', '100%');
+                pdfObject3.setAttribute('height', '500px');
+
+                var pdfnamebr = document.createElement('h3');
+                pdfnamebr.innerHTML="Buchta a Regata"
+
                 var pdfnamerg = document.createElement('h3');
                 pdfnamerg.innerHTML="RG650"
 
@@ -105,6 +114,8 @@
                 conta.appendChild(pdfObject);
                 conta.appendChild(pdfnamerg);
                 conta.appendChild(pdfObject2);
+                conta.appendChild(pdfnamebr);
+                conta.appendChild(pdfObject3)
                 conta.appendChild(linkContainer);
                 var linkspacerr=document.createElement('br');
                 linkspacerr.setAttribute("class","spacer")
