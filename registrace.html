@@ -118,6 +118,17 @@
                             <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
                             <br>
                         </div>
+                        <div id="fift_slide" style="display:none">
+                            <div>
+                                <input type="checkbox" id="ubytovaniCheck" name="ubytovani" v-model="ubytovaniC" @click="showPocet">
+                                <label for="ubytovani">Chci ubytování</label>
+                            </div>
+                            <div style="display:none;" id="pocet">
+                                <label for="pocet_osob">Pro kolik osob</label>
+                                <input type="number" id="pocet_osob" name="pocet_osob" min="1" v-model="pocetubyt">
+                            </div>
+                        </div>
+                        
                         <div id="six_slide" style="display:none">
                             <h3>Kontrola zadaných údajů</h3><br><br>
                             <div>
@@ -135,6 +146,8 @@
                             Délka vodorysky:{{delka}}<br>
                             Výtlak modelu:{{vytlak}}<br>
                             Měřítko: 1:{{meritko}}<br>
+                            Ubytovaní: {{ubytovaniC}}<br>
+                            Počet osob: {{pocetubyt}}<br>
                             </div>
                         </div>
                     </div>
@@ -143,7 +156,8 @@
                     </div>
                     <div class="spacer">
                         <p>Registrace Ukončena</p>
-                        <!-- <button @click="second_slide" id="ss_button" class="form_butt" >Pokračovat</button> -->
+                        <button @click="second_slide" id="ss_button" class="form_butt" >Pokračovat</button>
+                        <button @click="ubytovani" id="ubyt_button" class="form_butt" style="display:none">Pokračovat</button>
                         <button @click="fifth_slide" id="fs_button" class="form_butt" style="display:none">Pokračovat</button>
                         <button @click="finish" id="finish_button" class="form_butt" style="display:none">Dokončit</button>
                     </div>   
@@ -173,6 +187,9 @@
             <input  type="number" id="splocha" name="plocha" step="0.0001">
             <input class="right" type="number" id="svytlak" name="vytlak"  step="0.01">
             <input type="number" id="smeritko" name="meritko" step="0.01">
+            <input type="text" id="subytovaniCheck" name="ubytovanic" >
+            <input type="number" id="spocet_osob" name="pocet_osob" min="0">
+            
             <button id="odesli">send</button>
         </form>
     <!-------------------------------------------------------------------------------------------------------------------------------------->
@@ -228,8 +245,21 @@
                     delka:0,
                     vytlak:0,
                     meritko:0,
+                    ubytovaniC:false,
+                    pocetubyt:0
                   },
             methods:{
+                showPocet()
+                {
+                    document.getElementById("pocet").style.display="block";
+                    this.pocetubyt=1;
+                    if(this.ubytovaniC)
+                    {
+                        document.getElementById("pocet").style.display="none";
+                        this.pocetubyt=0;
+                    }
+
+                },
                 second_slide()
                 {
                     
@@ -275,8 +305,10 @@
                     {
                         document.getElementById("fs_button").style.display="none";
                         document.getElementById("fourth_slide").style.display="none";
-                        document.getElementById("finish_button").style.display="block";
-                        document.getElementById("six_slide").style.display="block";
+                        document.getElementById("fift_slide").style.display="block";
+                        document.getElementById("ubyt_button").style.display="block";
+                        //document.getElementById("finish_button").style.display="block";
+                        //document.getElementById("six_slide").style.display="block";
                         el=document.getElementById("error_log");
                         el.innerHTML="";
                     }
@@ -327,11 +359,20 @@
                     }
                     else
                     {
-                        document.getElementById("finish_button").style.display="block";
-                        document.getElementById("six_slide").style.display="block";
+                        document.getElementById("fift_slide").style.display="block";
+                        document.getElementById("ubyt_button").style.display="block";
+                        //document.getElementById("finish_button").style.display="block";
+                        //document.getElementById("six_slide").style.display="block";
                         document.getElementById("third_slide").style.display="none";
                         console.log(data);
                     }
+                },
+                ubytovani()
+                {
+                    document.getElementById("fift_slide").style.display="none";
+                    document.getElementById("ubyt_button").style.display="none";
+                    document.getElementById("finish_button").style.display="block";
+                    document.getElementById("six_slide").style.display="block";
                 },
                 finish(data)
                 {
@@ -349,6 +390,8 @@
                     console.log(document.getElementById("splocha"));
                     console.log(document.getElementById("svytlak"));
                     console.log(document.getElementById("smeritko"));
+                    console.log(document.getElementById(""));
+                    console.log(document.getElementById("smeritko"));
 
                     document.getElementById("sjmeno").value=this.jmeno;
                     document.getElementById("sprijemni").value=this.prijmeni;
@@ -364,6 +407,8 @@
                     document.getElementById("splocha").value=this.plocha;
                     document.getElementById("svytlak").value=this.vytlak;
                     document.getElementById("smeritko").value=this.meritko; 
+                    document.getElementById("spocet_osob").value=this.pocetubyt;
+                    document.getElementById("subytovaniCheck").value=this.ubytovaniC;
     
                     sendEmail(this);
                     console.log(this);
