@@ -2,22 +2,18 @@
     <head>
         <link rel="stylesheet" href="styl.css"/>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width", initial-scale="1">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script defer src="js/kontakt.js"></script>
+        <script defer src="js/frontInicializer.js"></script>
     </head>
-    <body>
-
+    <body onload="initMenu()">
         <img src="./logos/logo.svg" width="100%" id="logo">
         <img src="./logos/logomobile.svg" width="100%" id="mobile_logo">
-        <menu id="menu_web">
-            <a href="./index.html">Těrlická plachta 2024</a> | <a href="./historie.html">Historie</a> | <a href="./registrace.html">Registrace</a> | <a href="./kontakty.html">Kontakt</a>            
-        </menu>
-        <menu id="menu_mob">
-            <a href="./index.html">Těrlická plachta 2024</a> <a href="./historie.html">Historie</a> <a href="./registrace.html">Registrace</a> <a href="./kontakty.html">Kontakt</a>            
-        </menu>
-        
+        <div id="menu_block">
+        </div>
        
         <!--<div id="kont_spacer"> </div>-->
         <div class="spacer">
@@ -75,14 +71,6 @@
           </div>
         </div>
         </div>
-        <!--
-          <div id="pc_galerie">
-            <div id="kontakty_blok">
-              Správce webu: <a href = "mailto:sebastian.walent@gmail.com">sebastian.walent@gmail.com</a><br><br>
-              Klub: <a href = "mailto:modelari.slezsko@gmail.com">modelari.slezsko@gmail.com</a><br>
-              </div>
-          </div>
-        -->
         
         <div class="footer">
             <div id="Co" class="bottom_lines">

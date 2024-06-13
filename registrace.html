@@ -2,26 +2,20 @@
     <head>
         <link rel="stylesheet" href="styl.css"/>
         <link rel="stylesheet" href="testprihlasky\styleee.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
         <script defer src="js/odpocet.js"></script>
-        <!-- <script defer src="js/registrace.js"></script> -->
+        <script defer src="js/frontInicializer.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <meta name="viewport" content="width=device-width", initial-scale="1">
 
     </head>
-    <body>
-
+    <body onload="initMenu()">
         <img src="./logos/logo.svg" width="100%" id="logo">
         <img src="./logos/logomobile.svg" width="100%" id="mobile_logo">
-        <menu id="menu_web">
-            <a href="./index.html">Těrlická plachta 2024</a> | <a href="./historie.html">Historie</a> | <a href="./registrace.html">Registrace</a> | <a href="./kontakty.html">Kontakt</a>            
-        </menu>
-        <menu id="menu_mob">
-            <a href="./index.html">Těrlická plachta 2024</a> <a href="./historie.html">Historie</a> <a href="./registrace.html">Registrace</a> <a href="./kontakty.html">Kontakt</a>            
-        </menu>
-
-
+        <div id="menu_block">
+        </div>
         
         <div class="counter" id="counter">
             <h2>Zbývající</h2>

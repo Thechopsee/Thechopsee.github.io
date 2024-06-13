@@ -1,12 +1,12 @@
 html {
   scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   background-color: #303b4a;
   color: #45cece;
   text-align: center;
   margin: 0px;
-
 }
 #first_slide{
   text-align: center;
@@ -68,9 +68,6 @@ body {
 a{
   color: #dadfe4;
   text-decoration: none;
-}
-html {
-  font-family: "Century Gothic", CenturyGothic;
 }
 menu a {
   color: #dadfe4;
@@ -271,7 +268,10 @@ p{
 #menu_mob{
   display: none;
 }
- 
+menu{
+  padding: 0% !important;
+  padding-inline-start: 0 !important;
+}
 @media only screen and (hover:none) and (pointer:coarse){ 
   #logo{
     display: none;
@@ -280,6 +280,10 @@ p{
     display:flex;
     flex-direction: column;
     padding: 0;
+  }
+  menu{
+    padding: 0% !important;
+    padding-inline-start: 0 !important;
   }
   #menu_web{
     display: none;
@@ -310,9 +314,6 @@ p{
   }
   #mobil_galerie{
     display: block;
-  }
-  #pc_galerie{
-    display: none;
   }
 }
 #odeslat{
