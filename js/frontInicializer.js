@@ -24,7 +24,7 @@ function initFooter()
 
     const contentContainer = document.getElementById('footer');
     console.log(contentContainer);
-    // Data pro sekci "Co"
+
     const coLines = [
         { className: 'bottom_line_nad', content: 'Co? Kdy? Kde?' },
         { className: 'bottom_line', content: '💡 Setkání plachetnic třídy NSS - A,B,C,RG-650' },
@@ -34,7 +34,6 @@ function initFooter()
     const coSection = createBottomLines('Co', coLines);
     contentContainer.appendChild(coSection);
 
-    // Data pro sekci "Registrace"
     const registraceLines = [
         { className: 'bottom_line_nad', content: 'Registrace' },
         { className: 'bottom_line', content: '🗈 <a href="propozice.pdf">Propozice</a>' },
@@ -43,7 +42,6 @@ function initFooter()
     const registraceSection = createBottomLines('Registrace', registraceLines);
     contentContainer.appendChild(registraceSection);
 
-    // Data pro sekci "Kontakt"
     const kontaktLines = [
         { className: 'bottom_line_nad', content: 'Kontakt' },
         { className: 'bottom_line', content: '🖃 <a href="mailto:sebastian.walent@gmail.com">sebastian.walent@gmail.com</a>' },

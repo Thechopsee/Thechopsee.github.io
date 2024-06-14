@@ -100,7 +100,13 @@ header {
   gap: 4%;
 
 }
+.info_text_2
+{
+  margin-left: 21.5%;
+  margin-right: 21.5%;
+}
 #info_text_1a {
+  margin-left: 45%;
   text-align: right !important;
 }
 #info_text_1a h3{
@@ -117,6 +123,7 @@ header {
 }
 
 #info_text_1b {
+  margin-right: 45%;
   text-align: left;
 }
 .formular {
@@ -380,4 +387,14 @@ menu{
   flex-direction: column;
   padding-left: 10%;
 }
+}
+
+.material-box {
+  background-color: #dadfe4;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+
 }
