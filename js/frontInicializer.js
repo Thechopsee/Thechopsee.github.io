@@ -1,10 +1,75 @@
 function initFront()
 {
+    initLogo();
     initMenu();
+    initFooter();
+    prepareModal();
+}
+function initFooter()
+{
+    function createBottomLines(id, lines) {
+        const container = document.createElement('div');
+        container.id = id;
+        container.className = 'bottom_lines';
+
+        lines.forEach(line => {
+            const div = document.createElement('div');
+            div.className = line.className;
+            div.innerHTML = line.content;
+            container.appendChild(div);
+        });
+
+        return container;
+    }
+
+    const contentContainer = document.getElementById('footer');
+    console.log(contentContainer);
+    // Data pro sekci "Co"
+    const coLines = [
+        { className: 'bottom_line_nad', content: 'Co? Kdy? Kde?' },
+        { className: 'bottom_line', content: '💡 Setkání plachetnic třídy NSS - A,B,C,RG-650' },
+        { className: 'bottom_line', content: '🕘 29.9.-1.10.2023' },
+        { className: 'bottom_line', content: '🗺 RS Vyhlídka Těrlicko' }
+    ];
+    const coSection = createBottomLines('Co', coLines);
+    contentContainer.appendChild(coSection);
+
+    // Data pro sekci "Registrace"
+    const registraceLines = [
+        { className: 'bottom_line_nad', content: 'Registrace' },
+        { className: 'bottom_line', content: '🗈 <a href="propozice.pdf">Propozice</a>' },
+        { className: 'bottom_line', content: '🗊 <a href="registrace.html">Registrační formulář</a>' }
+    ];
+    const registraceSection = createBottomLines('Registrace', registraceLines);
+    contentContainer.appendChild(registraceSection);
+
+    // Data pro sekci "Kontakt"
+    const kontaktLines = [
+        { className: 'bottom_line_nad', content: 'Kontakt' },
+        { className: 'bottom_line', content: '🖃 <a href="mailto:sebastian.walent@gmail.com">sebastian.walent@gmail.com</a>' },
+        { className: 'bottom_line', content: '🖃 <a href="mailto:modelari.slezsko@gmail.com">modelari.slezsko@gmail.com</a>' }
+    ];
+    const kontaktSection = createBottomLines('Kontakt', kontaktLines);
+    contentContainer.appendChild(kontaktSection);
+}
+function initLogo()
+{
+    const logo = document.createElement('img');
+    logo.src = './logos/logo.svg';
+    logo.width = '100%';
+    logo.id = 'logo';
+
+    const mobileLogo = document.createElement('img');
+    mobileLogo.src = './logos/logomobile.svg';
+    mobileLogo.width = '100%';
+    mobileLogo.id = 'mobile_logo';
+
+    const imageContainer = document.getElementById('logo_block');
+    imageContainer.appendChild(logo);
+    imageContainer.appendChild(mobileLogo);
 }
 function initMenu()
 {
-    // Vytvoření položek menu
     const menuItems = [
         { href: "./index.html", text: "Těrlická plachta 2024" },
         { href: "./historie.html", text: "Historie" },
@@ -30,9 +95,25 @@ function initMenu()
     
         return menu;
     }
-    //document.body.appendChild(createMenu("menu_web", menuItems));
-    //document.body.appendChild(createMenu("menu_mob", menuItems, " "));
   
     document.getElementById("menu_block").appendChild(createMenu("menu_web", menuItems))
     document.getElementById("menu_block").appendChild(createMenu("menu_mob", menuItems, " "));
+}
+
+function prepareModal()
+{
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var pole_obrazku = document.getElementsByClassName("myImg");
+for(var i=0;i<pole_obrazku.length;i++)
+{
+    pole_obrazku[i].onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        }
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+  }
 }
