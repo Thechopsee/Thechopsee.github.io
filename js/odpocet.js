@@ -1,4 +1,4 @@
-const finaleDate = new Date("September 24, 2023 00:00:00").getTime();
+const finaleDate = new Date("September 24, 2024 00:00:00").getTime();
 
 var going=true;
 function timer (){
