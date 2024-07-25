@@ -30,8 +30,6 @@ body {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-left: 20%;
-  padding-right: 20%;
   gap: 1.5%;
 }
 #fourth_slide{

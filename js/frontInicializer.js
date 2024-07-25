@@ -101,6 +101,10 @@ function initMenu()
 function prepareModal()
 {
 var modal = document.getElementById("myModal");
+if(modal ==null)
+{
+    return;
+}
 var modalImg = document.getElementById("img01");
 var pole_obrazku = document.getElementsByClassName("myImg");
 for(var i=0;i<pole_obrazku.length;i++)
