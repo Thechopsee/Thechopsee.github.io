@@ -1,8 +1,8 @@
 //step 1.create new object where: clankyalias are text used in buttons on web page,clanky are links used as href on buttons and key is used for find exact object.
 //krok 1.Vytvořit nový objekt ,kde clankyalias budou aliasy použité jako text tlačítek,clanky jsou pole linků na ,které tyto tlačítka budou ukazovat a key sloučí k nalezení správného objektu při zpracovaní. 
 
-let galerie2024 ={clankyalias:["Youtube-Jiří Muclinger","Video-Polar","Rajce-ferodedek","Video-Petr Staněk"],
-  clanky:["https://youtu.be/CM5oRtg5olM?feature=shared","https://polar.cz/index.php/zpravy/moravskoslezsky-kraj/cely-ms-kraj/11000045241/lodni-modelari-soutezili-na-prehrade-v-zavode-terlicka-plachta","https://www.rajce.idnes.cz/album/JiJysRZxaYkpVTrx?","https://www.facebook.com/61558716742289/videos/1052083829681200/"],
+let galerie2024 ={clankyalias:["Youtube-Jiří Muclinger","Video-Polar","Rajce-ferodedek","Video-Petr Staněk","Drive-Val"],
+  clanky:["https://youtu.be/CM5oRtg5olM?feature=shared","https://polar.cz/index.php/zpravy/moravskoslezsky-kraj/cely-ms-kraj/11000045241/lodni-modelari-soutezili-na-prehrade-v-zavode-terlicka-plachta","https://www.rajce.idnes.cz/album/JiJysRZxaYkpVTrx?","https://www.facebook.com/61558716742289/videos/1052083829681200/","https://drive.google.com/drive/folders/1Og-qtfF3meH31QkNbqLy815w8R8B1yld?usp=sharing"],
   key:2024,
   };
 let galerie2023 ={clankyalias:["Drive-Val","Video-seb"],
@@ -63,6 +63,7 @@ var galerie_list=[];
 //krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list_g()
 {
+    galerie_list.push(galerie2024);
     galerie_list.push(galerie2023);
     galerie_list.push(galerie2022);
     galerie_list.push(galerie2021);
