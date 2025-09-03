@@ -299,7 +299,7 @@
                 },
                 fifth_slide()
                 {
-                    if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0)
+                    if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0 && this.kategorie.length<0 && this.kategorie!="vyber")
                     {
                         document.getElementById("fs_button").style.display="none";
                         document.getElementById("fourth_slide").style.display="none";
@@ -316,6 +316,10 @@
                         el=document.getElementById("error_log");
                         el.innerHTML="";
                         let str="";
+                        if(this.kategorie.length<=0 || this.kategorie=="vyber")
+                        {
+                            str+="Kategorie nezvolena<br>";
+                        }
                         if(this.nazev.length<=0)
                         {
                             str+="Název modelu nezadán<br>";
