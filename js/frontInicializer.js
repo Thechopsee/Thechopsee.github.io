@@ -28,7 +28,7 @@ function initFooter()
     const coLines = [
         { className: 'bottom_line_nad', content: 'Co? Kdy? Kde?' },
         { className: 'bottom_line', content: '💡 Setkání plachetnic třídy NSS - A,B,C,RG-650' },
-        { className: 'bottom_line', content: '🕘 26.-28.9.2025' },
+        { className: 'bottom_line', content: '🕘 25.-27.9.2026' },
         { className: 'bottom_line', content: '🗺 RS Vyhlídka Těrlicko' }
     ];
     const coSection = createBottomLines('Co', coLines);
@@ -69,7 +69,7 @@ function initLogo()
 function initMenu()
 {
     const menuItems = [
-        { href: "./index.html", text: "Těrlická plachta 2025" },
+        { href: "./index.html", text: "Těrlická plachta 2026" },
         { href: "./historie.html", text: "Historie" },
         { href: "./registrace.html", text: "Registrace" },
         { href: "./kontakty.html", text: "Kontakt" }
