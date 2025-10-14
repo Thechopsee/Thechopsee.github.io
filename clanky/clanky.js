@@ -67,6 +67,7 @@ var clanky_list=[];
 //krok 2.přidat objekt do listu.Funkce se spustí při načtení těla stránky.
 function build_list()
 {
+    clanky_list.push(clanky2025);
     clanky_list.push(clanky2024);
     clanky_list.push(clanky2023);
     clanky_list.push(clanky2022);
