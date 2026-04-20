@@ -12,24 +12,6 @@
 	];
 	const nssCategories = ['NSS-A', 'NSS-B', 'NSS-C'];
 	const isoOptions = ['CZE', 'SVK', 'PLN', 'OTHER'];
-	const initialRegistrants = [
-		{
-			name: 'Jan Novak',
-			age: 'S',
-			country: 'CZE',
-			nss: 'NSS-B / Albatros',
-			rg: '-',
-			footy: '-'
-		},
-		{
-			name: 'Marek Hlinka',
-			age: 'J',
-			country: 'SVK',
-			nss: '-',
-			rg: 'ano',
-			footy: '-'
-		}
-	];
 
 	const createInitialForm = () => ({
 		firstName: '',
@@ -63,7 +45,6 @@
 	/** @type {string[]} */
 	let errors = $state([]);
 	let submitted = $state(false);
-	let registrants = $state([...initialRegistrants]);
 	let countdown = $state(getCountdown());
 
 	const registrationClosed = $derived(countdown.closed);
@@ -284,10 +265,13 @@
 			formData.append('ubytovanic', String(form.accommodation));
 			formData.append('pocet_osob', String(form.accommodation ? form.accommodationPersons : 0));
 
-			await fetch('https://dataspracovavac.tode.cz/test.php', {
+			// We use mode: 'no-cors' because the destination server (Tode.cz)
+			// likely doesn't have CORS headers configured for our local/new origin.
+			// This means we can't read the response body, but the request will be sent.
+			await fetch('https://dataspracovavac.tode.cz/savetdb.php', {
 				method: 'POST',
 				body: formData,
-				mode: 'no-cors' // Mimic traditional form submission
+				mode: 'no-cors'
 			});
 
 			submitted = true;
