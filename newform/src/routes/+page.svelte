@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import emailjs from '@emailjs/browser';
 
 	const registrationDeadline = new Date(2026, 8, 22, 23, 59, 59);
 	const steps = [
@@ -11,24 +12,6 @@
 	];
 	const nssCategories = ['NSS-A', 'NSS-B', 'NSS-C'];
 	const isoOptions = ['CZE', 'SVK', 'PLN', 'OTHER'];
-	const initialRegistrants = [
-		{
-			name: 'Jan Novak',
-			age: 'S',
-			country: 'CZE',
-			nss: 'NSS-B / Albatros',
-			rg: '-',
-			footy: '-'
-		},
-		{
-			name: 'Marek Hlinka',
-			age: 'J',
-			country: 'SVK',
-			nss: '-',
-			rg: 'ano',
-			footy: '-'
-		}
-	];
 
 	const createInitialForm = () => ({
 		firstName: '',
@@ -59,9 +42,9 @@
 
 	let step = $state(0);
 	let form = $state(createInitialForm());
+	/** @type {string[]} */
 	let errors = $state([]);
 	let submitted = $state(false);
-	let registrants = $state([...initialRegistrants]);
 	let countdown = $state(getCountdown());
 
 	const registrationClosed = $derived(countdown.closed);
@@ -97,10 +80,16 @@
 		};
 	}
 
+	/** @param {number} value */
 	function formatCounter(value) {
 		return String(value).padStart(2, '0');
 	}
 
+	/**
+	 * @param {boolean} condition
+	 * @param {string} message
+	 * @param {string[]} bucket
+	 */
 	function addError(condition, message, bucket) {
 		if (condition) {
 			bucket.push(message);
@@ -108,6 +97,7 @@
 	}
 
 	function validateCurrentStep(currentStep = step) {
+		/** @type {string[]} */
 		const bucket = [];
 
 		if (registrationClosed) {
@@ -226,15 +216,70 @@
 		};
 	}
 
-	function submitForm() {
+	async function submitForm() {
 		if (!validateCurrentStep(4)) {
 			step = 4;
 			return;
 		}
 
-		registrants = [buildRegistrantRow(), ...registrants];
-		submitted = true;
-		errors = [];
+		try {
+			// EmailJS initialization
+			emailjs.init("user_aHSZslb08hBUmqeZ4wJ6L");
+
+			const templateParams = {
+				jmeno: form.firstName,
+				prijmeni: form.lastName,
+				date: form.ageGroup === '17-',
+				mail: form.email,
+				klub: form.club,
+				licence: form.license,
+				stat: countryCode,
+				rg: form.attendsRg,
+				kategorie: form.attendsNss ? form.nssCategory : '',
+				nazev: form.attendsNss ? form.nssBoatName : '',
+				plocha: form.attendsNss ? form.nssSailArea : 0,
+				delka: form.attendsNss ? form.nssWaterline : 0,
+				vytlak: form.attendsNss ? form.nssDisplacement : 0,
+				meritko: form.attendsNss ? form.nssScale : 0,
+				ubytovani: form.accommodation,
+				pocetubyt: form.accommodation ? form.accommodationPersons : 0
+			};
+
+			await emailjs.send('service_o9fsa61', 'template_pkbylb9', templateParams);
+
+			const formData = new FormData();
+			formData.append('jmeno', form.firstName);
+			formData.append('prijmeni', form.lastName);
+			formData.append('junior', String(form.ageGroup === '17-'));
+			formData.append('mail', form.email);
+			formData.append('klub', form.club);
+			formData.append('licence', form.license);
+			formData.append('stat', countryCode);
+			formData.append('rg', String(form.attendsRg));
+			formData.append('kategorie', form.attendsNss ? form.nssCategory : '');
+			formData.append('nazev_modelu', form.attendsNss ? form.nssBoatName : '');
+			formData.append('delka', String(form.attendsNss ? form.nssWaterline : 0));
+			formData.append('plocha', String(form.attendsNss ? form.nssSailArea : 0));
+			formData.append('vytlak', String(form.attendsNss ? form.nssDisplacement : 0));
+			formData.append('meritko', String(form.attendsNss ? form.nssScale : 0));
+			formData.append('ubytovanic', String(form.accommodation));
+			formData.append('pocet_osob', String(form.accommodation ? form.accommodationPersons : 0));
+
+			// We use mode: 'no-cors' because the destination server (Tode.cz)
+			// likely doesn't have CORS headers configured for our local/new origin.
+			// This means we can't read the response body, but the request will be sent.
+			await fetch('https://dataspracovavac.tode.cz/savetdb.php', {
+				method: 'POST',
+				body: formData,
+				mode: 'no-cors'
+			});
+
+			submitted = true;
+			errors = [];
+		} catch (e) {
+			errors = ['Omlouváme se, při odesílání došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte.'];
+			console.error(e);
+		}
 	}
 
 	function resetForm() {
@@ -296,7 +341,7 @@
 				Záznam jsem přidal do přehledu níže. Frontend je připravený na napojení skutečného
 				odeslání e-mailu i editace registrace přes odkaz.
 			</p>
-			<button class="secondary" type="button" on:click={resetForm}>Vyplnit další registraci</button>
+			<button class="secondary" type="button" onclick={resetForm}>Vyplnit další registraci</button>
 		</section>
 	{:else}
 		<section class="form-card">
@@ -306,7 +351,7 @@
 						type="button"
 						class:active={index === step}
 						class:done={index < step}
-						on:click={() => {
+						onclick={() => {
 							if (index <= step) {
 								errors = [];
 								step = index;
@@ -618,16 +663,16 @@
 			</div>
 
 			<div class="actions">
-				<button class="secondary" disabled={step === 0} type="button" on:click={previousStep}>
+				<button class="secondary" disabled={step === 0} type="button" onclick={previousStep}>
 					Zpět
 				</button>
 
 				{#if step < steps.length - 1}
-					<button class="primary" disabled={registrationClosed} type="button" on:click={nextStep}>
+					<button class="primary" disabled={registrationClosed} type="button" onclick={nextStep}>
 						Pokračovat
 					</button>
 				{:else}
-					<button class="primary" disabled={registrationClosed} type="button" on:click={submitForm}>
+					<button class="primary" disabled={registrationClosed} type="button" onclick={submitForm}>
 						Odeslat registraci
 					</button>
 				{/if}
@@ -638,37 +683,10 @@
 	<section class="table-card">
 		<div class="section-heading">
 			<h2>Soupiska registrovaných závodníků</h2>
-			<p>
-				Tahle tabulka je připravená pro budoucí napojení na reálná data. Teď zobrazuje ukázkové
-				záznamy a nově odeslané registrace z aktuální relace.
-			</p>
 		</div>
 
-		<div class="table-wrap">
-			<table>
-				<thead>
-					<tr>
-						<th>Jméno a příjmení</th>
-						<th>Věk</th>
-						<th>Stát</th>
-						<th>NSS</th>
-						<th>RG</th>
-						<th>Footy</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each registrants as registrant}
-						<tr>
-							<td>{registrant.name}</td>
-							<td>{registrant.age}</td>
-							<td>{registrant.country}</td>
-							<td>{registrant.nss}</td>
-							<td>{registrant.rg}</td>
-							<td>{registrant.footy}</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
+		<div class="table-wrap" style="text-align: center;">
+			<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="Registrovaní účastníci" width="100%" height="600px" style="border: none;"></iframe>
 		</div>
 	</section>
 </div>
