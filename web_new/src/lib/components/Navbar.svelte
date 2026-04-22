@@ -15,6 +15,8 @@
 		<span class="sep">|</span>
 		<a href="/historie.html">Historie</a>
 		<span class="sep">|</span>
+		<a href="/vysledky" class:active={page.url.pathname === '/vysledky'}>Výsledky</a>
+		<span class="sep">|</span>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<span class="sep">|</span>
 		<a href="/kontakty.html">Kontakt</a>
@@ -22,6 +24,7 @@
 	<nav id="menu_mob">
 		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
 		<a href="/historie.html">Historie</a>
+		<a href="/vysledky" class:active={page.url.pathname === '/vysledky'}>Výsledky</a>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<a href="/kontakty.html">Kontakt</a>
 	</nav>
