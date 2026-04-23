@@ -17,13 +17,13 @@
 		<span class="sep">|</span>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<span class="sep">|</span>
-		<a href="/kontakty.html">Kontakt</a>
+		<a href="/kontakty" class:active={page.url.pathname === '/kontakty'}>Kontakt</a>
 	</nav>
 	<nav id="menu_mob">
 		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
 		<a href="/historie.html">Historie</a>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
-		<a href="/kontakty.html">Kontakt</a>
+		<a href="/kontakty" class:active={page.url.pathname === '/kontakty'}>Kontakt</a>
 	</nav>
 </div>
 
