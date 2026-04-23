@@ -3,11 +3,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styl.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <!-- <script defer src="galerie/galerie.js"></script> -->
         <link rel="shortcut icon" type="image/png" href="favicon.png"/>
         <script defer src="clanky/clanky.js"></script>
         <script defer src="js/frontInicializer.js"></script>
         <script defer src="js/galerie.js"></script>
+        <script defer src="js/historie.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body onload="initFront()">
@@ -16,317 +16,47 @@
         <div id="menu_block">
         </div>
         <div>
-            <h2 >Historie</h2>
+            <h2>Historie</h2>
             <p>Portské, buček, soudek rumu. A tak to všechno začalo...</p>
         </div>
         
-        <div class="cara_wraper"><div class="spacer" id="yearmenu"><a href="#2023" class="his_nav_button">2023</a><a href="#2022" class="his_nav_button">2022</a><a href="#2021" class="his_nav_button">2021</a><a href="#2020" class="his_nav_button">2020</a><a href="#2019" class="his_nav_button">2019</a><a href="#2018" class="his_nav_button">2018</a><a href="#2017" class="his_nav_button">2017</a><a href="#2016" class="his_nav_button">2016</a><a href="#2015" class="his_nav_button">2015</a><a href="#2014" class="his_nav_button">2014</a><a href="#2013" class="his_nav_button">2013</a><a href="#2012" class="his_nav_button">2012</a><a href="#2011" class="his_nav_button">2011</a></div></div>
-       <div id="pc_galerie">
-        <div id="2025" class="fotky_frame">
-            <h3>2025</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2025/2025_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2025/2025_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-
-                <img src="galerie/fotky/2025/2025_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2025/2025_4.jpg" width="100%" id="myImg3" class="myImg">
-                
-                <img src="galerie/fotky/2025/2025_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2025/2025_6.jpg" width="100%" id="myImg5" class="myImg">
-
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2025" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2025" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2025" ><a href="vysledky/newvysledky.html?soubor=2025">Vysledky ↧</a></button></div>
-            <div id="center">
-                <div id="2025place" class="clanky_place"></div>
+        <div class="cara_wraper">
+            <div class="spacer" id="yearmenu">
             </div>
         </div>
-        <div id="2024" class="fotky_frame">
-            <h3>2024</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2024/2024_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2024/2024_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
+        <div id="pc_galerie">
+        </div>
 
-                <img src="galerie/fotky/2024/2024_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2024/2024_4.jpg" width="100%" id="myImg3" class="myImg">
-                
-                <img src="galerie/fotky/2024/2024_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2024/2024_6.jpg" width="100%" id="myImg5" class="myImg">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
 
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2024" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2024" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2024" ><a href="vysledky/newvysledky.html?soubor=2024">Vysledky ↧</a></button></div>
-            <div id="center">
-                <div id="2024place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2023" class="fotky_frame">
-            <h3>2023</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2023/2023_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2023/2023_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Nahoru</button>
+        <script>
+            var mybutton = document.getElementById("myBtn");
 
-                <img src="galerie/fotky/2023/2023_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2023/2023_4.jpg" width="100%" id="myImg3" class="myImg">
-                
-                <img src="galerie/fotky/2023/2023_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2023/2023_6.jpg" width="100%" id="myImg5" class="myImg">
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
 
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2023" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2023" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2023" ><a href="vysledky/newvysledky.html?soubor=2023">Vysledky ↧</a></button></div>
-            <div id="center">
-                <div id="2023place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2022" class="fotky_frame">
-            <h3>2022</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2022/2022_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2022/2022_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
 
-                <img src="galerie/fotky/2022/2022_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2022/2022_4.jpg" width="100%" id="myImg3" class="myImg">
-                
-                <img src="galerie/fotky/2022/2022_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2022/2022_6.jpg" width="100%" id="myImg5" class="myImg">
-
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2022" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2022" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2022" onclick="down_vysledky(this)"><a href="vysledky.html">Vysledky ↧</a></button></div>
-            <div id="center">
-                <div id="2022place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2021" class="fotky_frame">
-            <h3>2021</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2021/2021_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2021/2021_2.png" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-
-                <img src="galerie/fotky/2021/2021_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2021/2021_4.jpg" width="100%" id="myImg3" class="myImg">
-                
-                <img src="galerie/fotky/2021/2021_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2021/2021_6.jpg" width="100%" id="myImg5" class="myImg">
-
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2021" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2021" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2021" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-            <div id="center">
-                <div id="2021place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2020" class="fotky_frame">
-            <h3>2020</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2020/2020_1.jpg" width="100%" id="myImg0" class="myImg" ></div>
-                <div class="main_right"><img src="galerie/fotky/2020/2020_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2020/2020_3.jpg" width="100%" id="myImg2" class="myImg" >
-                <img src="galerie/fotky/2020/2020_4.jpg" width="100%" id="myImg3" class="myImg" >
-                <img src="galerie/fotky/2020/2020_5.jpg" width="100%" id="myImg4" class="myImg" >
-                <img src="galerie/fotky/2020/2020_6.jpg" width="100%" id="myImg5" class="myImg" >
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2020" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2020" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2020" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-            <div id="center">
-                <div id="2020place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2019" class="fotky_frame">
-            <h3>2019</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2019/2019_1.jpg" width="100%" id="myImg0" class="myImg" ></div>
-                <div class="main_right"><img src="galerie/fotky/2019/2019_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2019/2019_3.jpg" width="100%" id="myImg2" class="myImg" >
-                <img src="galerie/fotky/2019/2019_4.jpg" width="100%" id="myImg3" class="myImg" >
-                <img src="galerie/fotky/2019/2019_5.jpg" width="100%" id="myImg4" class="myImg" >
-                <img src="galerie/fotky/2019/2019_6.jpg" width="100%" id="myImg5" class="myImg" >
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2019" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2019" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2019" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-            <div id="center">
-                <div id="2019place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2018" class="fotky_frame">
-            <h3>2018</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2018/2018_1.jpg" width="100%" id="myImg0" class="myImg" ></div>
-                <div class="main_right"><img src="galerie/fotky/2018/2018_2.jpg" width="100%" id="myImg1"class="myImg"  ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2018/2018_3.jpg" width="100%" id="myImg2" class="myImg" >
-                <img src="galerie/fotky/2018/2018_4.jpg" width="100%" id="myImg3" class="myImg" >
-                <img src="galerie/fotky/2018/2018_5.jpg" width="100%" id="myImg4" class="myImg" >
-                <img src="galerie/fotky/2018/2018_6.jpg" width="100%" id="myImg5" class="myImg" >
-            </div>
-                <div class="spacer galery_link"><button class="galery_butt" id="clanky-2018" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2018" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2018" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2018place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2017" class="fotky_frame">
-            <h3>2017</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2017/2017_1.jpg" width="100%" id="myImg0" class="myImg" ></div>
-                <div class="main_right"><img src="galerie/fotky/2017/2017_2.jpg" width="100%" id="myImg1"class="myImg"  ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2017/2017_3.jpg" width="100%" id="myImg2" class="myImg" >
-                <img src="galerie/fotky/2017/2017_4.jpg" width="100%" id="myImg3" class="myImg" >
-                <img src="galerie/fotky/2017/2017_5.jpg" width="100%" id="myImg4" class="myImg" >
-                <img src="galerie/fotky/2017/2017_6.jpg" width="100%" id="myImg5" class="myImg" >
-            </div>
-             <div class="spacer galery_link"><button class="galery_butt" id="clanky-2017" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2017" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2017" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2017place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2016" class="fotky_frame">
-            <h3>2016</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2016/2016_1.jpg" width="100%" id="myImg0" class="myImg" ></div>
-                <div class="main_right"><img src="galerie/fotky/2016/2016_2.jpg" width="100%" id="myImg1"class="myImg"  ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2016/2016_3.jpg" width="100%" id="myImg2" class="myImg" >
-                <img src="galerie/fotky/2016/2016_4.jpg" width="100%" id="myImg3" class="myImg" >
-                <img src="galerie/fotky/2016/2016_5.jpg" width="100%" id="myImg4" class="myImg" >
-                <img src="galerie/fotky/2016/2016_6.jpg" width="100%" id="myImg5" class="myImg" >
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2016" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2016" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2016" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2016place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2015" class="fotky_frame">
-            <h3>2015</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2015/2015_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2015/2015_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2015/2015_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2015/2015_4.jpg" width="100%" id="myImg3" class="myImg">
-                <img src="galerie/fotky/2015/2015_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2015/2015_6.jpg" width="100%" id="myImg5" class="myImg">
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2015" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2015" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2015" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2015place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2014" class="fotky_frame">
-            <h3>2014</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2014/2014_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2014/2014_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2014/2014_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2014/2014_4.jpg" width="100%" id="myImg3" class="myImg">
-                <img src="galerie/fotky/2014/2014_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2014/2014_6.jpg" width="100%" id="myImg5" class="myImg">
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2014" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2014" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2014" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2014place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2013" class="fotky_frame">
-            <h3>2013</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2013/2013_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2013/2013_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2013/2013_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2013/2013_4.jpg" width="100%" id="myImg3" class="myImg">
-                <img src="galerie/fotky/2013/2013_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2013/2013_6.jpg" width="100%" id="myImg5" class="myImg">
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2013" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2013" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2013" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2013place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2012" class="fotky_frame">
-            <h3>2012</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2012/2012_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2012/2012_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2012/2012_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2012/2012_4.jpg" width="100%" id="myImg3" class="myImg">
-                <img src="galerie/fotky/2012/2012_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2012/2012_6.jpg" width="100%" id="myImg5" class="myImg">
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2012" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2012" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2012" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2012place" class="clanky_place"></div>
-            </div>
-        </div>
-        <div id="2011" class="fotky_frame">
-            <h3>2011</h3><br>
-            <div class="top_galery">
-                <div class="main_left"><img src="galerie/fotky/2011/2011_1.jpg" width="100%" id="myImg0" class="myImg"></div>
-                <div class="main_right"><img src="galerie/fotky/2011/2011_2.jpg" width="100%" id="myImg1"class="myImg" ></div>
-            </div>
-            <div class="bottom_galery">
-                <img src="galerie/fotky/2011/2011_3.jpg" width="100%" id="myImg2" class="myImg">
-                <img src="galerie/fotky/2011/2011_4.jpg" width="100%" id="myImg3" class="myImg">
-                <img src="galerie/fotky/2011/2011_5.jpg" width="100%" id="myImg4" class="myImg">
-                <img src="galerie/fotky/2011/2011_6.jpg" width="100%" id="myImg5" class="myImg">
-            </div>
-            <div class="spacer galery_link"><button class="galery_butt" id="clanky-2011" onclick="down_clanky(this)">Članky ↧</button><button class="galery_butt" id="galerie-2011" onclick="down_galerie(this)">Galerie ↧</button><button class="galery_butt" id="vysledky-2011" onclick="down_vysledky(this)">Vysledky ↧</button></div>
-                <div id="center">
-                    <div id="2011place" class="clanky_place"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content" id="img01">
-
-    <!-- Modal Caption (Image Text) -->
-    <div id="caption"></div>
-    </div>
-
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Nahoru</button>
-    <script>
-        var mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
         </script>
 
         <div class="footer" id="footer">
