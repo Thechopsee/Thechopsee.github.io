@@ -23,7 +23,7 @@ function initFooter()
     }
 
     const contentContainer = document.getElementById('footer');
-    console.log(contentContainer);
+
 
     const coLines = [
         { className: 'bottom_line_nad', content: 'Co? Kdy? Kde?' },
