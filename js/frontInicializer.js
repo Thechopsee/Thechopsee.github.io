@@ -3,6 +3,9 @@ function initFront()
     initLogo();
     initMenu();
     initFooter();
+    if (typeof renderHistory === 'function') {
+        renderHistory();
+    }
     prepareModal();
 }
 function initFooter()
