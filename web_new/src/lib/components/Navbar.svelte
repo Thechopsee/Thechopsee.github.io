@@ -13,7 +13,7 @@
 	<nav id="menu_web">
 		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
 		<span class="sep">|</span>
-		<a href="/historie.html">Historie</a>
+		<a href="/historie" class:active={page.url.pathname.startsWith('/historie')}>Historie</a>
 		<span class="sep">|</span>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<span class="sep">|</span>
@@ -21,7 +21,7 @@
 	</nav>
 	<nav id="menu_mob">
 		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
-		<a href="/historie.html">Historie</a>
+		<a href="/historie" class:active={page.url.pathname.startsWith('/historie')}>Historie</a>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<a href="/kontakty.html">Kontakt</a>
 	</nav>
