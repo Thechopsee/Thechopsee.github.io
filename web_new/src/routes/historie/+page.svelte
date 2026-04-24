@@ -1,8 +1,20 @@
 <script>
+	import { onMount } from 'svelte';
 	import { historyData } from '$lib/data/history.js';
 
 	/** @type {Record<number, string | null>} */
 	let expandedSection = $state({});
+
+	let modalImg = $state('');
+	let showScrollBtn = $state(false);
+
+	onMount(() => {
+		const handleScroll = () => {
+			showScrollBtn = window.scrollY > 300;
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 
 	/**
 	 * @param {number} year
@@ -14,6 +26,21 @@
 		} else {
 			expandedSection[year] = section;
 		}
+	}
+
+	/**
+	 * @param {string} src
+	 */
+	function openModal(src) {
+		modalImg = src;
+	}
+
+	function closeModal() {
+		modalImg = '';
+	}
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
 </script>
@@ -41,16 +68,39 @@
 			<section id={String(data.year)} class="year-card">
 				<h2>{data.year}</h2>
 
-				<div class="gallery-placeholders">
+				<div class="gallery-grid">
 					<div class="main-images">
-						<div class="placeholder large">FOTKA 1 (100%)</div>
-						<div class="placeholder large">FOTKA 2 (100%)</div>
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+						<img
+							src="/galerie/fotky/{data.year}/{data.year}_1.{data.imgExtensions?.[1] || 'jpg'}"
+							alt="{data.year} - 1"
+							loading="lazy"
+							class="gallery-img"
+							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`)}
+						/>
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+						<img
+							src="/galerie/fotky/{data.year}/{data.year}_2.{data.imgExtensions?.[2] || 'jpg'}"
+							alt="{data.year} - 2"
+							loading="lazy"
+							class="gallery-img"
+							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`)}
+						/>
 					</div>
 					<div class="sub-images">
-						<div class="placeholder small">FOTKA 3</div>
-						<div class="placeholder small">FOTKA 4</div>
-						<div class="placeholder small">FOTKA 5</div>
-						<div class="placeholder small">FOTKA 6</div>
+						{#each [3, 4, 5, 6] as i}
+							<!-- svelte-ignore a11y_click_events_have_key_events -->
+							<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+							<img
+								src="/galerie/fotky/{data.year}/{data.year}_{i}.{data.imgExtensions?.[i] || 'jpg'}"
+								alt="{data.year} - {i}"
+								loading="lazy"
+								class="gallery-img"
+								onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`)}
+							/>
+						{/each}
 					</div>
 				</div>
 
@@ -118,6 +168,21 @@
 	</div>
 </div>
 
+{#if showScrollBtn}
+	<button class="scroll-top" onclick={scrollToTop} title="Nahoru">
+		Nahoru
+	</button>
+{/if}
+
+{#if modalImg}
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="modal" onclick={closeModal}>
+		<span class="close">&times;</span>
+		<img class="modal-content" src={modalImg} alt="Zvětšený obrázek" onclick={(e) => e.stopPropagation()}/>
+	</div>
+{/if}
+
 <style>
 	.container {
 		max-width: 1180px;
@@ -183,10 +248,13 @@
 
 	.year-card {
 		background-color: #dadfe4;
-		border-radius: 8px;
-		padding: 25px;
+		border-radius: 5px;
+		padding: 1%;
+		margin-left: 10%;
+		margin-right: 10%;
 		color: #303b4a;
 		scroll-margin-top: 20px;
+		text-align: center;
 	}
 
 	.year-card h2 {
@@ -195,9 +263,11 @@
 		border-bottom: 2px solid #303b4a;
 		display: inline-block;
 		margin-bottom: 20px;
+		font-family: 'Century Gothic', CenturyGothic, sans-serif;
+		font-weight: normal;
 	}
 
-	.gallery-placeholders {
+	.gallery-grid {
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
@@ -216,23 +286,94 @@
 		gap: 15px;
 	}
 
-	.placeholder {
-		background-color: #bdc3c7;
-		border: 2px dashed #7f8c8d;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #7f8c8d;
-		font-weight: bold;
+	.gallery-img {
+		width: 100%;
 		border-radius: 4px;
+		cursor: pointer;
+		transition: opacity 0.2s;
+		display: block;
 	}
 
-	.placeholder.large {
-		aspect-ratio: 16 / 9;
+	.gallery-img:hover {
+		opacity: 0.8;
 	}
 
-	.placeholder.small {
-		aspect-ratio: 4 / 3;
+	/* Modal Styles */
+	.modal {
+		position: fixed;
+		z-index: 1000;
+		padding-top: 50px;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.9);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.modal-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 900px;
+		border-radius: 4px;
+		animation: zoom 0.3s;
+	}
+
+	@keyframes zoom {
+		from {
+			transform: scale(0.9);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	.close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: color 0.2s;
+	}
+
+	.close:hover {
+		color: #45cece;
+	}
+
+	@media (max-width: 700px) {
+		.modal-content {
+			width: 95%;
+		}
+	}
+
+	.scroll-top {
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 99;
+		background-color: #45cece;
+		color: white;
+		border: none;
+		padding: 15px;
+		border-radius: 4px;
+		cursor: pointer;
+		font-weight: bold;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+		transition: all 0.2s;
+	}
+
+	.scroll-top:hover {
+		background-color: white;
+		color: #303b4a;
 	}
 
 	.card-actions {
@@ -302,17 +443,29 @@
 	}
 
 	@media (max-width: 800px) {
+		.year-card {
+			margin-left: 0;
+			margin-right: 0;
+			padding: 15px;
+		}
+
 		.main-images {
 			grid-template-columns: 1fr;
 		}
+
 		.sub-images {
 			grid-template-columns: 1fr 1fr;
 		}
+
 		.card-actions {
 			flex-direction: column;
+			align-items: center;
+			gap: 10px;
 		}
+
 		.action-btn {
-			width: 100%;
+			width: 80%;
+			padding: 15px;
 		}
 	}
 </style>

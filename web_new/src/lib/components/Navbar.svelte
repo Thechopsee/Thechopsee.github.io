@@ -23,7 +23,7 @@
 	</nav>
 	<nav id="menu_mob">
 		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
-		<a href="/historie.html">Historie</a>
+		<a href="/historie" class:active={page.url.pathname.startsWith('/historie')}>Historie</a>
 		<a href="/vysledky" class:active={page.url.pathname === '/vysledky'}>Výsledky</a>
 		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
 		<a href="/kontakty" class:active={page.url.pathname === '/kontakty'}>Kontakt</a>

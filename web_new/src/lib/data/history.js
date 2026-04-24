@@ -1,3 +1,15 @@
+/**
+ * @typedef {Object} HistoryEntry
+ * @property {number} year
+ * @property {Object} results
+ * @property {string} results.type
+ * @property {string} [results.url]
+ * @property {Array<{label: string, url: string}>} articles
+ * @property {Array<{label: string, url: string}>} gallery
+ * @property {Record<number, string>} [imgExtensions]
+ */
+
+/** @type {HistoryEntry[]} */
 export const historyData = [
 	{
 		year: 2025,
@@ -89,6 +101,7 @@ export const historyData = [
 	{
 		year: 2021,
 		results: { type: 'download' },
+		imgExtensions: { 2: 'png' },
 		articles: [
 			{
 				label: 'Polar',
