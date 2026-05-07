@@ -247,14 +247,16 @@
 	}
 
 	.year-card {
-		background-color: #dadfe4;
-		border-radius: 5px;
-		padding: 1%;
-		margin-left: 10%;
-		margin-right: 10%;
+		background: rgba(255, 255, 255, 0.96);
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
+		padding: 28px;
+		margin-left: 5%;
+		margin-right: 5%;
 		color: #303b4a;
 		scroll-margin-top: 20px;
 		text-align: center;
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
 	}
 
 	.year-card h2 {

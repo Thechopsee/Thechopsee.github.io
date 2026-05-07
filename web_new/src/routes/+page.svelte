@@ -2,9 +2,8 @@
 	<title>Těrlická plachta 2026</title>
 </svelte:head>
 
-<div class="page-wrapper">
-	<div class="container">
-		<div id="info">
+<div class="container">
+	<div id="info">
 			<div id="info_nahore">
 				<div id="info_text_1a" class="info-card">
 					<h3 class="eyebrow-header">KDY</h3>
@@ -45,21 +44,12 @@
 			></iframe>
 		</div>
 	</div>
-</div>
 
 <style>
-	.page-wrapper {
-		background:
-			radial-gradient(circle at top, rgba(69, 206, 206, 0.12), transparent 32%),
-			linear-gradient(180deg, #364355 0%, #303b4a 48%, #2a3442 100%);
-		min-height: calc(100vh - 100px); /* Adjust based on navbar/footer height */
-		padding: 40px 0;
-	}
-
 	.container {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 0 20px;
+		padding: 40px 20px;
 	}
 
 	#info {
@@ -97,7 +87,8 @@
 	.info-card {
 		border: 1px solid rgba(69, 206, 206, 0.2);
 		border-radius: 24px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+		background: rgba(255, 255, 255, 0.96);
+		color: #303b4a;
 		padding: 32px;
 		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
 		transition:
