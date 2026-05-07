@@ -75,7 +75,7 @@ export const historyData = [
 	},
 	{
 		year: 2022,
-		results: { type: 'link', url: '/vysledky.html' },
+		results: { type: 'link', url: '/vysledky' },
 		articles: [
 			{
 				label: 'Minisail.cz',
