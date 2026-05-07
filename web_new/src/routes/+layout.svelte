@@ -23,16 +23,4 @@
 	:global(html) {
 		scroll-behavior: smooth;
 	}
-	:global(body) {
-		margin: 0;
-		background-color: #303b4a;
-		color: #45cece;
-		font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-	}
-	main {
-		flex: 1;
-	}
 </style>

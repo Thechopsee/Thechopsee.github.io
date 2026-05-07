@@ -71,7 +71,6 @@
 	<title>Těrlická plachta 2026 | Kontakt</title>
 </svelte:head>
 
-<div class="contact-page-wrapper">
 <div class="page-shell">
 	<section class="hero">
 		<div class="hero-copy">
@@ -125,19 +124,8 @@
 		</div>
 	</section>
 </div>
-</div>
 
 <style>
-	.contact-page-wrapper {
-		margin: 0;
-		background:
-			radial-gradient(circle at top, rgba(69, 206, 206, 0.12), transparent 32%),
-			linear-gradient(180deg, #364355 0%, #303b4a 48%, #2a3442 100%);
-		color: #45cece;
-		font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-		min-height: 100vh;
-	}
-
 	.page-shell {
 		max-width: 1180px;
 		margin: 0 auto;

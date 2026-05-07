@@ -303,10 +303,12 @@
 	.wrapper {
 		margin: 0 auto;
 		max-width: 800px;
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.96);
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
 		overflow: hidden;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+		color: #303b4a;
 	}
 
 	.table {
@@ -317,7 +319,7 @@
 
 	.row {
 		display: flex;
-		border-bottom: 1px solid rgba(69, 206, 206, 0.2);
+		border-bottom: 1px solid rgba(48, 59, 74, 0.1);
 	}
 
 	.row:last-child {
@@ -325,20 +327,20 @@
 	}
 
 	.row.header {
-		background-color: rgba(69, 206, 206, 0.1);
+		background-color: rgba(48, 59, 74, 0.05);
 		font-weight: bold;
-		color: #45cece;
+		color: #303b4a;
 	}
 
 	.cell {
 		flex: 1;
 		padding: 12px 15px;
 		text-align: left;
-		color: #dadfe4;
+		color: #303b4a;
 	}
 
 	.row.header .cell {
-		color: #45cece;
+		color: #303b4a;
 	}
 
 	.cell:first-child {
