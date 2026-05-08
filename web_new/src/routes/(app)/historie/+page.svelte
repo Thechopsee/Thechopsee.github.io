@@ -49,11 +49,14 @@
 	<title>Historie | Těrlická plachta</title>
 </svelte:head>
 
-<div class="container">
-	<header class="page-header">
-		<h1>Historie</h1>
-		<p>Portské, buček, soudek rumu. A tak to všechno začalo...</p>
-	</header>
+<div class="page-shell">
+	<section class="hero">
+		<div class="hero-copy">
+			<p class="eyebrow">Historie</p>
+			<h1>Těrlická plachta</h1>
+			<p class="lead">Portské, buček, soudek rumu. A tak to všechno začalo...</p>
+		</div>
+	</section>
 
 	<nav class="year-nav">
 		<div class="nav-inner">
@@ -184,20 +187,43 @@
 {/if}
 
 <style>
-	.container {
+	.page-shell {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 0 20px 60px;
+		padding: 32px 20px 64px;
 	}
 
-	.page-header {
-		text-align: center;
-		margin-bottom: 40px;
+	.hero {
+		margin-bottom: 28px;
+	}
+
+	.hero-copy {
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+		padding: 32px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+	}
+
+	.eyebrow {
+		margin: 0 0 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: 0.8rem;
+		opacity: 0.75;
 	}
 
 	h1 {
-		font-size: 3rem;
-		margin-bottom: 10px;
+		margin-bottom: 14px;
+		font-size: clamp(2.3rem, 5vw, 4.2rem);
+		line-height: 0.96;
+	}
+
+	.lead {
+		max-width: 55ch;
+		color: rgba(255, 255, 255, 0.86);
+		font-size: 1.05rem;
+		line-height: 1.6;
 	}
 
 	.year-nav {
