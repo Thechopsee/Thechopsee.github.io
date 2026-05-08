@@ -5,20 +5,24 @@
 <div class="container">
 	<div id="info">
 			<div id="info_nahore">
-				<div id="info_text_1a" class="info-card">
-					<h3 class="eyebrow-header">KDY</h3>
-					<p>25.-27.9.2026</p>
+				<div id="info_text_kdo" class="hero-card">
+					<p class="eyebrow">KDO</p>
+					<p class="lead">Modeláři Slezska</p>
 				</div>
-				<div id="info_text_1b" class="info-card">
-					<h3 class="eyebrow-header">KDE</h3>
-					<p>RS Vyhlídka Těrlicko</p>
+				<div id="info_text_1a" class="hero-card">
+					<p class="eyebrow">KDY</p>
+					<p class="lead">25.-27.9.2026</p>
+				</div>
+				<div id="info_text_1b" class="hero-card">
+					<p class="eyebrow">KDE</p>
+					<p class="lead">RS Vyhlídka Těrlicko</p>
 				</div>
 			</div>
 
 			<div class="info_text_2">
-				<div class="info-card">
-					<h3 class="eyebrow-header">CO</h3>
-					<p>Setkání plachetnic třídy NSS - A,B,C,RG-650 a další typy plachetnic bez strojního pohonu</p>
+				<div class="hero-card">
+					<p class="eyebrow">CO</p>
+					<p class="lead">Setkání plachetnic třídy NSS - A, B, C, RG-650 a další typy plachetnic bez strojního pohonu</p>
 				</div>
 			</div>
 		</div>
@@ -58,7 +62,7 @@
 
 	#info_nahore {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 24px;
 		margin-bottom: 24px;
 	}
@@ -103,9 +107,45 @@
 		text-align: center;
 	}
 
-	.info-card:hover {
+	.info-card:hover,
+	.hero-card:hover {
 		transform: translateY(-5px);
 		border-color: rgba(69, 206, 206, 0.4);
+	}
+
+	.hero-card {
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+		padding: 32px;
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+		transition:
+			transform 0.3s ease,
+			border-color 0.3s ease;
+		height: 100%;
+		box-sizing: border-box;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.eyebrow {
+		margin: 0 0 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: 0.8rem;
+		opacity: 0.75;
+		color: #45cece;
+	}
+
+	.lead {
+		margin: 0;
+		color: rgba(255, 255, 255, 0.86);
+		font-size: 1.15rem;
+		line-height: 1.5;
+		font-weight: 400;
 	}
 
 	.eyebrow-header {
@@ -153,16 +193,10 @@
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 800px) {
 		#info_nahore {
 			grid-template-columns: 1fr;
 			gap: 20px;
-		}
-		#info_text_1a h3,
-		#info_text_1a p,
-		#info_text_1b h3,
-		#info_text_1b p {
-			text-align: center;
 		}
 		#propozice {
 			grid-template-columns: 1fr;
