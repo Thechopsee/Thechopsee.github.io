@@ -2,32 +2,19 @@
 	<title>Těrlická plachta 2026</title>
 </svelte:head>
 
-<div class="container">
-	<div id="info">
-			<div id="info_nahore">
-				<div id="info_text_kdo" class="hero-card">
-					<p class="eyebrow">KDO</p>
-					<p class="lead">Modeláři Slezska</p>
-				</div>
-				<div id="info_text_1a" class="hero-card">
-					<p class="eyebrow">KDY</p>
-					<p class="lead">25.-27.9.2026</p>
-				</div>
-				<div id="info_text_1b" class="hero-card">
-					<p class="eyebrow">KDE</p>
-					<p class="lead">RS Vyhlídka Těrlicko</p>
-				</div>
-			</div>
-
-			<div class="info_text_2">
-				<div class="hero-card">
-					<p class="eyebrow">CO</p>
-					<p class="lead">Setkání plachetnic třídy NSS - A, B, C, RG-650 a další typy plachetnic bez strojního pohonu</p>
-				</div>
-			</div>
+<div class="page-shell">
+	<section class="hero">
+		<div class="hero-copy">
+			<p class="eyebrow">Modeláři Slezska</p>
+			<h1>Těrlická plachta 2026</h1>
+			<p class="lead">25.–27. 9. 2026 • RS Vyhlídka Těrlicko</p>
+			<p class="lead">
+				Setkání plachetnic třídy NSS - A, B, C, RG-650 a další typy plachetnic bez strojního pohonu
+			</p>
 		</div>
+	</section>
 
-		<div class="propozice-section info-card">
+	<div class="propozice-section info-card">
 			<h3 class="eyebrow-header">PROPOZICE</h3>
 			<p class="status">Poslední změna : Doposud nezveřejněno</p>
 			<div id="propozice">
@@ -50,32 +37,41 @@
 	</div>
 
 <style>
-	.container {
+	.page-shell {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 40px 20px;
+		padding: 32px 20px 64px;
 	}
 
-	#info {
-		margin-bottom: 60px;
+	.hero {
+		margin-bottom: 28px;
 	}
 
-	#info_nahore {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 24px;
-		margin-bottom: 24px;
-	}
-
-	.info_text_2 {
+	.hero-copy {
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+		padding: 32px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+		transition:
+			transform 0.3s ease,
+			border-color 0.3s ease;
 		text-align: center;
-		max-width: 800px;
-		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
-	h3 {
-		font-size: 2rem;
-		margin-bottom: 10px;
+	.hero-copy:hover {
+		transform: translateY(-5px);
+		border-color: rgba(69, 206, 206, 0.4);
+	}
+
+	h1 {
+		margin-bottom: 14px;
+		font-size: clamp(2.3rem, 5vw, 4.2rem);
+		line-height: 0.96;
 		color: #45cece;
 	}
 
@@ -107,28 +103,9 @@
 		text-align: center;
 	}
 
-	.info-card:hover,
-	.hero-card:hover {
+	.info-card:hover {
 		transform: translateY(-5px);
 		border-color: rgba(69, 206, 206, 0.4);
-	}
-
-	.hero-card {
-		border: 1px solid rgba(69, 206, 206, 0.2);
-		border-radius: 24px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-		padding: 32px;
-		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
-		transition:
-			transform 0.3s ease,
-			border-color 0.3s ease;
-		height: 100%;
-		box-sizing: border-box;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.eyebrow {
@@ -141,7 +118,7 @@
 	}
 
 	.lead {
-		margin: 0;
+		margin: 0 0 10px;
 		color: rgba(255, 255, 255, 0.86);
 		font-size: 1.15rem;
 		line-height: 1.5;
@@ -194,10 +171,6 @@
 	}
 
 	@media (max-width: 800px) {
-		#info_nahore {
-			grid-template-columns: 1fr;
-			gap: 20px;
-		}
 		#propozice {
 			grid-template-columns: 1fr;
 		}
