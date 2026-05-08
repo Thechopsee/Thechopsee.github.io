@@ -80,6 +80,10 @@
 		color: #dadfe4;
 	}
 
+	.info-card p {
+		color: #303b4a;
+	}
+
 	.propozice-section {
 		margin-bottom: 60px;
 	}
@@ -115,13 +119,14 @@
 		letter-spacing: 0.18em;
 		font-size: 0.7rem;
 		font-weight: 600;
-		color: #45cece;
+		color: #008080;
 	}
 
 	.status {
 		margin-bottom: 30px;
 		font-style: italic;
-		opacity: 0.8;
+		opacity: 1;
+		color: #303b4a;
 	}
 
 	#propozice {
