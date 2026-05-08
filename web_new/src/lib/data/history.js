@@ -13,7 +13,7 @@
 export const historyData = [
 	{
 		year: 2025,
-		results: { type: 'new', url: '/vysledky/newvysledky.html?soubor=2025' },
+		results: { type: 'new', url: '/vysledky/2025/' },
 		articles: [
 			{ label: 'Minisail.cz', url: 'https://www.minisail.cz/setkani/z-akci/id:20506/terlicko-2025' }
 		],
@@ -28,7 +28,7 @@ export const historyData = [
 	},
 	{
 		year: 2024,
-		results: { type: 'new', url: '/vysledky/newvysledky.html?soubor=2024' },
+		results: { type: 'new', url: '/vysledky/2024/' },
 		articles: [
 			{
 				label: 'Minisail.cz',
@@ -58,7 +58,7 @@ export const historyData = [
 	},
 	{
 		year: 2023,
-		results: { type: 'new', url: '/vysledky/newvysledky.html?soubor=2023' },
+		results: { type: 'new', url: '/vysledky/2023/' },
 		articles: [
 			{
 				label: 'Minisail.cz',
@@ -75,7 +75,7 @@ export const historyData = [
 	},
 	{
 		year: 2022,
-		results: { type: 'link', url: '/vysledky' },
+		results: { type: 'link', url: '/vysledky/2022/' },
 		articles: [
 			{
 				label: 'Minisail.cz',
