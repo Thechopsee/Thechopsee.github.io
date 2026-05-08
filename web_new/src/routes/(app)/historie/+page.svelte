@@ -1,6 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { historyData } from '$lib/data/history.js';
+	import YearNav from '$lib/components/YearNav.svelte';
+
+	const years = historyData.map((d) => d.year);
 
 	/** @type {Record<number, string | null>} */
 	let expandedSection = $state({});
@@ -58,13 +61,7 @@
 		</div>
 	</section>
 
-	<nav class="year-nav">
-		<div class="nav-inner">
-			{#each historyData as data}
-				<a href="#{data.year}" class="year-link">{data.year}</a>
-			{/each}
-		</div>
-	</nav>
+	<YearNav {years} />
 
 	<div class="history-list">
 		{#each historyData as data}
@@ -226,45 +223,6 @@
 		line-height: 1.6;
 	}
 
-	.year-nav {
-		margin: 30px 0;
-		position: relative;
-		text-align: center;
-	}
-
-	.year-nav::before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: rgba(255, 255, 255, 0.3);
-		z-index: 0;
-	}
-
-	.nav-inner {
-		position: relative;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 15px;
-		z-index: 1;
-	}
-
-	.year-link {
-		background-color: #45cece;
-		color: #303b4a;
-		padding: 8px 16px;
-		border-radius: 5px;
-		font-weight: bold;
-		transition: all 0.2s;
-	}
-
-	.year-link:hover {
-		background-color: white;
-		color: #45cece;
-	}
 
 	.history-list {
 		display: flex;
