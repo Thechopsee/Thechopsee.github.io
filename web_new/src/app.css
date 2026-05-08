@@ -1,8 +1,6 @@
 body {
 	margin: 0;
-	background:
-		radial-gradient(circle at top, rgba(69, 206, 206, 0.12), transparent 32%),
-		linear-gradient(180deg, #364355 0%, #303b4a 48%, #2a3442 100%);
+	background-color: #303b4a;
 	color: #45cece;
 	font-family: 'Trebuchet MS', 'Segoe UI', 'Open Sans', sans-serif;
 	min-height: 100vh;
