@@ -5,11 +5,11 @@
 <div class="page-shell">
 	<section class="hero">
 		<div class="hero-copy">
-			<p class="eyebrow">Modeláři Slezska</p>
 			<h1>Těrlická plachta 2026</h1>
-			<p class="lead">25.–27. 9. 2026 • RS Vyhlídka Těrlicko</p>
+			<p class="lead">Kdy: 25.–27. 9. 2026 • RS Vyhlídka Těrlicko</p>
+			<p class="lead">Kde: RS Vyhlídka Těrlicko</p>
 			<p class="lead">
-				Setkání plachetnic třídy NSS - A, B, C, RG-650 a další typy plachetnic bez strojního pohonu
+				Co: Setkání plachetnic třídy NSS - A, B, C, RG-650 a další typy plachetnic bez strojního pohonu
 			</p>
 		</div>
 	</section>
