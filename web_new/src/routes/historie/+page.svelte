@@ -49,11 +49,14 @@
 	<title>Historie | Těrlická plachta</title>
 </svelte:head>
 
-<div class="container">
-	<header class="page-header">
-		<h1>Historie</h1>
-		<p>Portské, buček, soudek rumu. A tak to všechno začalo...</p>
-	</header>
+<div class="page-shell">
+	<section class="hero">
+		<div class="hero-copy">
+			<p class="eyebrow">Historie</p>
+			<h1>Historie</h1>
+			<p class="lead">Portské, buček, soudek rumu. A tak to všechno začalo...</p>
+		</div>
+	</section>
 
 	<nav class="year-nav">
 		<div class="nav-inner">
@@ -70,36 +73,45 @@
 
 				<div class="gallery-grid">
 					<div class="main-images">
-						<!-- svelte-ignore a11y_click_events_have_key_events -->
-						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-						<img
-							src="/galerie/fotky/{data.year}/{data.year}_1.{data.imgExtensions?.[1] || 'jpg'}"
-							alt="{data.year} - 1"
-							loading="lazy"
-							class="gallery-img"
+						<button
+							class="gallery-btn"
 							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`)}
-						/>
-						<!-- svelte-ignore a11y_click_events_have_key_events -->
-						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-						<img
-							src="/galerie/fotky/{data.year}/{data.year}_2.{data.imgExtensions?.[2] || 'jpg'}"
-							alt="{data.year} - 2"
-							loading="lazy"
-							class="gallery-img"
+							aria-label="Zvětšit obrázek {data.year} - 1"
+						>
+							<img
+								src="/galerie/fotky/{data.year}/{data.year}_1.{data.imgExtensions?.[1] || 'jpg'}"
+								alt="{data.year} - 1"
+								loading="lazy"
+								class="gallery-img"
+							/>
+						</button>
+						<button
+							class="gallery-btn"
 							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`)}
-						/>
+							aria-label="Zvětšit obrázek {data.year} - 2"
+						>
+							<img
+								src="/galerie/fotky/{data.year}/{data.year}_2.{data.imgExtensions?.[2] || 'jpg'}"
+								alt="{data.year} - 2"
+								loading="lazy"
+								class="gallery-img"
+							/>
+						</button>
 					</div>
 					<div class="sub-images">
 						{#each [3, 4, 5, 6] as i}
-							<!-- svelte-ignore a11y_click_events_have_key_events -->
-							<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-							<img
-								src="/galerie/fotky/{data.year}/{data.year}_{i}.{data.imgExtensions?.[i] || 'jpg'}"
-								alt="{data.year} - {i}"
-								loading="lazy"
-								class="gallery-img"
+							<button
+								class="gallery-btn"
 								onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`)}
-							/>
+								aria-label="Zvětšit obrázek {data.year} - {i}"
+							>
+								<img
+									src="/galerie/fotky/{data.year}/{data.year}_{i}.{data.imgExtensions?.[i] || 'jpg'}"
+									alt="{data.year} - {i}"
+									loading="lazy"
+									class="gallery-img"
+								/>
+							</button>
 						{/each}
 					</div>
 				</div>
@@ -177,27 +189,52 @@
 {#if modalImg}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div class="modal" onclick={closeModal}>
+	<div class="modal" onclick={closeModal} onkeydown={(e) => e.key === 'Escape' && closeModal()} role="button" tabindex="0" aria-label="Zavřít modal">
 		<span class="close">&times;</span>
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<img class="modal-content" src={modalImg} alt="Zvětšený obrázek" onclick={(e) => e.stopPropagation()}/>
 	</div>
 {/if}
 
 <style>
-	.container {
+	.page-shell {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 0 20px 60px;
+		padding: 32px 20px 64px;
 	}
 
-	.page-header {
-		text-align: center;
-		margin-bottom: 40px;
+	.hero {
+		margin-bottom: 28px;
+	}
+
+	.hero-copy {
+		padding: 32px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+		border: 1px solid rgba(69, 206, 206, 0.2);
+		border-radius: 24px;
+		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+	}
+
+	.eyebrow {
+		margin: 0 0 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: 0.8rem;
+		opacity: 0.75;
 	}
 
 	h1 {
-		font-size: 3rem;
-		margin-bottom: 10px;
+		margin-bottom: 14px;
+		font-size: clamp(2.3rem, 5vw, 4.2rem);
+		line-height: 0.96;
+	}
+
+	.lead {
+		max-width: 55ch;
+		color: rgba(255, 255, 255, 0.86);
+		font-size: 1.05rem;
+		line-height: 1.6;
 	}
 
 	.year-nav {
@@ -228,7 +265,7 @@
 
 	.year-link {
 		background-color: #45cece;
-		color: #303b4a;
+		color: white;
 		padding: 8px 16px;
 		border-radius: 5px;
 		font-weight: bold;
@@ -288,15 +325,23 @@
 		gap: 15px;
 	}
 
+	.gallery-btn {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		display: block;
+		width: 100%;
+	}
+
 	.gallery-img {
 		width: 100%;
 		border-radius: 4px;
-		cursor: pointer;
 		transition: opacity 0.2s;
 		display: block;
 	}
 
-	.gallery-img:hover {
+	.gallery-btn:hover .gallery-img {
 		opacity: 0.8;
 	}
 
