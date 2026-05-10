@@ -100,7 +100,7 @@ export const historyData = [
 	},
 	{
 		year: 2021,
-		results: { type: 'download' },
+		results: { type: 'download', url: '/vysledky/vysledky-2021.xlsx' },
 		imgExtensions: { 2: 'png' },
 		articles: [
 			{
@@ -230,7 +230,7 @@ export const historyData = [
 	},
 	{
 		year: 2015,
-		results: { type: 'download' },
+		results: { type: 'download', url: '/vysledky/vysledky-2015.xlsx' },
 		articles: [
 			{
 				label: 'minisail.cz',

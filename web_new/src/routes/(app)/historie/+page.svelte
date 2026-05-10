@@ -118,18 +118,20 @@
 					>
 						Galerie ↧
 					</button>
-					{#if data.results.type === 'download'}
+					{#if data.results.type === 'download' && data.results.url}
 						<a
-							href="/vysledky/vysledky-{data.year}.xlsx"
-							download="vysledky-{data.year}.xlsx"
+							href={data.results.url}
+							download={`vysledky-${data.year}.xlsx`}
 							class="action-btn link-btn"
 						>
 							Výsledky ↧
 						</a>
-					{:else}
+					{:else if data.results.url}
 						<a href={data.results.url} class="action-btn link-btn">
 							Výsledky ↧
 						</a>
+					{:else}
+						<span class="action-btn disabled">Výsledky nejsou k dispozici</span>
 					{/if}
 				</div>
 
@@ -384,6 +386,13 @@
 		color: #303b4a;
 		outline: 2px solid #303b4a;
 		text-decoration: none;
+	}
+
+	.action-btn.disabled {
+		background-color: #7e7e7e;
+		color: #d8d8d8;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 
 	.link-btn {

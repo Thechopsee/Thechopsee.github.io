@@ -7,7 +7,7 @@
 	</div>
 	<div class="bottom_lines">
 		<div class="bottom_line_nad">Registrace</div>
-		<div class="bottom_line">🗈 <a href="/propozice/propozice.pdf">Propozice</a></div>
+		<div class="bottom_line">🗈 <a href="/propozice/2025/propozice.pdf">Propozice</a></div>
 		<div class="bottom_line">🗊 <a href="/registrace">Registrační formulář</a></div>
 	</div>
 	<div class="bottom_lines">

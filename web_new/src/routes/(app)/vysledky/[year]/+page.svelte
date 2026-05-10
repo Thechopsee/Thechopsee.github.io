@@ -1,7 +1,6 @@
 <script>
-	import { page } from '$app/state';
-
-	const year = $derived(page.params.year);
+	const { data } = $props();
+	const year = data.year;
 </script>
 
 <svelte:head>
