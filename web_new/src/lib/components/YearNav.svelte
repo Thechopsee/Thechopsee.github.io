@@ -3,7 +3,7 @@
 </script>
 
 <nav class="year-nav-container">
-	<div class="year-nav-pill">
+	<div class="year-nav-box">
 		{#each years as year}
 			<a href="#{year}" class="year-link">{year}</a>
 		{/each}
@@ -18,24 +18,24 @@
 		padding: 0 20px;
 	}
 
-	.year-nav-pill {
+	.year-nav-box {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 10px;
-		padding: 12px;
+		padding: 16px;
 		background: rgba(255, 255, 255, 0.03);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 50px;
+		border-radius: 24px;
 		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 	}
 
 	.year-link {
 		color: white;
 		padding: 10px 20px;
-		border-radius: 30px;
+		border-radius: 12px;
 		font-weight: 600;
 		font-size: 0.95rem;
 		transition: all 0.2s ease-in-out;
@@ -61,9 +61,8 @@
 	}
 
 	@media (max-width: 800px) {
-		.year-nav-pill {
-			border-radius: 24px;
-			padding: 10px;
+		.year-nav-box {
+			padding: 12px;
 			gap: 8px;
 		}
 
