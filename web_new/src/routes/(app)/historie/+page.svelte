@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { historyData } from '$lib/data/history.js';
 	import YearNav from '$lib/components/YearNav.svelte';
+	import { assets, base } from '$app/paths';
 
 	const years = historyData.map((d) => d.year);
 
@@ -29,6 +30,12 @@
 		} else {
 			expandedSection[year] = section;
 		}
+	}
+
+	function resolveUrl(url) {
+		if (!url) return url;
+		if (url.startsWith('/')) return base + url;
+		return url;
 	}
 
 	/**
@@ -72,20 +79,20 @@
 						<!-- svelte-ignore a11y_click_events_have_key_events -->
 						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 						<img
-							src="/galerie/fotky/{data.year}/{data.year}_1.{data.imgExtensions?.[1] || 'jpg'}"
+							src={assets + `/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`}
 							alt="{data.year} - 1"
 							loading="lazy"
 							class="gallery-img"
-							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`)}
+							onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`)}
 						/>
 						<!-- svelte-ignore a11y_click_events_have_key_events -->
 						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 						<img
-							src="/galerie/fotky/{data.year}/{data.year}_2.{data.imgExtensions?.[2] || 'jpg'}"
+							src={assets + `/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`}
 							alt="{data.year} - 2"
 							loading="lazy"
 							class="gallery-img"
-							onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`)}
+							onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`)}
 						/>
 					</div>
 					<div class="sub-images">
@@ -93,11 +100,11 @@
 							<!-- svelte-ignore a11y_click_events_have_key_events -->
 							<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 							<img
-								src="/galerie/fotky/{data.year}/{data.year}_{i}.{data.imgExtensions?.[i] || 'jpg'}"
+								src={assets + `/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`}
 								alt="{data.year} - {i}"
 								loading="lazy"
 								class="gallery-img"
-								onclick={() => openModal(`/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`)}
+								onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`)}
 							/>
 						{/each}
 					</div>
@@ -120,14 +127,14 @@
 					</button>
 					{#if data.results.type === 'download' && data.results.url}
 						<a
-							href={data.results.url}
+							href={resolveUrl(data.results.url)}
 							download={`vysledky-${data.year}.xlsx`}
 							class="action-btn link-btn"
 						>
 							Výsledky ↧
 						</a>
 					{:else if data.results.url}
-						<a href={data.results.url} class="action-btn link-btn">
+						<a href={resolveUrl(data.results.url)} class="action-btn link-btn">
 							Výsledky ↧
 						</a>
 					{:else}

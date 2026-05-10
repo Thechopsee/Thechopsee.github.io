@@ -616,7 +616,7 @@
 							<input bind:checked={form.gdprConsent} disabled={registrationClosed} type="checkbox" />
 							<span>
 								Potvrzuji, že jsem se seznámil s
-								<a href="/informace-o-zpracovani-osobnich-udaju.html" rel="noreferrer" target="_blank">
+								<a href={assets + '/informace-o-zpracovani-osobnich-udaju.html'} rel="noreferrer" target="_blank">
 									Informacemi o zpracování osobních údajů
 								</a>.
 							</span>

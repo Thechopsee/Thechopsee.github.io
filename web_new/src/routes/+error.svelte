@@ -1,4 +1,6 @@
 <script>
+	import { base, assets } from '$app/paths';
+	let { error, status } = $props();
 </script>
 
 <svelte:head>
@@ -7,12 +9,12 @@
 
 <div class="error-container">
 	<div class="error-content">
-		<a href="/">
-			<img src="/logos/logo.svg" alt="Těrlická plachta" class="logo" />
+		<a href={base + '/'}>
+			<img src={assets + '/logos/logo.svg'} alt="Těrlická plachta" class="logo" />
 		</a>
 		<h1>404</h1>
 		<p>Stránka nebyla nalezena</p>
-		<a href="/" class="btn">Zpět na úvod</a>
+		<a href={base + '/'} class="btn">Zpět na úvod</a>
 	</div>
 </div>
 

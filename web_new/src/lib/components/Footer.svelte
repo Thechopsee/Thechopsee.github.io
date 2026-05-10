@@ -1,3 +1,7 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <footer id="footer">
 	<div class="bottom_lines">
 		<div class="bottom_line_nad">Co? Kdy? Kde?</div>
@@ -7,8 +11,8 @@
 	</div>
 	<div class="bottom_lines">
 		<div class="bottom_line_nad">Registrace</div>
-		<div class="bottom_line">🗈 <a href="/propozice/2025/propozice.pdf">Propozice</a></div>
-		<div class="bottom_line">🗊 <a href="/registrace">Registrační formulář</a></div>
+		<div class="bottom_line">🗈 <a href={base + '/propozice/2025/propozice.pdf'}>Propozice</a></div>
+		<div class="bottom_line">🗊 <a href={base + '/registrace'}>Registrační formulář</a></div>
 	</div>
 	<div class="bottom_lines">
 		<div class="bottom_line_nad">Kontakt</div>

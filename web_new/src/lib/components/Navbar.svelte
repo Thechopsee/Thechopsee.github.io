@@ -1,29 +1,30 @@
 <script>
 	import { page } from '$app/state';
+	import { base, assets } from '$app/paths';
 </script>
 
 <div id="logo_block">
-	<a href="/">
-		<img src="/logos/logo.svg" id="logo" alt="Logo" />
-		<img src="/logos/logomobile.svg" id="mobile_logo" alt="Logo Mobile" />
+	<a href={base + '/'}>
+		<img src={assets + '/logos/logo.svg'} id="logo" alt="Logo" />
+		<img src={assets + '/logos/logomobile.svg'} id="mobile_logo" alt="Logo Mobile" />
 	</a>
 </div>
 
 <div id="menu_block">
 	<nav id="menu_web">
-		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
+		<a href={base + '/'} class:active={page.url.pathname === base + '/'}>Těrlická plachta 2026</a>
 		<span class="sep">|</span>
-		<a href="/historie" class:active={page.url.pathname.startsWith('/historie')}>Historie</a>
+		<a href={base + '/historie'} class:active={page.url.pathname.startsWith(base + '/historie')}>Historie</a>
 		<span class="sep">|</span>
-		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
+		<a href={base + '/registrace'} class:active={page.url.pathname === base + '/registrace'}>Registrace</a>
 		<span class="sep">|</span>
-		<a href="/kontakty" class:active={page.url.pathname === '/kontakty'}>Kontakt</a>
+		<a href={base + '/kontakty'} class:active={page.url.pathname === base + '/kontakty'}>Kontakt</a>
 	</nav>
 	<nav id="menu_mob">
-		<a href="/" class:active={page.url.pathname === '/'}>Těrlická plachta 2026</a>
-		<a href="/historie" class:active={page.url.pathname.startsWith('/historie')}>Historie</a>
-		<a href="/registrace" class:active={page.url.pathname === '/registrace'}>Registrace</a>
-		<a href="/kontakty" class:active={page.url.pathname === '/kontakty'}>Kontakt</a>
+		<a href={base + '/'} class:active={page.url.pathname === base + '/'}>Těrlická plachta 2026</a>
+		<a href={base + '/historie'} class:active={page.url.pathname.startsWith(base + '/historie')}>Historie</a>
+		<a href={base + '/registrace'} class:active={page.url.pathname === base + '/registrace'}>Registrace</a>
+		<a href={base + '/kontakty'} class:active={page.url.pathname === base + '/kontakty'}>Kontakt</a>
 	</nav>
 </div>
 

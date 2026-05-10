@@ -1,1 +1,0 @@
-import{t as e}from"../chunks/Btk_GNY8.js";import{n as t}from"../chunks/DGYrhauS.js";var n=e({load:()=>r});function r(){throw t(307,`/vysledky/2025/`)}export{n as universal};

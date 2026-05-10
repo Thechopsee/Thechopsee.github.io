@@ -1,3 +1,7 @@
+<script>
+	import { assets } from '$app/paths';
+</script>
+
 <svelte:head>
 	<title>Těrlická plachta 2026</title>
 </svelte:head>
@@ -18,8 +22,8 @@
 			<h3 class="eyebrow-header">PROPOZICE</h3>
 			<p class="status">Poslední změna : Doposud nezveřejněno</p>
 			<div id="propozice">
-				<img src="/propozice/propozice1.png" alt="Propozice 1" class="myImg" />
-				<img src="/propozice/propozice2.png" alt="Propozice 2" class="myImg" />
+				<img src={assets + '/propozice/propozice1.png'} alt="Propozice 1" class="myImg" />
+				<img src={assets + '/propozice/propozice2.png'} alt="Propozice 2" class="myImg" />
 			</div>
 		</div>
 

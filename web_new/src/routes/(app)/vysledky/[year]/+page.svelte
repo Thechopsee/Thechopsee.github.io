@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	const { data } = $props();
 	const year = data.year;
 </script>
@@ -15,13 +16,13 @@
 			<h2>NSS</h2>
 			<div class="pdf-wrapper">
 				<object
-					data="/vysledky/{year}/{year}.pdf"
+					data={base + `/vysledky/${year}/${year}.pdf`}
 					type="application/pdf"
 					width="100%"
 					height="600px"
 					title="Výsledky NSS {year}"
 				>
-					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href="/vysledky/{year}/{year}.pdf">Stáhnout PDF</a>.</p>
+					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href={base + `/vysledky/${year}/${year}.pdf`}>Stáhnout PDF</a>.</p>
 				</object>
 			</div>
 		</section>
@@ -30,13 +31,13 @@
 			<h2>RG650</h2>
 			<div class="pdf-wrapper">
 				<object
-					data="/vysledky/{year}/{year}rg.pdf"
+					data={base + `/vysledky/${year}/${year}rg.pdf`}
 					type="application/pdf"
 					width="100%"
 					height="600px"
 					title="Výsledky RG650 {year}"
 				>
-					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href="/vysledky/{year}/{year}rg.pdf">Stáhnout PDF</a>.</p>
+					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href={base + `/vysledky/${year}/${year}rg.pdf`}>Stáhnout PDF</a>.</p>
 				</object>
 			</div>
 		</section>
@@ -45,13 +46,13 @@
 			<h2>Buchta a Regata</h2>
 			<div class="pdf-wrapper">
 				<object
-					data="/vysledky/{year}/{year}buchreg.pdf"
+					data={base + `/vysledky/${year}/${year}buchreg.pdf`}
 					type="application/pdf"
 					width="100%"
 					height="600px"
 					title="Výsledky Buchta a Regata {year}"
 				>
-					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href="/vysledky/{year}/{year}buchreg.pdf">Stáhnout PDF</a>.</p>
+					<p>Váš prohlížeč nepodporuje prohlížení PDF. <a href={base + `/vysledky/${year}/${year}buchreg.pdf`}>Stáhnout PDF</a>.</p>
 				</object>
 			</div>
 		</section>
@@ -59,9 +60,9 @@
 		<div class="download-section">
 			<h3>Stažení kompletních výsledků</h3>
 			<div class="button-group">
-				<a href="/vysledky/{year}/{year}comp.pdf" class="download-btn" download>PDF</a>
+				<a href={base + `/vysledky/${year}/${year}comp.pdf`} class="download-btn" download>PDF</a>
         {#if year === '2023'}
-            <a href="/vysledky/{year}/{year}.xlsx" class="download-btn" download>XLSX</a>
+            <a href={base + `/vysledky/${year}/${year}.xlsx`} class="download-btn" download>XLSX</a>
         {/if}
 			</div>
 		</div>
