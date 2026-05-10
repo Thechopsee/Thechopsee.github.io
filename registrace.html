@@ -1,394 +1,48 @@
-<!DOCTYPE html>
-<html lang="cs">
-    <head>
-        <meta charset="UTF-8">
-        <title>Registrace - Těrlická plachta</title>
-        <link rel="stylesheet" href="styl.css"/>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.min.js"></script>
-        <script defer src="js/odpocet.js"></script>
-        <script defer src="js/frontInicializer.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="./_app/immutable/entry/start.CAI5nMpD.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BYQkQ5z0.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BVVIqT88.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/app.CU3xeCbO.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/Di6zslmw.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/CsaauQz1.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/0.C7soLJ88.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/2.BPAqyWkP.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/6.DfrxjbkE.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="./favicon.png"/> <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/><!----><!--1ozbwwp--><meta name="description" content="Registrační formulář závodu Těrlická plachta 2026 pro kategorie NSS, RG650 a Footy."/><!----><title>Těrlická plachta 2026 | Registrace</title>
+		<link href="./_app/immutable/assets/0.CcY0380P.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.BRxmh6OQ.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/6.CwSm2r0G.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[0--><!--[--><!--[0--><!--[--><div id="logo_block" class="svelte-rfuq4y"><a href="./" class="svelte-rfuq4y"><img src="./logos/logo.svg" id="logo" alt="Logo" class="svelte-rfuq4y"/> <img src="./logos/logomobile.svg" id="mobile_logo" alt="Logo Mobile" class="svelte-rfuq4y"/></a></div> <div id="menu_block" class="svelte-rfuq4y"><nav id="menu_web" class="svelte-rfuq4y"><a href="./" class="svelte-rfuq4y">Těrlická plachta 2026</a> <span class="sep svelte-rfuq4y">|</span> <a href="./historie" class="svelte-rfuq4y">Historie</a> <span class="sep svelte-rfuq4y">|</span> <a href="./registrace" class="svelte-rfuq4y">Registrace</a> <span class="sep svelte-rfuq4y">|</span> <a href="./kontakty" class="svelte-rfuq4y">Kontakt</a></nav> <nav id="menu_mob" class="svelte-rfuq4y"><a href="./" class="svelte-rfuq4y">Těrlická plachta 2026</a> <a href="./historie" class="svelte-rfuq4y">Historie</a> <a href="./registrace" class="svelte-rfuq4y">Registrace</a> <a href="./kontakty" class="svelte-rfuq4y">Kontakt</a></nav></div><!----> <main class="svelte-1v2axqk"><!--[--><div class="page-shell svelte-1ozbwwp"><section class="hero svelte-1ozbwwp"><div class="hero-copy svelte-1ozbwwp"><p class="eyebrow svelte-1ozbwwp">Těrlická plachta 2026</p> <h1 class="svelte-1ozbwwp">Registrační formulář závodníků</h1> <p class="lead svelte-1ozbwwp">Vyplňte údaje závodníka, zvolte lodní kategorie a na konci vše zkontrolujte před odesláním.</p></div> <div class="countdown-card svelte-1ozbwwp"><p class="countdown-label svelte-1ozbwwp">Registrace končí za</p> <div class="countdown-grid svelte-1ozbwwp" aria-live="polite"><div class="svelte-1ozbwwp"><strong class="svelte-1ozbwwp">135</strong> <span class="svelte-1ozbwwp">dny</span></div> <div class="svelte-1ozbwwp"><strong class="svelte-1ozbwwp">09</strong> <span class="svelte-1ozbwwp">hodiny</span></div> <div class="svelte-1ozbwwp"><strong class="svelte-1ozbwwp">19</strong> <span class="svelte-1ozbwwp">minuty</span></div> <div class="svelte-1ozbwwp"><strong class="svelte-1ozbwwp">46</strong> <span class="svelte-1ozbwwp">sekundy</span></div></div> <p class="countdown-note svelte-1ozbwwp">Uzávěrka je nastavena na 22. 9. 2026, po jejím uplynutí se formulář automaticky zamkne.</p></div></section> <!--[-1--><section class="form-card svelte-1ozbwwp"><div class="stepper svelte-1ozbwwp" aria-label="Postup formuláře"><!--[--><button type="button" class="svelte-1ozbwwp active"><span class="svelte-1ozbwwp">1</span> Závodník</button><button type="button" class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">2</span> NSS</button><button type="button" class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">3</span> RG650</button><button type="button" class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">4</span> Footy</button><button type="button" class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">5</span> Rekapitulace</button><!--]--></div> <!--[-1--><!--]--> <!--[-1--><!--]--> <div class="panel svelte-1ozbwwp"><!--[0--><div class="section-heading svelte-1ozbwwp"><h2 class="svelte-1ozbwwp">Údaje o závodníkovi</h2> <p class="svelte-1ozbwwp">Základní identifikace závodníka a případné ubytování.</p></div> <div class="form-grid svelte-1ozbwwp"><label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">Jméno</span> <input value="" type="text" class="svelte-1ozbwwp"/></label> <label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">Příjmení</span> <input value="" type="text" class="svelte-1ozbwwp"/></label> <fieldset class="full-width svelte-1ozbwwp"><legend class="svelte-1ozbwwp">Věk v době konání závodu</legend> <div class="inline-options svelte-1ozbwwp"><label class="radio-option svelte-1ozbwwp"><input type="radio" value="17-" class="svelte-1ozbwwp"/> <span class="svelte-1ozbwwp">17-</span></label> <label class="radio-option svelte-1ozbwwp"><input checked="" type="radio" value="18+" class="svelte-1ozbwwp"/> <span class="svelte-1ozbwwp">18+</span></label></div></fieldset> <label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">E-mail</span> <input value="" type="email" class="svelte-1ozbwwp"/></label> <label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">Klub</span> <input value="" type="text" class="svelte-1ozbwwp"/></label> <label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">Licence</span> <input value="" type="text" class="svelte-1ozbwwp"/></label> <label class="svelte-1ozbwwp"><span class="svelte-1ozbwwp">ISO státu</span> <select class="svelte-1ozbwwp"><!--[--><option value="CZE" selected="">CZE</option><option value="SVK">SVK</option><option value="PLN">PLN</option><option value="OTHER">Jiný stát</option><!--]--></select></label> <!--[-1--><!--]--> <div class="full-width checkbox-card svelte-1ozbwwp"><label class="toggle svelte-1ozbwwp"><input type="checkbox" class="svelte-1ozbwwp"/> <span class="svelte-1ozbwwp">Chci ubytování</span></label> <!--[-1--><!--]--></div></div><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--> <!--[-1--><!--]--></div> <div class="actions svelte-1ozbwwp"><button class="secondary svelte-1ozbwwp" disabled="" type="button">Zpět</button> <!--[0--><button class="primary svelte-1ozbwwp" type="button">Pokračovat</button><!--]--></div></section><!--]--> <section class="table-card svelte-1ozbwwp"><div class="section-heading svelte-1ozbwwp"><h2 class="svelte-1ozbwwp">Soupiska registrovaných závodníků</h2> <p class="svelte-1ozbwwp">Tahle tabulka je připravená pro budoucí napojení na reálná data. Teď zobrazuje ukázkové
+				záznamy a nově odeslané registrace z aktuální relace.</p></div> <div class="table-wrap svelte-1ozbwwp"><table class="svelte-1ozbwwp"><thead><tr><th class="svelte-1ozbwwp">Jméno a příjmení</th><th class="svelte-1ozbwwp">Věk</th><th class="svelte-1ozbwwp">Stát</th><th class="svelte-1ozbwwp">NSS</th><th class="svelte-1ozbwwp">RG</th><th class="svelte-1ozbwwp">Footy</th></tr></thead><tbody><!--[--><tr><td class="svelte-1ozbwwp">Jan Novak</td><td class="svelte-1ozbwwp">S</td><td class="svelte-1ozbwwp">CZE</td><td class="svelte-1ozbwwp">NSS-B / Albatros</td><td class="svelte-1ozbwwp">-</td><td class="svelte-1ozbwwp">-</td></tr><tr><td class="svelte-1ozbwwp">Marek Hlinka</td><td class="svelte-1ozbwwp">J</td><td class="svelte-1ozbwwp">SVK</td><td class="svelte-1ozbwwp">-</td><td class="svelte-1ozbwwp">ano</td><td class="svelte-1ozbwwp">-</td></tr><!--]--></tbody></table></div></section></div><!--]--><!----></main> <footer id="footer" class="svelte-jz8lnl"><div class="bottom_lines svelte-jz8lnl"><div class="bottom_line_nad svelte-jz8lnl">Co? Kdy? Kde?</div> <div class="bottom_line svelte-jz8lnl">💡 Setkání plachetnic třídy NSS - A,B,C,RG-650</div> <div class="bottom_line svelte-jz8lnl">🕘 25.-27.9.2026</div> <div class="bottom_line svelte-jz8lnl">🗺 RS Vyhlídka Těrlicko</div></div> <div class="bottom_lines svelte-jz8lnl"><div class="bottom_line_nad svelte-jz8lnl">Registrace</div> <div class="bottom_line svelte-jz8lnl">🗈 <a href="./propozice/2025/propozice.pdf" class="svelte-jz8lnl">Propozice</a></div> <div class="bottom_line svelte-jz8lnl">🗊 <a href="./registrace" class="svelte-jz8lnl">Registrační formulář</a></div></div> <div class="bottom_lines svelte-jz8lnl"><div class="bottom_line_nad svelte-jz8lnl">Kontakt</div> <div class="bottom_line svelte-jz8lnl">🖃 <a href="mailto:sebastian.walent@gmail.com" class="svelte-jz8lnl">sebastian.walent@gmail.com</a></div> <div class="bottom_line svelte-jz8lnl">🖃 <a href="mailto:modelari.slezsko@gmail.com" class="svelte-jz8lnl">modelari.slezsko@gmail.com</a></div></div></footer><!----><!--]--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_9p4uj9 = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
 
-    </head>
-    <body onload="initFront()">
-        <div id="logo_block" >
-        </div>
-        <div id="menu_block">
-        </div>
+					const element = document.currentScript.parentElement;
 
-        <div class="counter" id="counter">
-            <h2>Zbývající</h2>
-            <div class="box">
-                <h3 id="daystxt">dny</h2>
-                <h2 id="days">000</h2>
-            </div>
-            <div class="box">
-                <h3 id="hourstxt">hodiny</h2>
-                <h2 id="hours">00</h2>
-            </div>
-            <div class="box">
-                <h3 id="minutestxt">minuty</h2>
-                <h2 id="minutes">00</h2>
-            </div>
-            <div class="box">
-                <h3 id="secondstxt">a sekundy</h2>
-                <h2 id="seconds">00</h2>
-            </div>
-            <h2>do konce přihlášování!</h2>
-        </div>
-
-        <div class="counter_mobile" style="display:none">
-            Přihlášování ukončeno!
-        </div>
-        <div id="maincont"></div>
-        <h2>Registrační formulář</h2>
-
-        <div class="spacer">
-            <div id="app" class="registracniform">
-                <div id="form_temp">
-                    <div class="form_body" id="primal_body">
-                        <div id="first_slide">
-                            <label class="left" for="jmeno">Jméno: </label>
-                            <input type="text"  id="jmeno"  name="jmeno" v-model="jmeno">
-
-                            <label class="left" for="prijmeni">Příjmení: </label>
-                            <input type="text" id="prijmeni" name="prijmeni" v-model="prijmeni">
-
-                            <label class="left" for="junior">Mladší 18ti let: </label>
-                            <input class="right_check" type="checkbox" id="junior" name="junior" v-model="date">
-
-                            <label class="left" for="mail">E-mail: </label>
-                            <input type="email" id="mail" name="mail" v-model="mail">
-
-                            <label class="left" for="klub">Klub: </label>
-                            <input type="text" id="klub" name="klub" v-model="klub">
-
-                            <label class="left" for="licence">Licence: </label>
-                            <input type="text" id="licence" name="licence" v-model="licence">
-
-                            <label class="left" for="stat">ISO Státu: </label>
-                            <select id="staty"  name="stat" maxlength="3" v-model="stat">
-                                <option value="CZE">CZE</option>
-                                <option value="POL">POL</option>
-                                <option value="SVK">SVK</option>
-                                <option value="DEU">DEU</option>
-                            </select><br>
-                        </div>
-                        <div id="second_slide" style="display:none">
-                            <h3 >Budete závodit v kategorii RG?</h3>
-                            <br>
-                            <div id="ssecond_slide">
-                                <button @click="rgg(true)" id="rgtrue" class="form_butt">Ano</button><button @click="rgg(false)" id="rgfalse" class="form_butt">Ne</button>
-                            </div>
-                        </div>
-                        <div id="third_slide" style="display:none">
-                            <h3>Budete zavodit v kategorii NSS?</h3><br>
-                            <div id="tthird_slide">
-                            <button @click="nss(true)" id="nsstrue" class="form_butt">Ano</button><button @click="nss(false)" id="nssfalse" class="form_butt">Ne</button>
-                            </div>
-                        </div>
-                        <div id="fourth_slide" style="display:none">
-                            <label class="left" for="kategorie">Kategorie: </label>
-                            <select id="kategorie" width="50%" name="kategorie" v-model="kategorie">
-                                <option value="vyber">Vyber</option>
-                                <option value="nss_a">NSS-A</option>
-                                <option value="nss_b">NSS-B</option>
-                                <option value="nss_c">NSS-C</option>
-                            </select>
-
-                            <label class="left" for="nazev_modelu">Název modelu: </label>
-                            <input type="text" id="nazev_modelu" name="nazev_modelu" v-model="nazev">
-
-                            <label class="left" for="delka">Délka vodorysky [mm]: </label>
-                            <div class="right"><input class="right" type="number" id="delka" name="delka"  step="1" v-model="delka"></div>
-
-                            <label class="left" for="plocha">Plocha plachet [m&sup2;]: </label>
-                            <div class="right"><input  type="number" id="plocha" name="plocha" step="0.0001" v-model="plocha"></div>
-
-                            <label class="left" for="vytlak">Výtlak [kg]: </label>
-                            <div class="right"><input class="right" type="number" id="vytlak" name="vytlak"  step="0.01" v-model="vytlak"></div>
-
-                            <label class="left" for="meritko">Měřítko: 1: </label>
-                            <input type="number" id="meritko" name="meritko" step="0.01" v-model="meritko">
-                            <br>
-                        </div>
-                        <div id="fift_slide" style="display:none">
-                            <div>
-                                <input type="checkbox" id="ubytovaniCheck" name="ubytovani" v-model="ubytovaniC">
-                                <label for="ubytovani">Chci ubytování</label>
-                            </div>
-                            <div v-if="ubytovaniC" id="pocet">
-                                <label for="pocet_osob">Pro kolik osob</label>
-                                <input type="number" id="pocet_osob" name="pocet_osob" min="1" v-model="pocetubyt">
-                            </div>
-                        </div>
-
-                        <div id="six_slide" style="display:none">
-                            <h3>Kontrola zadaných údajů</h3><br><br>
-                            <div>
-                            Jméno:{{jmeno}}<br>
-                            Příjmení:{{prijmeni}}<br>
-                            Věková kategorie:{{date}}<br>
-                            Email:{{mail}}<br>
-                            Klub:{{klub}}<br>
-                            Licence:{{licence}}<br>
-                            Státní příslušnost:{{stat}}<br>
-                            Rg650:{{rg}}<br>
-                            Kategorie:{{kategorie}}<br>
-                            Název modelu:{{nazev}}<br>
-                            Plocha plachet:{{plocha}}<br>
-                            Délka vodorysky:{{delka}}<br>
-                            Výtlak modelu:{{vytlak}}<br>
-                            Měřítko: 1:{{meritko}}<br>
-                            Ubytovaní: {{ubytovaniC}}<br>
-                            Počet osob: {{pocetubyt}}<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="error_log">
-
-                    </div>
-                    <div class="spacer">
-                        <button @click="second_slide" id="ss_button" class="form_butt" >Pokračovat</button>
-                        <button @click="ubytovani" id="ubyt_button" class="form_butt" style="display:none">Pokračovat</button>
-                        <button @click="fifth_slide" id="fs_button" class="form_butt" style="display:none">Pokračovat</button>
-                        <button @click="finish" id="finish_button" class="form_butt" style="display:none">Dokončit</button>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-            <h2>Registrovaní účastníci</h2>
-<iframe src="https://dataspracovavac.tode.cz/savetdb.php" title="description" width="80%" id="iframeId" height="500px"></iframe>
-
-        </div>
-
-
-        <!---------------------------------------------------------------------------------------->
-        <form id="secret_form" style="display:none" action="https://dataspracovavac.tode.cz/test.php" method="post">
-            <input type="text"  id="sjmeno"  name="jmeno" >
-            <input type="text" id="sprijemni" name="prijmeni" >
-            <input class="right_check" type="text" id="sjunior" name="junior">
-            <input type="text" id="smail" name="mail" >
-            <input type="text" id="sklub" name="klub">
-            <input type="text" id="slicence" name="licence">
-            <input type="text" id="sstat" list="staty" name="stat" maxlength="3" placeholder="CZE">
-            <input class="right_check" type="text" id="srg" name="rg">
-            <input class="right_check" type="text" id="skategorie" name="kategorie">
-            <input type="text" id="snazev_modelu" name="nazev_modelu" >
-            <input class="right" type="number" id="sdelka" name="delka"  step="1">
-            <input  type="number" id="splocha" name="plocha" step="0.0001">
-            <input class="right" type="number" id="svytlak" name="vytlak"  step="0.01">
-            <input type="number" id="smeritko" name="meritko" step="0.01">
-            <input type="text" id="subytovaniCheck" name="ubytovanic" >
-            <input type="number" id="spocet_osob" name="pocet_osob" min="0">
-
-            <button id="odesli">send</button>
-        </form>
-    <!-------------------------------------------------------------------------------------------------------------------------------------->
-    <div class="footer" id="footer">
-    </div>
-    </body>
-    <script>
-
-    (function() {
-        emailjs.init("user_aHSZslb08hBUmqeZ4wJ6L");
-          console.log("init");
-        })();
-
-        function sendEmail(form)
-        {
-            var templateParams = {
-                jmeno: form.jmeno,
-                prijmeni: form.prijmeni,
-                date:form.date,
-                mail:form.mail,
-                klub:form.klub,
-                licence:form.licence,
-                stat:form.stat,
-                rg:form.rg,
-                kategorie:form.kategorie,
-                nazev:form.nazev,
-                plocha:form.plocha,
-                delka:form.delka,
-                vytlak:form.vytlak,
-                meritko:form.meritko,
-                ubytovani:form.ubytovaniC,
-                pocetubyt:form.pocetubyt
-                };
-            return emailjs.send('service_o9fsa61', 'template_pkbylb9', templateParams)
-            .then(function(response) {
-                // Success
-            }, function(error) {
-                throw error;
-            });
-        }
-
-        var Formular = new Vue({
-            el: '#app',
-            data: {message: 'Hello Vue!',
-                    jmeno:'',
-                    prijmeni:'',
-                    date:false,
-                    mail:'',
-                    klub:'',
-                    licence:'',
-                    stat:'',
-                    rg:false,
-                    kategorie:'',
-                    nazev:'',
-                    plocha:0,
-                    delka:0,
-                    vytlak:0,
-                    meritko:0,
-                    ubytovaniC:false,
-                    pocetubyt:0
-                  },
-            methods:{
-                second_slide()
-                {
-
-                    if(this.jmeno.length>0 && this.prijmeni.length>0 && this.mail.length>0 && this.stat.length>0)
-                    {
-                        document.getElementById("first_slide").style.display="none";
-                        document.getElementById("ss_button").style.display="none";
-                        document.getElementById("second_slide").style.display="block";
-                        el=document.getElementById("error_log");
-                        el.innerHTML="";
-                    }
-                    else
-                    {
-                        console.log("error"+this.stat.length);
-                        el=document.getElementById("error_log");
-                        el.innerHTML="";
-                        let str="";
-                        if(this.jmeno.length<=0)
-                        {
-                            str+="Jméno nezadáno<br>";
-                        }
-                        if(this.prijmeni.length<=0)
-                        {
-                            str+="Příjmení nezadáno<br>";
-                        }
-                        if(this.mail.length<=0)
-                        {
-                            str+="Emailová adresa nezadána<br>";
-                        }
-                        if(this.stat.length<=0)
-                        {
-                            str+="Stát nezadán<br>";
-                        }
-                        el.innerHTML=str;
-                        return;
-                    }
-
-                },
-                fifth_slide()
-                {
-                    if(this.nazev.length>0 && this.plocha>0 && this.delka>0 && this.vytlak>0 && this.meritko>0 && this.kategorie.length>0 && this.kategorie!="vyber")
-                    {
-                        document.getElementById("fs_button").style.display="none";
-                        document.getElementById("fourth_slide").style.display="none";
-                        document.getElementById("fift_slide").style.display="block";
-                        document.getElementById("ubyt_button").style.display="block";
-                        el=document.getElementById("error_log");
-                        el.innerHTML="";
-                    }
-                    else
-                    {
-                        el=document.getElementById("error_log");
-                        el.innerHTML="";
-                        let str="";
-                        if(this.kategorie.length<=0 || this.kategorie=="vyber")
-                        {
-                            str+="Kategorie nezvolena<br>";
-                        }
-                        if(this.nazev.length<=0)
-                        {
-                            str+="Název modelu nezadán<br>";
-                        }
-                        if(this.plocha<=0)
-                        {
-                            str+="Plocha nezadána<br>";
-                        }
-                        if(this.delka<=0)
-                        {
-                            str+="Délka nezadána<br>";
-                        }
-                        if(this.vytlak<=0)
-                        {
-                            str+="Výtlak nezadán<br>";
-                        }
-                        if(this.meritko<=0)
-                        {
-                            str+="Měřítko nezadáno<br>";
-                        }
-                        el.innerHTML=str;
-
-                    }
-                },
-                rgg(data)
-                {
-                    this.rg=data;
-                    document.getElementById("second_slide").style.display="none";
-                    document.getElementById("third_slide").style.display="grid";
-                },
-                nss(data)
-                {
-                    if(data==true)
-                    {
-                        document.getElementById("fourth_slide").style.display="grid";
-                        document.getElementById("third_slide").style.display="none";
-                        document.getElementById("fs_button").style.display="block";
-                    }
-                    else
-                    {
-                        document.getElementById("fift_slide").style.display="block";
-                        document.getElementById("ubyt_button").style.display="block";
-                        document.getElementById("third_slide").style.display="none";
-                    }
-                },
-                ubytovani()
-                {
-                    document.getElementById("fift_slide").style.display="none";
-                    document.getElementById("ubyt_button").style.display="none";
-                    document.getElementById("finish_button").style.display="block";
-                    document.getElementById("six_slide").style.display="block";
-                },
-                finish(data)
-                {
-                    document.getElementById("sjmeno").value=this.jmeno;
-                    document.getElementById("sprijemni").value=this.prijmeni;
-                    document.getElementById("sjunior").value=this.date;
-                    document.getElementById("smail").value=this.mail;
-                    document.getElementById("sklub").value=this.klub;
-                    document.getElementById("slicence").value=this.licence;
-                    document.getElementById("sstat").value=this.stat;
-                    document.getElementById("srg").value=this.rg;
-                    document.getElementById("skategorie").value=this.kategorie;
-                    document.getElementById("snazev_modelu").value=this.nazev;
-                    document.getElementById("sdelka").value=this.delka;
-                    document.getElementById("splocha").value=this.plocha;
-                    document.getElementById("svytlak").value=this.vytlak;
-                    document.getElementById("smeritko").value=this.meritko;
-                    document.getElementById("spocet_osob").value=this.pocetubyt;
-                    document.getElementById("subytovaniCheck").value=this.ubytovaniC;
-
-                    sendEmail(this).then(() => {
-                        document.getElementById("six_slide").innerHTML="Děkujeme za registraci! Kopie registrace vám byla odeslána na email.";
-                        document.getElementById("finish_button").style.display="none";
-                        document.getElementById("odesli").click();
-                    }).catch((error) => {
-                        alert("Chyba při odesílání emailu. Zkuste to prosím znovu.");
-                    });
-                },
-            },
-
-        })
-    </script>
-
+					Promise.all([
+						import("./_app/immutable/entry/start.CAI5nMpD.js"),
+						import("./_app/immutable/entry/app.CU3xeCbO.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 6],
+							data: [null,null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
 </html>
