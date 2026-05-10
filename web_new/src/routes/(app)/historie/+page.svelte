@@ -55,8 +55,7 @@
 <div class="page-shell">
 	<section class="hero">
 		<div class="hero-copy">
-			<p class="eyebrow">Historie</p>
-			<h1>Těrlická plachta</h1>
+			<h1>Historie</h1>
 			<p class="lead">Portské, buček, soudek rumu. A tak to všechno začalo...</p>
 		</div>
 	</section>
@@ -246,7 +245,6 @@
 	.year-card h2 {
 		margin-top: 0;
 		font-size: 2rem;
-		border-bottom: 2px solid #303b4a;
 		display: inline-block;
 		margin-bottom: 20px;
 		font-family: 'Century Gothic', CenturyGothic, sans-serif;
