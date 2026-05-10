@@ -22,42 +22,55 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 8px;
-		padding: 8px;
-		background: rgba(255, 255, 255, 0.05);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
-		border: 1px solid rgba(69, 206, 206, 0.2);
-		border-radius: 100px;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+		gap: 10px;
+		padding: 12px;
+		background: rgba(255, 255, 255, 0.03);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 50px;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 	}
 
 	.year-link {
 		color: white;
-		padding: 8px 18px;
-		border-radius: 100px;
+		padding: 10px 20px;
+		border-radius: 30px;
 		font-weight: 600;
-		font-size: 0.9rem;
-		transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+		font-size: 0.95rem;
+		transition: all 0.2s ease-in-out;
 		text-decoration: none;
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(69, 206, 206, 0.3);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 60px;
 	}
 
 	.year-link:hover {
 		background-color: #45cece;
 		color: #303b4a;
-		box-shadow: 0 4px 15px rgba(69, 206, 206, 0.4);
+		border-color: #45cece;
+		box-shadow: 0 0 20px rgba(69, 206, 206, 0.4);
+		transform: translateY(-2px);
+	}
+
+	.year-link:active {
+		transform: translateY(0);
 	}
 
 	@media (max-width: 800px) {
 		.year-nav-pill {
-			border-radius: 20px;
-			padding: 12px;
-			gap: 6px;
+			border-radius: 24px;
+			padding: 10px;
+			gap: 8px;
 		}
 
 		.year-link {
-			padding: 6px 12px;
+			padding: 8px 14px;
 			font-size: 0.85rem;
+			min-width: auto;
 		}
 	}
 </style>
