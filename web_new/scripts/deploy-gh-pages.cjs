@@ -43,6 +43,7 @@ async function main() {
   await fs.mkdir(tempDir, { recursive: true });
   await fs.cp(buildDir, tempDir, { recursive: true });
   await fs.writeFile(path.join(tempDir, '.nojekyll'), '');
+  await fs.writeFile(path.join(tempDir, 'CNAME'), 'terlickaplachta.cz');
 
   runGit(['init'], tempDir);
   runGit(['checkout', '--orphan', 'gh-pages'], tempDir);
