@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { assets } from '$app/paths';
 
 	const registrationDeadline = new Date(2026, 8, 22, 23, 59, 59);
 	const steps = [
@@ -11,24 +12,8 @@
 	];
 	const nssCategories = ['NSS-A', 'NSS-B', 'NSS-C'];
 	const isoOptions = ['CZE', 'SVK', 'PLN', 'OTHER'];
-	const initialRegistrants = [
-		{
-			name: 'Jan Novak',
-			age: 'S',
-			country: 'CZE',
-			nss: 'NSS-B / Albatros',
-			rg: '-',
-			footy: '-'
-		},
-		{
-			name: 'Marek Hlinka',
-			age: 'J',
-			country: 'SVK',
-			nss: '-',
-			rg: 'ano',
-			footy: '-'
-		}
-	];
+	/** @type {Array<{name: string, age: string, country: string, nss: string, rg: string, footy: string}>} */
+	const initialRegistrants = [];
 
 	const createInitialForm = () => ({
 		firstName: '',
@@ -79,8 +64,32 @@
 			countdown = getCountdown();
 		}, 1000);
 
+		// Fetch registrants from endpoint
+		fetchRegistrants();
+
 		return () => clearInterval(interval);
 	});
+
+	async function fetchRegistrants() {
+		try {
+			const response = await fetch('/api/tableendpoint');
+			if (response.ok) {
+				const data = await response.json();
+				registrants = data.zavodnici.map((/** @type {any} */ zavodnik) => ({
+					name: zavodnik.cele_jmeno,
+					age: zavodnik.vek,
+					country: zavodnik.stat,
+					nss: zavodnik.kategorie !== '-' ? `${zavodnik.kategorie} / ${zavodnik.nazev_modelu}` : '-',
+					rg: zavodnik.rg ? 'ano' : '-',
+					footy: '-'
+				}));
+			} else {
+				console.error('Failed to fetch registrants:', response.status);
+			}
+		} catch (error) {
+			console.error('Error fetching registrants:', error);
+		}
+	}
 
 	function getCountdown() {
 		const diff = registrationDeadline.getTime() - Date.now();
@@ -647,8 +656,7 @@
 		<div class="section-heading">
 			<h2>Soupiska registrovaných závodníků</h2>
 			<p>
-				Tahle tabulka je připravená pro budoucí napojení na reálná data. Teď zobrazuje ukázkové
-				záznamy a nově odeslané registrace z aktuální relace.
+				Tahle tabulka zobrazuje aktuální registrace načtené z databáze. Nově odeslané registrace z aktuální relace se zobrazí po refresh stránky.
 			</p>
 		</div>
 
