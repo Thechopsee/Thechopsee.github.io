@@ -9,11 +9,6 @@ export default defineConfig({
 				target: 'https://dataspracovavac.tode.cz',
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api\/tableendpoint/, '/tableendpoint.php')
-			},
-			'/api/registrace': {
-				target: 'https://dataspracovavac.tode.cz',
-				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/api\/registrace/, '/test.php')
 			}
 		}
 	}

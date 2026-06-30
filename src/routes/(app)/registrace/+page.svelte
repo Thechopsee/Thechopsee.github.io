@@ -47,7 +47,6 @@
 	/** @type {string[]} */
 	let errors = $state([]);
 	let submitted = $state(false);
-	let submitting = $state(false);
 	let registrants = $state([...initialRegistrants]);
 	let countdown = $state(getCountdown());
 
@@ -244,69 +243,15 @@
 		};
 	}
 
-	async function submitForm() {
+	function submitForm() {
 		if (!validateCurrentStep(4)) {
 			step = 4;
 			return;
 		}
 
-		submitting = true;
+		registrants = [buildRegistrantRow(), ...registrants];
+		submitted = true;
 		errors = [];
-
-		try {
-			const formData = new FormData();
-			formData.append('firstName', form.firstName);
-			formData.append('lastName', form.lastName);
-			formData.append('ageGroup', form.ageGroup);
-			formData.append('email', form.email);
-			formData.append('club', form.club);
-			formData.append('license', form.license);
-			formData.append('country', countryCode);
-			formData.append('accommodation', form.accommodation ? 'true' : 'false');
-			formData.append('accommodationPersons', String(form.accommodationPersons));
-
-			formData.append('attendsNss', form.attendsNss ? 'true' : 'false');
-			if (form.attendsNss) {
-				formData.append('nssCategory', form.nssCategory);
-				formData.append('nssBoatName', form.nssBoatName);
-				formData.append('nssScale', String(form.nssScale));
-				formData.append('nssDisplacement', String(form.nssDisplacement));
-				formData.append('nssSailArea', String(form.nssSailArea));
-				formData.append('nssWaterline', String(form.nssWaterline));
-			}
-
-			formData.append('attendsRg', form.attendsRg ? 'true' : 'false');
-			if (form.attendsRg) {
-				formData.append('rgSailNumber', form.rgSailNumber);
-			}
-
-			formData.append('attendsFooty', form.attendsFooty ? 'true' : 'false');
-			if (form.attendsFooty) {
-				formData.append('footySailNumber', form.footySailNumber);
-			}
-
-			formData.append('marketingConsent', form.marketingConsent ? 'true' : 'false');
-			formData.append('gdprConsent', form.gdprConsent ? 'true' : 'false');
-
-			const response = await fetch('/api/registrace', {
-				method: 'POST',
-				body: formData
-			});
-
-			if (response.ok) {
-				registrants = [buildRegistrantRow(), ...registrants];
-				submitted = true;
-			} else {
-				const text = await response.text();
-				errors = [`Odesílání selhalo: ${response.status} ${response.statusText}`, text].filter(Boolean);
-			}
-		} catch (err) {
-			console.error(err);
-			// @ts-ignore
-			errors = ['Došlo k chybě při odesílání: ' + err.message];
-		} finally {
-			submitting = false;
-		}
 	}
 
 	function resetForm() {
@@ -699,8 +644,8 @@
 						Pokračovat
 					</button>
 				{:else}
-					<button class="primary" disabled={registrationClosed || submitting} type="button" onclick={submitForm}>
-						{submitting ? 'Odesílám...' : 'Odeslat registraci'}
+					<button class="primary" disabled={registrationClosed} type="button" onclick={submitForm}>
+						Odeslat registraci
 					</button>
 				{/if}
 			</div>
