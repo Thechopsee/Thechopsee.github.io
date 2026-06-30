@@ -32,6 +32,9 @@
 		}
 	}
 
+	/**
+	 * @param {string | null | undefined} url
+	 */
 	function resolveUrl(url) {
 		if (!url) return url;
 		if (url.startsWith('/')) return base + url;
