@@ -73,7 +73,7 @@
 
 	async function fetchRegistrants() {
 		try {
-			const response = await fetch('/api/tableendpoint');
+			const response = await fetch('https://dataspracovavac.tode.cz/tableendpoint.php');
 			if (response.ok) {
 				const data = await response.json();
 				registrants = data.zavodnici.map((/** @type {any} */ zavodnik) => ({
@@ -288,7 +288,7 @@
 			formData.append('marketingConsent', form.marketingConsent ? 'true' : 'false');
 			formData.append('gdprConsent', form.gdprConsent ? 'true' : 'false');
 
-			const response = await fetch('/api/registrace', {
+			const response = await fetch('https://dataspracovavac.tode.cz/test.php', {
 				method: 'POST',
 				body: formData
 			});
