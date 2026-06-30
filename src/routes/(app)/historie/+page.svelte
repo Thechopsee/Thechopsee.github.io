@@ -33,7 +33,7 @@
 	}
 
 	/**
-	 * @param {string | null | undefined} url
+	 * @param {string} url
 	 */
 	function resolveUrl(url) {
 		if (!url) return url;
@@ -80,36 +80,55 @@
 
 				<div class="gallery-grid">
 					<div class="main-images">
-						<!-- svelte-ignore a11y_click_events_have_key_events -->
-						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-						<img
-							src={assets + `/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`}
-							alt="{data.year} - 1"
-							loading="lazy"
-							class="gallery-img"
-							onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`)}
-						/>
-						<!-- svelte-ignore a11y_click_events_have_key_events -->
-						<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-						<img
-							src={assets + `/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`}
-							alt="{data.year} - 2"
-							loading="lazy"
-							class="gallery-img"
-							onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`)}
-						/>
+						<button
+							class="gallery-btn"
+							onclick={() =>
+								openModal(
+									assets + `/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`
+								)}
+						>
+							<img
+								src={assets +
+									`/galerie/fotky/${data.year}/${data.year}_1.${data.imgExtensions?.[1] || 'jpg'}`}
+								alt="{data.year} - 1"
+								loading="lazy"
+								class="gallery-img"
+							/>
+						</button>
+						<button
+							class="gallery-btn"
+							onclick={() =>
+								openModal(
+									assets + `/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`
+								)}
+						>
+							<img
+								src={assets +
+									`/galerie/fotky/${data.year}/${data.year}_2.${data.imgExtensions?.[2] || 'jpg'}`}
+								alt="{data.year} - 2"
+								loading="lazy"
+								class="gallery-img"
+							/>
+						</button>
 					</div>
 					<div class="sub-images">
 						{#each [3, 4, 5, 6] as i}
-							<!-- svelte-ignore a11y_click_events_have_key_events -->
-							<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-							<img
-								src={assets + `/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`}
-								alt="{data.year} - {i}"
-								loading="lazy"
-								class="gallery-img"
-								onclick={() => openModal(assets + `/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`)}
-							/>
+							<button
+								class="gallery-btn"
+								onclick={() =>
+									openModal(
+										assets +
+											`/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`
+									)}
+							>
+								<img
+									src={assets +
+										`/galerie/fotky/${data.year}/${data.year}_${i}.${data.imgExtensions?.[i] || 'jpg'}`}
+									alt="{data.year} - {i}"
+									loading="lazy"
+									class="gallery-img"
+								/>
+							</button>
 						{/each}
 					</div>
 				</div>
@@ -283,15 +302,23 @@
 		gap: 15px;
 	}
 
+	.gallery-btn {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		display: block;
+		width: 100%;
+	}
+
 	.gallery-img {
 		width: 100%;
 		border-radius: 4px;
-		cursor: pointer;
 		transition: opacity 0.2s;
 		display: block;
 	}
 
-	.gallery-img:hover {
+	.gallery-btn:hover .gallery-img {
 		opacity: 0.8;
 	}
 
