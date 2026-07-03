@@ -81,8 +81,8 @@
 					age: zavodnik.vek,
 					country: zavodnik.stat,
 					nss: zavodnik.kategorie !== '-' ? `${zavodnik.kategorie} / ${zavodnik.nazev_modelu}` : '-',
-					rg: zavodnik.rg ? 'ano' : '-',
-					footy: '-'
+					rg: zavodnik.rg_text ?? (zavodnik.rg ? 'Ano' : '-'),
+					footy: zavodnik.footy ?? '-'
 				}));
 			} else {
 				console.error('Failed to fetch registrants:', response.status);
