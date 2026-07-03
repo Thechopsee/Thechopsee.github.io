@@ -1,5 +1,15 @@
 <script>
 	import { assets } from '$app/paths';
+
+let modalImg = $state('');
+
+function openModal(src) {
+	modalImg = src;
+}
+
+function closeModal() {
+	modalImg = '';
+}
 </script>
 
 <svelte:head>
@@ -19,26 +29,42 @@
 	</section>
 
 	<div class="propozice-section info-card">
-			<h3 class="eyebrow-header">PROPOZICE</h3>
-			<p class="status">Poslední změna : Doposud nezveřejněno</p>
-			<div id="propozice">
-				<img src={assets + '/propozice/propozice1.png'} alt="Propozice 1" class="myImg" />
-				<img src={assets + '/propozice/propozice2.png'} alt="Propozice 2" class="myImg" />
-			</div>
-		</div>
-
-		<div class="map-section">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5154.750184284669!2d18.491579140758724!3d49.760200904961785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713f8a4faf18b1d%3A0x173c33626a5fee4d!2zUmVrcmVhxI1uw60gU3TFmWVkaXNrbyBOYSBWeWhsw61kY2U!5e0!3m2!1scs!2scz!4v1643894168889!5m2!1scs!2scz"
-				width="100%"
-				height="400"
-				style="border:0;"
-				allowfullscreen
-				loading="lazy"
-				title="Mapa místa konání"
-			></iframe>
+		<h3 class="eyebrow-header">PROPOZICE</h3>
+		<p class="status">Poslední změna : 3.7.2026</p>
+		<a
+			href={assets + '/propozice/propozice.pdf'}
+			download
+			class="download-btn"
+		>
+			Stažení propozic (PDF)
+		</a>
+		<div id="propozice">
+			<img src={assets + '/propozice/propozice1.png'} alt="Propozice 1" class="myImg" onclick={() => openModal(assets + '/propozice/propozice1.png')} />
+			<img src={assets + '/propozice/propozice2.png'} alt="Propozice 2" class="myImg" onclick={() => openModal(assets + '/propozice/propozice2.png')} />
 		</div>
 	</div>
+
+	<div class="map-section info-card">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5154.750184284669!2d18.491579140758724!3d49.760200904961785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713f8a4faf18b1d%3A0x173c33626a5fee4d!2zUmVrcmVhxI1uw60gU3TFmWVkaXNrbyBOYSBWeWhsw61kY2U!5e0!3m2!1scs!2scz!4v1643894168889!5m2!1scs!2scz"
+			width="100%"
+			height="400"
+			style="border:0;"
+			allowfullscreen
+			loading="lazy"
+			title="Mapa místa konání"
+		></iframe>
+	</div>
+</div>
+
+{#if modalImg}
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="modal" onclick={closeModal}>
+		<span class="close" aria-label="Zavřít">&times;</span>
+		<img class="modal-content" src={modalImg} alt="Zvětšený obrázek" onclick={(e) => e.stopPropagation()} />
+	</div>
+{/if}
 
 <style>
 	.page-shell {
@@ -150,6 +176,28 @@
 		color: #303b4a;
 	}
 
+	.download-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 24px;
+		padding: 12px 20px;
+		border-radius: 999px;
+		background: #45cece;
+		color: #0f172a;
+		font-weight: 700;
+		text-decoration: none;
+		box-shadow: 0 8px 20px rgba(69, 206, 206, 0.22);
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+	}
+
+	.download-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 24px rgba(69, 206, 206, 0.28);
+	}
+
 	#propozice {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -165,6 +213,43 @@
 
 	.myImg:hover {
 		transform: scale(1.02);
+	}
+
+	.modal {
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.9);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+	}
+
+	.modal-content {
+		max-width: 100%;
+		max-height: 100%;
+		border-radius: 8px;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	}
+
+	.close {
+		position: absolute;
+		top: 18px;
+		right: 24px;
+		color: #fff;
+		font-size: 40px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: color 0.2s ease;
+	}
+
+	.close:hover {
+		color: #45cece;
 	}
 
 	.map-section {
