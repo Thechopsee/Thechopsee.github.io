@@ -54,20 +54,17 @@
 		<h3 class="eyebrow-header">Kde nás najdete</h3>
 		<p class="map-desc">RS Vyhlídka Těrlicko (Lipová 815/9, Horní Těrlicko)</p>
 
-		<a
-			href="https://www.google.com/maps/place/Rekrea%C4%8Dn%C3%AD+St%C5%99edisko+Na+Vyhl%C3%ADdce/@49.7602009,18.4915791,17z/data=!3m1!4b1!4m6!3m5!1s0x4713f8a4faf18b1d:0x173c33626a5fee4d!8m2!3d49.7602009!4d18.4915791!16s%2Fg%2F1xb2c926"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="map-preview-link"
-			title="Otevřít v Google Mapách"
-		>
-			<div class="map-image-wrapper">
-				<img src={assets + '/mapa.png'} alt="Mapa RS Vyhlídka Těrlicko" class="map-screenshot" />
-				<div class="map-overlay">
-					<span class="map-overlay-text">Otevřít v Google Mapách</span>
-				</div>
-			</div>
-		</a>
+		<div class="map-container">
+			<iframe
+				src="https://www.openstreetmap.org/export/embed.html?bbox=18.48493576049805%2C49.757134375549045%2C18.498218059539798%2C49.763264627195726&amp;layer=mapnik&amp;marker=49.7602009%2C18.4915791"
+				width="100%"
+				height="100%"
+				style="border: 0;"
+				title="Mapa místa konání na OpenStreetMap"
+				allowfullscreen
+				loading="lazy"
+			></iframe>
+		</div>
 
 		<div class="map-buttons">
 			<a
@@ -302,64 +299,14 @@
 		font-weight: 500;
 	}
 
-	.map-preview-link {
-		display: block;
+	.map-container {
 		margin: 0 auto 24px;
 		max-width: 800px;
+		height: 450px;
 		border-radius: 16px;
 		overflow: hidden;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-		position: relative;
-	}
-
-	.map-image-wrapper {
-		position: relative;
-		width: 100%;
-		padding-top: 56.25%; /* 16:9 ratio */
-		overflow: hidden;
-	}
-
-	.map-screenshot {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.4s ease;
-	}
-
-	.map-preview-link:hover .map-screenshot {
-		transform: scale(1.03);
-	}
-
-	.map-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(15, 23, 42, 0.4);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	.map-preview-link:hover .map-overlay {
-		opacity: 1;
-	}
-
-	.map-overlay-text {
-		color: #ffffff;
-		font-weight: 700;
-		font-size: 1.1rem;
-		background: rgba(48, 59, 74, 0.9);
-		padding: 10px 20px;
-		border-radius: 999px;
-		border: 1px solid rgba(69, 206, 206, 0.4);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		border: 1px solid rgba(48, 59, 74, 0.1);
 	}
 
 	.map-buttons {
@@ -424,6 +371,10 @@
 	@media (max-width: 800px) {
 		#propozice {
 			grid-template-columns: 1fr;
+		}
+
+		.map-container {
+			height: 350px;
 		}
 
 		.map-buttons {
