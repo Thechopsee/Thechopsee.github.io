@@ -1,42 +1,78 @@
-# sv
+# Thechopsee.github.io
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Czech event organization website built with SvelteKit, featuring registration, results, gallery, and event proposals.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Registration system** - User registration with EmailJS integration
+- **Results archive** - Event results from 2015-2025
+- **Gallery** - Photo galleries from past events
+- **Event proposals** - Downloadable event documents (propozice)
+- **Responsive design** - Mobile-friendly with dedicated mobile logo
+- **Static deployment** - Hosted on GitHub Pages
+
+## Tech Stack
+
+- **SvelteKit** - Web framework
+- **Svelte 5** - UI framework
+- **Vite** - Build tool
+- **EmailJS** - Email service for registration
+- **@sveltejs/adapter-static** - Static site generation for GitHub Pages
+
+## Development
+
+Install dependencies:
 
 ```sh
-# create a new project
-npx sv create my-app
+npm install
 ```
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.0 create --template minimal --types jsdoc --install npm form
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start development server:
 
 ```sh
 npm run dev
 
-# or start the server and open the app in a new browser tab
+# or open in new browser tab
 npm run dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
+Create production build:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview production build:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```sh
+npm run preview
+```
+
+## Deployment
+
+Deploy to GitHub Pages:
+
+```sh
+npm run deploy
+```
+
+This runs the `deploy-gh-pages.cjs` script which builds the site and pushes to the `gh-pages` branch.
+
+## Project Structure
+
+```
+src/
+├── routes/          # SvelteKit routes
+│   ├── (app)/      # Main app routes
+│   └── registrace/ # Registration page
+├── lib/            # Shared components and utilities
+└── app.css         # Global styles
+
+static/
+├── galerie/        # Photo galleries
+├── vysledky/       # Event results
+├── propozice/      # Event proposals
+└── logos/          # Logo assets
+```
