@@ -1,15 +1,17 @@
 <script>
 	import { assets } from '$app/paths';
 
-let modalImg = $state('');
+	/** @type {string} */
+	let modalImg = $state('');
 
-function openModal(src) {
-	modalImg = src;
-}
+	/** @param {string} src */
+	function openModal(src) {
+		modalImg = src;
+	}
 
-function closeModal() {
-	modalImg = '';
-}
+	function closeModal() {
+		modalImg = '';
+	}
 </script>
 
 <svelte:head>
@@ -39,21 +41,57 @@ function closeModal() {
 			Stažení propozic (PDF)
 		</a>
 		<div id="propozice">
-			<img src={assets + '/propozice/propozice1.png'} alt="Propozice 1" class="myImg" onclick={() => openModal(assets + '/propozice/propozice1.png')} />
-			<img src={assets + '/propozice/propozice2.png'} alt="Propozice 2" class="myImg" onclick={() => openModal(assets + '/propozice/propozice2.png')} />
+			<button type="button" class="propozice-btn" onclick={() => openModal(assets + '/propozice/propozice1.png')}>
+				<img src={assets + '/propozice/propozice1.png'} alt="Propozice 1" class="myImg" />
+			</button>
+			<button type="button" class="propozice-btn" onclick={() => openModal(assets + '/propozice/propozice2.png')}>
+				<img src={assets + '/propozice/propozice2.png'} alt="Propozice 2" class="myImg" />
+			</button>
 		</div>
 	</div>
 
 	<div class="map-section info-card">
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5154.750184284669!2d18.491579140758724!3d49.760200904961785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713f8a4faf18b1d%3A0x173c33626a5fee4d!2zUmVrcmVhxI1uw60gU3TFmWVkaXNrbyBOYSBWeWhsw61kY2U!5e0!3m2!1scs!2scz!4v1643894168889!5m2!1scs!2scz"
-			width="100%"
-			height="400"
-			style="border:0;"
-			allowfullscreen
-			loading="lazy"
-			title="Mapa místa konání"
-		></iframe>
+		<h3 class="eyebrow-header">Kde nás najdete</h3>
+		<p class="map-desc">RS Vyhlídka Těrlicko (Lipová 815/9, Horní Těrlicko)</p>
+
+		<div class="map-container">
+			<iframe
+				src="https://www.openstreetmap.org/export/embed.html?bbox=18.48493576049805%2C49.757134375549045%2C18.498218059539798%2C49.763264627195726&amp;layer=mapnik&amp;marker=49.7602009%2C18.4915791"
+				width="100%"
+				height="100%"
+				style="border: 0;"
+				title="Mapa místa konání na OpenStreetMap"
+				allowfullscreen
+				loading="lazy"
+			></iframe>
+		</div>
+
+		<div class="map-buttons">
+			<a
+				href="https://www.google.com/maps/place/Rekrea%C4%8Dn%C3%AD+St%C5%99edisko+Na+Vyhl%C3%ADdce/@49.7602009,18.4915791,17z/data=!3m1!4b1!4m6!3m5!1s0x4713f8a4faf18b1d:0x173c33626a5fee4d!8m2!3d49.7602009!4d18.4915791!16s%2Fg%2F1xb2c926"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="provider-btn google-maps"
+			>
+				Google Mapy
+			</a>
+			<a
+				href="https://mapy.cz/zakladni?source=firm&id=475597"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="provider-btn mapy-cz"
+			>
+				Mapy.cz
+			</a>
+			<a
+				href="https://www.openstreetmap.org/?mlat=49.75981&mlon=18.49204#map=17/49.75981/18.49204"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="provider-btn openstreetmap"
+			>
+				OpenStreetMap
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -138,15 +176,6 @@ function closeModal() {
 		border-color: rgba(69, 206, 206, 0.4);
 	}
 
-	.eyebrow {
-		margin: 0 0 10px;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		font-size: 0.8rem;
-		opacity: 0.75;
-		color: #45cece;
-	}
-
 	.lead {
 		margin: 0 0 10px;
 		color: rgba(255, 255, 255, 0.86);
@@ -204,6 +233,15 @@ function closeModal() {
 		gap: 20px;
 	}
 
+	.propozice-btn {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		display: block;
+		width: 100%;
+	}
+
 	.myImg {
 		width: 100%;
 		border-radius: 8px;
@@ -254,14 +292,99 @@ function closeModal() {
 
 	.map-section {
 		margin-bottom: 60px;
-		border-radius: 12px;
+	}
+
+	.map-desc {
+		margin-bottom: 20px;
+		font-weight: 500;
+	}
+
+	.map-container {
+		margin: 0 auto 24px;
+		max-width: 800px;
+		height: 450px;
+		border-radius: 16px;
 		overflow: hidden;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+		border: 1px solid rgba(48, 59, 74, 0.1);
+	}
+
+	.map-buttons {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		flex-wrap: wrap;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.provider-btn {
+		flex: 1;
+		min-width: 160px;
+		max-width: 240px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 20px;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.provider-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+	}
+
+	.provider-btn.google-maps {
+		background: #303b4a;
+		color: #45cece;
+		border: 1px solid #303b4a;
+	}
+
+	.provider-btn.google-maps:hover {
+		background: #1e293b;
+	}
+
+	.provider-btn.mapy-cz {
+		background: #f43f5e;
+		color: #ffffff;
+		border: 1px solid #f43f5e;
+	}
+
+	.provider-btn.mapy-cz:hover {
+		background: #e11d48;
+	}
+
+	.provider-btn.openstreetmap {
+		background: #10b981;
+		color: #ffffff;
+		border: 1px solid #10b981;
+	}
+
+	.provider-btn.openstreetmap:hover {
+		background: #059669;
 	}
 
 	@media (max-width: 800px) {
 		#propozice {
 			grid-template-columns: 1fr;
+		}
+
+		.map-container {
+			height: 350px;
+		}
+
+		.map-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.provider-btn {
+			width: 100%;
+			max-width: 100%;
 		}
 	}
 </style>
